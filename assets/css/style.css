@@ -45,11 +45,14 @@ nav {
     font-family: 'Space Mono', monospace;
 }
 
-button.dark-mode-btn {
+.dark-mode-btn {
     width: 30px;
     height: 30px;
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--midnight-blue);
+    border: 2px solid var(--green-blue);
+    border-radius: 20%;
 }
 
 .fa-moon,
@@ -60,4 +63,8 @@ button.dark-mode-btn {
 
 .fa-sun {
     visibility: hidden;
+}
+
+.fa-moon {
+    color: var(--minion-yellow);
 }
