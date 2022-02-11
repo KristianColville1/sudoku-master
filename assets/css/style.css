@@ -1,8 +1,15 @@
-/* fonts
-color variables */
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Space+Mono&display=swap'); /*-----Google fonts */
+
+/*-------------------------------------------------------Defaults */
 
 body {
     margin: 0;
     border: 0;
     padding: 0;
+}
+
+/*-------------------------------------------------------Navigational menu */
+
+header {
+
 }
