@@ -2,6 +2,20 @@
 
 /*-------------------------------------------------------Defaults */
 
+:root {
+    /* CSS HEX */
+--minion-yellow: #fde74cff;
+--carolina-blue: #2397d7ff;
+--capri: #22c0f9ff;
+--vivid-sky-blue: #47ceffff;
+--spanish-blue: #2471b6ff;
+--green-blue: #1866afff;
+--midnight-blue: #03045eff;
+--midnight-blue-2: #0f1066ff;
+--midnight-blue-3: #1a1b6dff;
+--st-patricks-blue: #2f307aff;
+}
+
 body {
     margin: 0;
     border: 0;
@@ -31,6 +45,19 @@ nav {
     font-family: 'Space Mono', monospace;
 }
 
-.fa-solid {
+button.dark-mode-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fa-moon,
+.fa-sun {
     font-size: 1.2rem;
+    position: absolute;
+}
+
+.fa-sun {
+    visibility: hidden;
 }
