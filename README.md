@@ -12,7 +12,19 @@ features
 validation
 testing
 bugs
-deployment
+
+* [Deployment](#deployment)
+    * [Version Control](#version-control)
+    * [GitHub Pages](#github-pages)
+    * [Cloning this Repository](#cloning-this-repository)
+
 credits
 acknowledgements
 
+
+
+
+## Deployment
+### Version Control
+### GitHub Pages
+### Cloning this Repository
