@@ -27,12 +27,16 @@ body {
 /*-------------------------------------------------------Navigational menu */
 
 header {
-    background-color: green;
+    background-color: var(--vivid-sky-blue);
 }
 
 a {
     color: unset;
     text-decoration: none;
+}
+
+li {
+    display: inline-block;
 }
 
 ul {
@@ -45,24 +49,37 @@ nav {
     font-family: 'Space Mono', monospace;
 }
 
+.nav-left 
+
 .dark-mode-btn {
-    width: 30px;
+    width: 60px;
     height: 30px;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--midnight-blue);
-    border: 2px solid var(--green-blue);
-    border-radius: 20%;
+    border: 3px solid var(--green-blue);
+    border-radius: 15%;
+    justify-content: space-between;
+}
+
+.dark-mode-btn:hover {
+    background-color: var(--minion-yellow);
+    border: 3px solid var(--midnight-blue);
+}
+
+.dark-mode-btn:hover .fa-moon,
+.dark-mode-btn:hover .fa-sun {
+    color: var(--midnight-blue);
+    cursor: pointer;
 }
 
 .fa-moon,
 .fa-sun {
     font-size: 1.2rem;
-    position: absolute;
 }
 
 .fa-sun {
-    visibility: hidden;
+    color: var(--minion-yellow);
 }
 
 .fa-moon {
