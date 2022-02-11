@@ -31,12 +31,14 @@ header {
 }
 
 a {
+    font-size: 1.5rem;
     color: unset;
     text-decoration: none;
 }
 
 li {
     display: inline-block;
+    padding: 0 30px;
 }
 
 ul {
@@ -47,9 +49,14 @@ nav {
     display: flex;
     flex-wrap: wrap;
     font-family: 'Space Mono', monospace;
+    justify-content: space-between;
 }
 
-.nav-left 
+.nav-left ul li {
+    padding: 0;
+    font-size: 2rem;
+    font-weight: 700;
+}
 
 .dark-mode-btn {
     width: 60px;
@@ -65,12 +72,12 @@ nav {
 .dark-mode-btn:hover {
     background-color: var(--minion-yellow);
     border: 3px solid var(--midnight-blue);
+    cursor: pointer;
 }
 
 .dark-mode-btn:hover .fa-moon,
 .dark-mode-btn:hover .fa-sun {
     color: var(--midnight-blue);
-    cursor: pointer;
 }
 
 .fa-moon,
