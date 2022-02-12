@@ -49,3 +49,14 @@ When I finished setting up my workstation and getting everything set up to use t
 5. Once completed, I got the website's URL.
 
 ### Cloning this Repository
+In order to clone this repository for use on your local machine please follow the below steps.
+
+1. Navigate to the repository you wish to clone.
+2. Click the green button labelled 'Code'.
+3. Copy the URL under the HTTPS option.
+4. Open an [IDE](https://www.codecademy.com/article/what-is-an-ide) of your choosing that has [Git](https://git-scm.com/) installed.
+5. Then open a new terminal in your IDE.
+6. Type this exactly: git clone the-URL-you-copied
+7. Hit enter.
+
+You now have a local copy of this repository to use on your machine.
