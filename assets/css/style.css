@@ -140,9 +140,10 @@ nav {
 }
 
 .numbers {
+    font-size: 1.8rem;
     height: 40%;
     width: 33%;
     position: relative;
-    top: 30%;
-    left: 35%;
+    top: 10%;
+    left: 28%;
 }
