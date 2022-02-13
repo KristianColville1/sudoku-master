@@ -139,6 +139,11 @@ nav {
     flex-direction: column;
 }
 
+.game-grid-cells:hover {
+    border: 1px solid var(--minion-yellow);
+    cursor: pointer;
+}
+
 .numbers {
     font-size: 1.8rem;
     height: 40%;
