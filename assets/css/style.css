@@ -111,6 +111,16 @@ nav {
 }
 
 .grid {
+    height: 468px;
+    width: 468px;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    border: 3px solid red;
+}
+
+.game-grid-cells {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: inline-block;
 }
