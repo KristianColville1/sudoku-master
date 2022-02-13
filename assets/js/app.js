@@ -10,7 +10,7 @@ let localZone = []; // 9 positions
 let conflictZone = []; // 19 positions
 let emptyArray = [];
 
-let largeGridCells = {
+let largeGridCells = { 
     cell1:[
         1, 2, 3,
         10, 11, 12,
@@ -41,9 +41,21 @@ let largeGridCells = {
         43, 44, 45,
         52, 53, 54
     ],
-    cell7:[],
-    cell8:[],
-    cell9:[]
+    cell7:[
+        55, 56, 57,
+        64, 65, 66,
+        73, 74, 75
+    ],
+    cell8:[
+        58, 59, 60,
+        67, 68, 69,
+        76, 77, 78
+    ],
+    cell9:[
+        61, 62, 63,
+        70, 71, 72,
+        79, 80, 81
+    ]
 }
     
 
