@@ -119,8 +119,8 @@ nav {
 }
 
 .grid {
-    height: 468px;
-    width: 468px;
+    height: 486px;
+    width: 486px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -130,7 +130,7 @@ nav {
 .game-grid-cells {
     width: 50px;
     height: 50px;
-    border: 1px solid var(--midnight-blue);
+    border: 2px solid var(--midnight-blue);
     border-radius: 15%;
     display: flex;
     flex-wrap: wrap;
@@ -138,7 +138,7 @@ nav {
 }
 
 .game-grid-cells:hover {
-    border: 1px solid var(--minion-yellow);
+    border: 2px solid var(--minion-yellow);
     cursor: pointer;
 }
 
