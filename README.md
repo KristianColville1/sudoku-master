@@ -6,6 +6,9 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 (image here of finished website)
 
 ## Table of Contents
+* [Project Goals](#project-goals)
+    * [External User Goals](#external-user-goals)
+    * [Site Owners Goals](#site-owners-goals)
 * [UX](#ux)
 * [Technologies & Tools](#technologies--tools)
 * [Features](#features)
@@ -18,6 +21,12 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
     * [Cloning this Repository](#cloning-this-repository)
 * [credits](#credits)
 * [acknowledgements](#acknowledgements)
+
+## Project Goals
+This project's goal was to create an interactive and user-friendly version of the popular game Sudoku.
+
+### External User Goals
+### Site Owners Goals
 
 ## UX
 [Back to the top](#table-of-contents)
