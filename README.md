@@ -10,6 +10,8 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
     * [External User Goals](#external-user-goals)
     * [Site Owners Goals](#site-owners-goals)
 * [UX](#ux)
+* [Design](#design)
+    * [How to build Sudoko](#how-to-build-sudoko)
 * [Technologies & Tools](#technologies--tools)
 * [Features](#features)
 * [Validation](#validation)
@@ -29,6 +31,11 @@ This project's goal was to create an interactive and user-friendly version of th
 ### Site Owners Goals
 
 ## UX
+[Back to the top](#table-of-contents)
+## Design
+### How to build Sudoko
+Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku game boards by Kristian Colville. It describes my thought process for this project and my ideas on how to build the game.
+
 [Back to the top](#table-of-contents)
 ## Technologies & Tools
 [Back to the top](#table-of-contents)
