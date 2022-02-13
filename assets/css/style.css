@@ -93,14 +93,19 @@ nav {
 
 .fa-moon,
 .fa-sun {
+    color: var(--minion-yellow);
     padding-top: 5px;
     font-size: 1.2rem;
 }
 
-.fa-sun {
-    color: var(--minion-yellow);
-}
+/*-------------------------------------------------------Game board */
 
-.fa-moon {
-    color: var(--minion-yellow);
+.grid {
+    width: 85vh; /*-------------------------------------------------------Game grid width */
+    height: 70vh;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
