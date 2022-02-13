@@ -100,12 +100,17 @@ nav {
 
 /*-------------------------------------------------------Game board */
 
-.grid {
-    width: 85vh; /*-------------------------------------------------------Game grid width */
+.game {
+    width: 85vh; /*-------------------------------------------------------Game width */
     height: 70vh;
     border: 1px solid black;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.grid {
+    display: flex;
+    flex-wrap: nowrap;
 }
