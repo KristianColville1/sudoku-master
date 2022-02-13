@@ -53,24 +53,36 @@ I used [Visual Studio Code](https://code.visualstudio.com/) as a local repositor
 When I finished setting up my workstation and getting everything set up to use the repository I decided to deploy the website using [GitHub Pages](https://pages.github.com/). This is a resource developers can use to test how their websites behave on a cloud platform. It's an excellent resource provided by GitHub to publicly display websites.
 
 1. To begin, I went to the repository and selected 'settings.'
+
 2. I went to the 'pages' section.
+
 3. I chose the master branch as the 'main' branch under 'source.'
+
 4. I ensured that it was deployed from the 'root' directory.
+
 5. Once completed, I got the website's URL.
 
 ### Cloning this Repository
 In order to clone this repository for use on your local machine please follow the below steps.
 
 1. Navigate to the repository you wish to clone.
+
 2. Click the green button labelled 'Code'.
+
 3. Copy the URL under the HTTPS option.
+
 4. Open an [IDE](https://www.codecademy.com/article/what-is-an-ide) of your choosing that has [Git](https://git-scm.com/) installed.
+
 5. Then open a new terminal in your IDE.
+
 6. Type this exactly: git clone the-URL-you-copied
+
 7. Hit enter.
 
 You now have a local copy of this repository to use on your machine.
 
 [Back to the top](#table-of-contents)
 ## Credits
+[Back to the top](#table-of-contents)
 ## Acknowledgements
+[Back to the top](#table-of-contents)
