@@ -7,7 +7,7 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 
 ## Table of Contents
 UX
-Technologies used in this
+Technologies & Tools
 features
 validation
 testing
@@ -21,8 +21,18 @@ bugs
 credits
 acknowledgements
 
-
-
+## UX
+[Back to the top](#table-of-contents)
+## Technologies & Tools
+[Back to the top](#table-of-contents)
+## Features
+[Back to the top](#table-of-contents)
+## Validation
+[Back to the top](#table-of-contents)
+## Testing
+[Back to the top](#table-of-contents)
+## Bugs
+[Back to the top](#table-of-contents)
 
 ## Deployment
 ### Version Control
@@ -60,3 +70,7 @@ In order to clone this repository for use on your local machine please follow th
 7. Hit enter.
 
 You now have a local copy of this repository to use on your machine.
+
+[Back to the top](#table-of-contents)
+## Credits
+## Acknowledgements
