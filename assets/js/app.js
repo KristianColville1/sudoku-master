@@ -24,6 +24,8 @@ function startGame(){
         firstPosition++;
     }
 
+    for()
+
     emptyGridCells[firstPosition].innerHTML = `<div class="numbers"> ${firstValue}</div>`;
 
 
@@ -43,6 +45,12 @@ function startGame(){
     
     // alert(emptyArray);
 
+}
+
+// Use functions to call when new random numbers needed
+function firstValue(){
+    let num = Math.floor(Math.random() * 9);
+    return num;
 }
 
 startGame(); // calls the function and runs the game
