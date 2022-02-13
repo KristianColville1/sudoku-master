@@ -6,20 +6,18 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 (image here of finished website)
 
 ## Table of Contents
-UX
-Technologies & Tools
-features
-validation
-testing
-bugs
-
+* [UX](#ux)
+* [Technologies & Tools](#technologies--tools)
+* [Features](#features)
+* [Validation](#validation)
+* [Testing](#testing)
+* [Bugs](#bugs)
 * [Deployment](#deployment)
     * [Version Control](#version-control)
     * [GitHub Pages](#github-pages)
     * [Cloning this Repository](#cloning-this-repository)
-
-credits
-acknowledgements
+* [credits](#credits)
+* [acknowledgements](#acknowledgements)
 
 ## UX
 [Back to the top](#table-of-contents)
