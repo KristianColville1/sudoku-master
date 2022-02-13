@@ -22,9 +22,11 @@ body {
     padding: 0;
     font-family: 'Alfa Slab One', cursive;
     overflow-x: hidden;
+    background-color: var(--capri);
 }
 
 /*-------------------------------------------------------special classes */
+
 .hidden {
     visibility: hidden;
 }
@@ -32,7 +34,7 @@ body {
 /*-------------------------------------------------------Navigational menu */
 
 header {
-    background-color: var(--vivid-sky-blue);
+    background-color: var(--green-blue);
     border-bottom: 2px solid var(--midnight-blue-3)
 }
 
@@ -52,25 +54,21 @@ ul {
 }
 
 nav {
+    color: var(--minion-yellow);
     display: flex;
     flex-wrap: wrap;
     font-family: 'Space Mono', monospace;
     justify-content: space-between;
 }
 
-.nav-left, .nav-right {
-    width: 45%;
-}
-
 .logo {
+    color: var(--minion-yellow);
     padding: 0;
-    font-size: 5vh;
+    font-size: 2rem;
     letter-spacing: 2px;
     font-family: 'Alfa Slab One', cursive;
-}
-
-.logo:hover {
-    color: var(--st-patricks-blue);
+    position: absolute;
+    margin: 20px 20px;
 }
 
 .dark-mode-button {
@@ -79,10 +77,10 @@ nav {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--midnight-blue);
-    border: 5px solid var(--green-blue);
+    border: 5px solid var(--minion-yellow);
     border-radius: 50%;
-    position: relative;
-    top: 2vh;
+    position: absolute;
+    left: 50%;
 }
 
 .dark-mode-button:hover {
@@ -113,10 +111,12 @@ nav {
     width: 85vh; /*-------------------------------------------------------Game width */
     height: 70vh;
     border: 1px solid var(--midnight-blue);
+    background-color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 15px 15px 15px var(--green-blue);
 }
 
 .grid,
@@ -130,14 +130,15 @@ nav {
 }
 
 .large-cells {
-    width: 152px;
-    height: 152px;
-    border: 2px solid var(--green-blue);
+    width: 150px;
+    height: 150px;
+    border: 3px solid var(--green-blue);
 }
 
 .game-grid-cells {
     width: 50px;
     height: 50px;
     border: 1px solid var(--midnight-blue);
+    border-radius: 15%;
     display: inline-block;
 }
