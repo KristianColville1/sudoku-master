@@ -110,12 +110,20 @@ nav {
     transform: translate(-50%, -50%);
 }
 
-.grid {
+.grid,
+.behind-grid {
     height: 468px;
     width: 468px;
     display: flex;
     flex-wrap: wrap;
     border: 3px solid red;
+    position: absolute;
+}
+
+.large-cells {
+    width: 152px;
+    height: 152px;
+    border: 2px solid red;
 }
 
 .game-grid-cells {
