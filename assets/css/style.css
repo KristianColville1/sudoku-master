@@ -140,5 +140,15 @@ nav {
     height: 50px;
     border: 1px solid var(--midnight-blue);
     border-radius: 15%;
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.numbers {
+    height: 40%;
+    width: 33%;
+    position: relative;
+    top: 30%;
+    left: 35%;
 }
