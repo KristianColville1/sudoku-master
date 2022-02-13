@@ -24,6 +24,11 @@ body {
     overflow-x: hidden;
 }
 
+/*-------------------------------------------------------special classes */
+.hidden {
+    visibility: hidden;
+}
+
 /*-------------------------------------------------------Navigational menu */
 
 header {
@@ -69,20 +74,20 @@ nav {
 }
 
 .dark-mode-button {
-    width: 60px;
-    height: 60px;
+    width: 65px;
+    height: 65px;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--midnight-blue);
-    border: 3px solid var(--green-blue);
-    border-radius: 45%;
+    border: 5px solid var(--green-blue);
+    border-radius: 50%;
     position: relative;
     top: 2vh;
 }
 
 .dark-mode-button:hover {
     background-color: var(--minion-yellow);
-    border: 3px solid var(--midnight-blue);
+    border-color: var(--midnight-blue);
     cursor: pointer;
 }
 
@@ -95,7 +100,11 @@ nav {
 .fa-sun {
     color: var(--minion-yellow);
     padding-top: 15px;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /*-------------------------------------------------------Game board */
@@ -103,7 +112,7 @@ nav {
 .game {
     width: 85vh; /*-------------------------------------------------------Game width */
     height: 70vh;
-    border: 1px solid black;
+    border: 1px solid var(--midnight-blue);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -116,19 +125,19 @@ nav {
     width: 468px;
     display: flex;
     flex-wrap: wrap;
-    border: 3px solid red;
+    border: 3px solid var(--green-blue);
     position: absolute;
 }
 
 .large-cells {
     width: 152px;
     height: 152px;
-    border: 2px solid red;
+    border: 2px solid var(--green-blue);
 }
 
 .game-grid-cells {
     width: 50px;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid var(--midnight-blue);
     display: inline-block;
 }
