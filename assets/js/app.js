@@ -10,23 +10,24 @@ let localZone = []; // 9 positions
 let conflictZone = []; // 19 positions
 let emptyArray = [];
 
+let largeGridCells = {
+    cell1:[],
+    cell2:[],
+    cell3:[],
+    cell4:[],
+    cell5:[],
+    cell6:[],
+    cell7:[],
+    cell8:[],
+    cell9:[]
+}
+    
+
 // function to start game
 function startGame(){
-    emptyGridCells[newPosition].innerHTML = `<div class="numbers"> ${newValue}</div>`;
-
-    // let counter = 1;
-    // enters the numbers 1 - 9 every 9 numbers
-    // for(let i = 0; i < emptyGridCells.length; i++){
-    //     emptyArray.push(counter);
-    //     emptyGridCells[i].innerHTML = `<div class="numbers"> ${newValue}</div>`;
-    //     if(counter > 9){
-    //         counter = 1;
-    //     }
-        
-    // }
-    
-    // alert(emptyArray);
-
+    for(let i = 0; i < emptyGridCells.length; i++){
+        emptyGridCells[i].innerHTML = `<span class="numbers"> ${newValue()}</span>`;
+    }
 }
 
 // Use functions to call when new random numbers needed
