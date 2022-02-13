@@ -11,9 +11,21 @@ let conflictZone = []; // 19 positions
 let emptyArray = [];
 
 let largeGridCells = {
-    cell1:[],
-    cell2:[],
-    cell3:[],
+    cell1:[
+        1, 2, 3,
+        10, 11, 12,
+        19, 20, 21
+    ],
+    cell2:[
+        4, 5, 6,
+        13, 14, 15,
+        22, 23, 24
+    ],
+    cell3:[
+        7, 8, 9,
+        16, 17, 18,
+        25, 26, 27
+    ],
     cell4:[],
     cell5:[],
     cell6:[],
