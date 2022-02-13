@@ -110,8 +110,7 @@ nav {
 .game {
     width: 85vh; /*-------------------------------------------------------Game width */
     height: 70vh;
-    border: 1px solid var(--midnight-blue);
-    background-color: var(--carolina-blue);
+    background-color: transparent;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -119,8 +118,7 @@ nav {
     box-shadow: 15px 15px 15px var(--green-blue);
 }
 
-.grid,
-.behind-grid {
+.grid {
     height: 468px;
     width: 468px;
     display: flex;
