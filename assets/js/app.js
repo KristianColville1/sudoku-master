@@ -1,13 +1,18 @@
 // global variables
 let gameGridCells = document.getElementsByClassName('game-grid-cells');
-
-const vertically = 9;
-const horizontally = 9;
+const isGameStarted = document.querySelector('.start-game')
+let direction = 1;
+const length = 9;
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let localZone = []; // 9 positions
 let conflictZone = []; // 19 positions
 let emptyArray = [];
+
+let shadedPos = [];
+let playerIndex = 0;
+let playerPos = [41]; // places player in the center of the board
+
 
 let largeGridCells = [ [
     1, 2, 3,    // cell 1
@@ -55,7 +60,35 @@ let largeGridCells = [ [
 // function to start game
 function startGame(){
 
-    
+    // alert('hey game working');
+    playerPos.forEach(index => gameGridCells[index - 1].classList.add('player'));
+    // largeGridCells[0].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+
+
+
+    // gameGridCells[largeGridCells[0][0] - 1].classList.add('shaded');
+
+
+
+
+    checkGridArray();
+    playerPos.forEach(index => gameGridCells[index - 1].classList.add('player'));
+}
+
+function checkGridArray(){
+    // alert(largeGridCells[0]);
+    for(let outerArray = 0; outerArray < largeGridCells.length; outerArray++){
+        var innerArraylength = largeGridCells[outerArray].length;
+        for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
+            if(gameGridCells[largeGridCells[outerArray][innerArray]].classList.contains('player')){
+                alert('test');
+                largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                break;
+            }
+        }
+    }
+
+
 }
 
 // Use functions to call when new random numbers needed
@@ -68,4 +101,6 @@ function randNum(n){
 }
 
 
-startGame(); // calls the function and runs the game
+// startGame(); // calls the function and runs the game
+
+isGameStarted.addEventListener('click', startGame);
