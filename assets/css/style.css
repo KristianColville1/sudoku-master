@@ -4,6 +4,7 @@
 
 :root {
     /* CSS HEX */
+--minion-yellow-shaded: #f8f6e3;
 --minion-yellow: #fde74cff;
 --carolina-blue: #2397d7ff;
 --capri: #22c0f9ff;
@@ -37,6 +38,14 @@ body {
 
 .margin-left {
     margin-left: 10px;
+}
+
+.player {
+    background-color: var(--minion-yellow);
+}
+
+.shaded {
+    background-color: var(--minion-yellow-shaded);
 }
 
 /*-------------------------------------------------------Navigational menu */
