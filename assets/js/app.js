@@ -1,6 +1,7 @@
 // global variables
 let gameGridCells = document.getElementsByClassName('game-grid-cells');
-const isGameStarted = document.querySelector('.start-game')
+const isGameStarted = document.querySelector('.start-game');
+const isDarkMode = document.querySelector('dark-mode-button');
 let direction = 1;
 const length = 9;
 
@@ -115,8 +116,12 @@ function randNum(n){
     return num;
 }
 
+// function darkMode(){
+//     document.documentElement.style.setProperty('')
+// }
+
 
 // startGame(); // calls the function and runs the game
 
 isGameStarted.addEventListener('click', startGame);
-document.addEventListener('click', isDarkMode);
+isDarkMode.addEventListener('click', darkMode);
