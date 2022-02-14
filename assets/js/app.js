@@ -11,7 +11,8 @@ let emptyArray = [];
 
 let shadedPos = [];
 let playerIndex = 0;
-let playerPos = [68]; // places player in the center of the board
+// var a = Math.floor(Math.random() * 81);
+// let playerPos = [a]; // places player in the center of the board
 
 
 let largeGridCells = [ [
@@ -55,24 +56,34 @@ let largeGridCells = [ [
 
 
 
+
+
 // emptyCells[i].innerHTML = `<span class="numbers"> ${randNum()}</span>`;
 
 // function to start game
 function startGame(){
-
+    // a = Math.floor(Math.random() * 81);
+    // playerPos = [a]; // places player in the center of the board
     // alert('hey game working');
-    playerPos.forEach(index => gameGridCells[index - 1].classList.add('player'));
-    // largeGridCells[0].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+    // playerPos.forEach(index => gameGridCells[index - 1].classList.add('player'));
+    // checkGridArray();
 
 
 
-    // gameGridCells[largeGridCells[0][0] - 1].classList.add('shaded');
+    // solving the sudoku board
+    // pick a random grid and place a number between 1 and 9 in the grid
 
 
+    
+    for(let i = 0; i < gameGridCells.length; i++){
+
+    }
 
 
-    checkGridArray();
-    playerPos.forEach(index => gameGridCells[index - 1].classList.add('player'));
+}
+
+function createBoard(){
+
 }
 
 function checkGridArray(){
@@ -81,13 +92,12 @@ function checkGridArray(){
         var innerArraylength = largeGridCells[outerArray].length;
         for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
             if(gameGridCells[largeGridCells[outerArray][innerArray]].classList.contains('player')){
-                alert('test');
+                playerIndex = largeGridCells[outerArray][innerArray]
                 largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].innerHTML = `<span class="numbers"> ${randNum(9 - innerArray)}</span>`);
             }
         }
     }
-
-
 }
 
 // Use functions to call when new random numbers needed
