@@ -11,52 +11,20 @@ let emptyArray = [];
 
 let shadedPos = [];
 let playerIndex = 0;
-// var a = Math.floor(Math.random() * 81);
-// let playerPos = [a]; // places player in the center of the board
+var a = Math.floor(Math.random() * 81);
+let playerPos = [a + 1]; // places player in the center of the board
 
 
-let largeGridCells = [ [
-    1, 2, 3,    // cell 1
-    10, 11, 12,
-    19, 20, 21
-], [
-    4, 5, 6,    // cell 2
-    13, 14, 15,
-    22, 23, 24
-], [
-    7, 8, 9,    // cell 3
-    16, 17, 18,
-    25, 26, 27
-], [
-    28, 29, 30,    // cell 4
-    37, 38, 39,
-    46, 47, 48
-], [
-    31, 32, 33,    // cell 5
-    40, 41, 42,
-    49, 50, 51
-],[
-    34, 35, 36,    // cell 6
-    43, 44, 45,
-    52, 53, 54
-], [
-    55, 56, 57,    // cell 7
-    64, 65, 66,
-    73, 74, 75
-], [
-    58, 59, 60,    // cell 8
-    67, 68, 69,
-    76, 77, 78
-], [
-    61, 62, 63,    // cell 9
-    70, 71, 72,
-    79, 80, 81
-]];
-
-
-
-
-
+let largeGridCells = [
+    [0,1,2,3,4,5,6,7,8],
+    [9,10,11,12,13,14,15,16,17],
+    [18,19,20,21,22,23,24,25,26],
+    [27,28,29,30,31,32,33,34,35],
+    [36,37,38,39,40,41,42,43,44],
+    [45,46,47,48,49,50,51,52,53],
+    [54,55,56,57,58,59,60,61,62],
+    [63,64,65,66,67,68,69,70,71],
+    [72,73,74,75,76,77,78,79,80]];
 
 // emptyCells[i].innerHTML = `<span class="numbers"> ${randNum()}</span>`;
 
@@ -65,8 +33,10 @@ function startGame(){
     // a = Math.floor(Math.random() * 81);
     // playerPos = [a]; // places player in the center of the board
     // alert('hey game working');
-    // playerPos.forEach(index => gameGridCells[index - 1].classList.add('player'));
-    // checkGridArray();
+    playerPos.forEach(index => gameGridCells[index].classList.add('player'));
+    gameGridCells[playerPos].innerHTML = `<span class="numbers"> ${5}</span>`;
+    checkGridArray();
+
 
 
 
@@ -75,9 +45,9 @@ function startGame(){
 
 
     
-    for(let i = 0; i < gameGridCells.length; i++){
+    // for(let i = 0; i < gameGridCells.length; i++){
 
-    }
+    // }
 
 
 }
@@ -92,9 +62,9 @@ function checkGridArray(){
         var innerArraylength = largeGridCells[outerArray].length;
         for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
             if(gameGridCells[largeGridCells[outerArray][innerArray]].classList.contains('player')){
-                playerIndex = largeGridCells[outerArray][innerArray]
+                playerIndex = largeGridCells[outerArray][innerArray];
                 largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-                largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].innerHTML = `<span class="numbers"> ${randNum(9 - innerArray)}</span>`);
+                // largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].innerHTML = `<span class="numbers"> ${randNum(9 - innerArray)}</span>`);
             }
         }
     }
