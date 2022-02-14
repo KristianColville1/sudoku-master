@@ -38,10 +38,14 @@ let verticalGrid = [
     [8, 17, 26, 35, 44, 53, 62, 71, 80]
 ];
 
+function setGridUp(){
+    
+}
 // emptyCells[i].innerHTML = `<span class="numbers"> ${randNum()}</span>`;
 
 // function to start game
 function startGame(){
+    setGridUp();
     // reset game each click
     // gameGridCells.forEach(index => gameGridCells[index].classList.remove('number'));
     playerPos.forEach(index => gameGridCells[index].classList.remove('player'));
@@ -89,17 +93,17 @@ function checkGridArray(){
         }
     }
 
-        // check horizontally and add lighter background to those cells
-        for(let outerArray = 0; outerArray < verticalGrid.length; outerArray++){
-            var innerArraylength = verticalGrid[outerArray].length;
-            for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
-                if(gameGridCells[verticalGrid[outerArray][innerArray]].classList.contains('player')){
-                    playerIndex = verticalGrid[outerArray][innerArray];
-                    verticalGrid[outerArray].forEach(index => gameGridCells[index].classList.add('shaded'));
-                    verticalGrid[outerArray].forEach(index => shadedPos.push(index));
-                }
+    // check horizontally and add lighter background to those cells
+    for(let outerArray = 0; outerArray < verticalGrid.length; outerArray++){
+        var innerArraylength = verticalGrid[outerArray].length;
+        for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
+            if(gameGridCells[verticalGrid[outerArray][innerArray]].classList.contains('player')){
+                playerIndex = verticalGrid[outerArray][innerArray];
+                verticalGrid[outerArray].forEach(index => gameGridCells[index].classList.add('shaded'));
+                verticalGrid[outerArray].forEach(index => shadedPos.push(index));
             }
         }
+    }
 }
 
 // Use functions to call when new random numbers needed
@@ -115,3 +119,4 @@ function randNum(n){
 // startGame(); // calls the function and runs the game
 
 isGameStarted.addEventListener('click', startGame);
+document.addEventListener('click', isDarkMode);
