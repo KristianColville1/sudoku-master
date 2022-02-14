@@ -31,6 +31,14 @@ body {
     visibility: hidden;
 }
 
+.margin-top {
+    margin-top: 10px;
+}
+
+.margin-left {
+    margin-left: 10px;
+}
+
 /*-------------------------------------------------------Navigational menu */
 
 header {
@@ -119,8 +127,8 @@ nav {
 }
 
 .grid {
-    height: 486px;
-    width: 486px;
+    height: 506px;
+    width: 506px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
