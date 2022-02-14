@@ -4,16 +4,21 @@
 
 :root {
     /* CSS HEX */
---minion-yellow-shaded: #f8f6e3;
---minion-yellow: #fde74cff;
---carolina-blue: #2397d7ff;
---capri: #22c0f9ff;
---vivid-sky-blue: #47ceffff;
---spanish-blue: #2471b6ff;
---green-blue: #1866afff;
---midnight-blue: #03045eff;
---midnight-blue-2: #0f1066ff;
---midnight-blue-3: #1a1b6dff;
+--shaded-cells: #8AEEE2;
+--player-cell: #FFED66;
+
+
+--main-bg: #26F0F1;
+--main-bg-2: #64d1f8;
+
+--header-bg: #26F0F1;
+--logo: #FFED66;
+
+--dark-mode-light: #FFED66;
+--dark-mode-dark: #FFED66;
+
+--game-bg: #9A9CA5;
+--purple-navy: #464D77;
 --st-patricks-blue: #2f307aff;
 }
 
@@ -23,7 +28,7 @@ body {
     padding: 0;
     font-family: 'Alfa Slab One', cursive;
     overflow-x: hidden;
-    background-color: var(--capri);
+    background-color: var(--main-bg);
 }
 
 /*-------------------------------------------------------special classes */
@@ -41,18 +46,18 @@ body {
 }
 
 .player {
-    background-color: var(--minion-yellow);
+    background-color: var(--player-cell);
 }
 
 .shaded {
-    background-color: var(--minion-yellow-shaded);
+    background-color: var(--shaded-cells);
 }
 
 /*-------------------------------------------------------Navigational menu */
 
 header {
-    background-color: var(--green-blue);
-    border-bottom: 2px solid var(--midnight-blue-3)
+    background-color: var(--header-bg);
+    border-bottom: 2px solid var(--header-bg)
 }
 
 a {
@@ -71,7 +76,7 @@ ul {
 }
 
 nav {
-    color: var(--minion-yellow);
+    color: var(--player-cell);
     display: flex;
     flex-wrap: wrap;
     font-family: 'Space Mono', monospace;
@@ -79,7 +84,7 @@ nav {
 }
 
 .logo {
-    color: var(--minion-yellow);
+    color: var(--logo);
     padding: 0;
     font-size: 2rem;
     letter-spacing: 2px;
@@ -93,27 +98,27 @@ nav {
     height: 65px;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--midnight-blue);
-    border: 5px solid var(--minion-yellow);
+    background-color: var(--purple-navy);
+    border: 2px solid var(--dark-mode-light);
     border-radius: 50%;
     position: absolute;
     left: 50%;
 }
 
 .dark-mode-button:hover {
-    background-color: var(--minion-yellow);
-    border-color: var(--midnight-blue);
+    background-color: var(--player-cell);
+    border-color: var(--purple-navy);
     cursor: pointer;
 }
 
 .dark-mode-button:hover .fa-moon,
 .dark-mode-button:hover .fa-sun {
-    color: var(--midnight-blue);
+    color: var(--purple-navy);
 }
 
 .fa-moon,
 .fa-sun {
-    color: var(--minion-yellow);
+    color: var(--dark-mode-light);
     padding-top: 15px;
     font-size: 1.8rem;
     position: absolute;
@@ -132,7 +137,7 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 15px 15px 15px var(--green-blue);
+    box-shadow: 15px 15px 15px var(--game-bg);
 }
 
 .grid {
@@ -141,13 +146,14 @@ nav {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    box-shadow: 10px 10px 10px var(--green-blue);
+    background-color: var(--main-bg-2);
+    box-shadow: 10px 10px 10px var(--game-bg);
 }
 
 .game-grid-cells {
     width: 50px;
     height: 50px;
-    border: 2px solid var(--midnight-blue);
+    border: 2px solid var(--purple-navy);
     border-radius: 15%;
     display: flex;
     flex-wrap: wrap;
@@ -155,7 +161,7 @@ nav {
 }
 
 .game-grid-cells:hover {
-    border: 2px solid var(--minion-yellow);
+    border: 2px solid var(--player-cell);
     cursor: pointer;
 }
 
