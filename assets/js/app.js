@@ -11,8 +11,7 @@ let emptyArray = [];
 
 let shadedPos = [];
 let playerIndex = 0;
-var a = Math.floor(Math.random() * 81);
-let playerPos = [a + 1]; // places player in the center of the board
+let playerPos = [41]; // places player in the center of the board
 
 
 let largeGridCells = [
@@ -24,17 +23,23 @@ let largeGridCells = [
     [45,46,47,48,49,50,51,52,53],
     [54,55,56,57,58,59,60,61,62],
     [63,64,65,66,67,68,69,70,71],
-    [72,73,74,75,76,77,78,79,80]];
+    [72,73,74,75,76,77,78,79,80]
+];
 
 // emptyCells[i].innerHTML = `<span class="numbers"> ${randNum()}</span>`;
 
 // function to start game
 function startGame(){
-    // a = Math.floor(Math.random() * 81);
-    // playerPos = [a]; // places player in the center of the board
+    // reset game each click
+    playerPos.forEach(index => gameGridCells[index].classList.remove('player'));
+    shadedPos.forEach(index => gameGridCells[index].classList.remove('shaded'));
+    a = Math.floor(Math.random() * 81);
+    playerPos = [a]; // places player in the center of the board
     // alert('hey game working');
+    // a = Math.floor(Math.random() * 9);
+    // playerPos = [a + 1]; // places player in the center of the board
     playerPos.forEach(index => gameGridCells[index].classList.add('player'));
-    gameGridCells[playerPos].innerHTML = `<span class="numbers"> ${5}</span>`;
+    gameGridCells[playerPos].innerHTML = `<span class="numbers"> ${playerPos}</span>`;
     checkGridArray();
 
 
@@ -63,7 +68,8 @@ function checkGridArray(){
         for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
             if(gameGridCells[largeGridCells[outerArray][innerArray]].classList.contains('player')){
                 playerIndex = largeGridCells[outerArray][innerArray];
-                largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                largeGridCells[outerArray].forEach(index => gameGridCells[index].classList.add('shaded'));
+                largeGridCells[outerArray].forEach(index => shadedPos.push(index));
                 // largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].innerHTML = `<span class="numbers"> ${randNum(9 - innerArray)}</span>`);
             }
         }
