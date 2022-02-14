@@ -43,6 +43,7 @@ let verticalGrid = [
 // function to start game
 function startGame(){
     // reset game each click
+    // gameGridCells.forEach(index => gameGridCells[index].classList.remove('number'));
     playerPos.forEach(index => gameGridCells[index].classList.remove('player'));
     shadedPos.forEach(index => gameGridCells[index].classList.remove('shaded'));
     a = Math.floor(Math.random() * 81);
@@ -75,6 +76,8 @@ function createBoard(){
 
 // function to search the main array to locate the player class and highlight the array with class shader horizontally
 function checkGridArray(){
+
+    // check vertically and add lighter background to those cells
     for(let outerArray = 0; outerArray < horizontalGrid.length; outerArray++){
         var innerArraylength = horizontalGrid[outerArray].length;
         for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
@@ -85,6 +88,18 @@ function checkGridArray(){
             }
         }
     }
+
+        // check horizontally and add lighter background to those cells
+        for(let outerArray = 0; outerArray < verticalGrid.length; outerArray++){
+            var innerArraylength = verticalGrid[outerArray].length;
+            for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
+                if(gameGridCells[verticalGrid[outerArray][innerArray]].classList.contains('player')){
+                    playerIndex = verticalGrid[outerArray][innerArray];
+                    verticalGrid[outerArray].forEach(index => gameGridCells[index].classList.add('shaded'));
+                    verticalGrid[outerArray].forEach(index => shadedPos.push(index));
+                }
+            }
+        }
 }
 
 // Use functions to call when new random numbers needed
