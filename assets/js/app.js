@@ -4,7 +4,6 @@ let emptyGridCells = document.getElementsByClassName('game-grid-cells');
 const vertically = 9;
 const horizontally = 9;
 
-let filledGridCells = []; 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let localZone = []; // 9 positions
 let conflictZone = []; // 19 positions
@@ -46,24 +45,30 @@ let largeGridCells = [ [
     61, 62, 63,    // cell 9
     70, 71, 72,
     79, 80, 81
-]]
-    
+]];
 
+// emptyCells[i].innerHTML = `<span class="numbers"> ${newValue()}</span>`;
 
 // function to start game
 function startGame(){
-    for(let i = 0; i < emptyGridCells.length; i++){
 
+    // I want to test iterating through the large cell array and adding the values to the empty array to check it works
 
+    // emptyGridCells[largeGridCells[0][0]-1].innerHTML = `<span class="numbers"> ${newValue()}</span>`;
 
+    // iterating through the array is successful.
+    // for(let outside = 0; outside < possibleChoices.length; outside++){
+    //     for(let inside = 0; inside < possibleChoices.length; inside++){
+    //         emptyGridCells[largeGridCells[outside][inside]-1].innerHTML = `<span class="numbers"> ${newValue()}</span>`;
+    //     }
+    // }
 
+    // test iterating through 1 grid and placing values
+    // for(let i = 0; i < possibleChoices.length; i++){
+    //     emptyGridCells[largeGridCells[0][i]- 1].innerHTML = `<span class="numbers"> ${newValue()}</span>`;
+    // }
+    // testing iterating through one grid at a time successful
 
-
-
-
-
-        emptyGridCells[i].innerHTML = `<span class="numbers"> ${newValue()}</span>`;
-    }
 }
 
 // Use functions to call when new random numbers needed
