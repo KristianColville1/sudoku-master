@@ -11,7 +11,7 @@ let emptyArray = [];
 
 let shadedPos = [];
 let playerIndex = 0;
-let playerPos = [11]; // places player in the center of the board
+let playerPos = [68]; // places player in the center of the board
 
 
 let largeGridCells = [ [
@@ -83,51 +83,51 @@ function checkGridArray(){
             if(gameGridCells[largeGridCells[outerArray][innerArray]].classList.contains('player')){
                 alert('test');
                 largeGridCells[outerArray].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                // if(outerArray === 0 || outerArray === 3 || outerArray === 6){
+                //     largeGridCells[outerArray + 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // left rows
+                //     largeGridCells[outerArray + 2].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
 
-                if(outerArray === 1 || outerArray === 4 || outerArray === 7){ // horizontal rows
-                    largeGridCells[outerArray - 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // middle rows
-                    largeGridCells[outerArray + 1].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-
-                    if(outerArray < 6){
-                        largeGridCells[outerArray + 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-                        largeGridCells[outerArray + 6].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-                    }
-                }
-                if(outerArray === 0 || outerArray === 3 || outerArray === 6){
-                    largeGridCells[outerArray + 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // left rows
-                    largeGridCells[outerArray + 2].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-
-                    if(outerArray < 6){
-                        largeGridCells[outerArray + 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-                        largeGridCells[outerArray + 6].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-                    }
+                //     if(outerArray < 6){
+                //         largeGridCells[outerArray + 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                //         largeGridCells[outerArray + 6].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                //     }
                     
-                }
-                if(outerArray === 2 || outerArray === 5 || outerArray === 8){
-                    largeGridCells[outerArray - 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // right rows
-                    largeGridCells[outerArray - 2].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                // }
+                // if(outerArray === 2 || outerArray === 5 || outerArray === 8){
+                //     largeGridCells[outerArray - 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // right rows
+                //     largeGridCells[outerArray - 2].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
 
-                    if(outerArray < 6){
-                        largeGridCells[outerArray + 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-                        largeGridCells[outerArray + 6].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
-                    }
-                }
-
-
+                //     if(outerArray < 6){
+                //         largeGridCells[outerArray + 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                //         largeGridCells[outerArray + 6].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                //     }
+                // }
                 switch(outerArray){
                     case 1:
+                        largeGridCells[outerArray - 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // middle row one
+                        largeGridCells[outerArray + 1].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                        largeGridCells[outerArray + 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                        largeGridCells[outerArray + 6].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
                         break;
                     case 2:
                         break;
                     case 3:
                         break;
                     case 4:
+                        largeGridCells[outerArray - 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // middle row two
+                        largeGridCells[outerArray + 1].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                        largeGridCells[outerArray + 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                        largeGridCells[outerArray - 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
                         break;
                     case 5:
                         break;
                     case 6:
                         break;
                     case 7:
+                        largeGridCells[outerArray - 1].forEach(index => gameGridCells[index - 1].classList.add('shaded')); // middle row three
+                        largeGridCells[outerArray + 1].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                        largeGridCells[outerArray - 3].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
+                        largeGridCells[outerArray - 6].forEach(index => gameGridCells[index - 1].classList.add('shaded'));
                         break;
                     case 8:
                         break;
