@@ -167,3 +167,12 @@ nav {
     top: 10%;
     left: 28%;
 }
+
+button.start-game {
+    height: 35px;
+    width: 45px;
+    color: red;
+    font-weight: 600;
+    position: relative;
+    left: 80%;
+}
