@@ -3,7 +3,7 @@ let mainGrid = document.getElementById('grid');
 let gCells = document.getElementsByClassName('game-grid-cells');
 
 const isGameStarted = document.querySelector('.start-game');
-const isDarkMode = document.querySelector('dark-mode-button');
+const isDarkMode = document.querySelector('.dark-mode-button');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let localZone = []; // 9 positions
@@ -141,19 +141,26 @@ function randNum(){
 
 // darkmode function 
 function darkMode(){
-
-    if(enableDarkMode){// if dark mode is on do this
-        enableDarkMode = false;
-
-
-        
-
-
-    }else if(!enableDarkMode){ // if dark mode is off do this
+    if(enableDarkMode === false){
+        document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-dark'));
+        document.documentElement.style.setProperty('player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-dark'));
+        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-dark'));
+        document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-dark'));
+        document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-dark'));
+        document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-dark'));
+        document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-dark'));
+        document.documentElement.style.setProperty('--game-shadow', getComputedStyle(document.documentElement).getPropertyValue('--game-shadow-dark'));
         enableDarkMode = true;
-
-
-
+    }else if(enableDarkMode === true){
+        document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
+        document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-light'));
+        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-light'));
+        document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-light'));
+        document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-light'));
+        document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-light'));
+        document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-light'));
+        document.documentElement.style.setProperty('--game-shadow', getComputedStyle(document.documentElement).getPropertyValue('--game-shadow-light'));
+        enableDarkMode = false;
     }
 }
 
