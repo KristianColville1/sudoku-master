@@ -13,9 +13,13 @@ let localZone = []; // 9 positions
 let conflictZone = []; // 19 positions
 let emptyArray = [];
 
-let shadedIndexs = [];
+var dontShade = [];
+var shadedIndexs = [];
 let playerIndex = [40]; // places player in the center of the board
+var lastIndex = [];
 let isPlayerHere = false; // is the player on the board
+
+let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
 // horizontal indexs
 let hGrid = [
@@ -63,36 +67,20 @@ function setGridUp(){
 
 // function to start game
 function startGame(){
-    // resetGame();
+    resetGame();
     setGridUp();
 
-    let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
-    
+    randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
+    playerIndex = [randomPosition];
+    lastIndex.push(randomPosition);
     playerIndex.forEach(index => gCells[index].classList.add('player'));
     gCells[playerIndex].innerHTML = `<span class="numbers"> ${playerIndex}</span>`;
 
     playerPosition();
-
-
-
-
-    // solving the sudoku board
-    // pick a random grid and place a number between 1 and 9 in the grid
-
-
-
-    // for(let i = 0; i < gCells.length; i++){
-
-    // }
-
-
 }
 
 function resetGame(){
-    // reset game each click
-    // gCells.forEach(index => gCells[index].classList.remove('number'));
-    alert('here');
-    playerIndex.forEach(index => gCells[index].classList.remove('player'));
+    lastIndex.forEach(index => gCells[index].classList.remove('player'));
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
 }
 
@@ -108,9 +96,9 @@ function playerPosition(){
         let iArrayLen = hGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
             if(gCells[hGrid[oArray][iArray]].classList.contains('player')){
-                playerIndex = hGrid[oArray][iArray];
                 hGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 hGrid[oArray].forEach(index => shadedIndexs.push(index));
+                gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
             }
         }
     }
@@ -120,9 +108,10 @@ function playerPosition(){
         let iArrayLen = vGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
             if(gCells[vGrid[oArray][iArray]].classList.contains('player')){
-                playerIndex = vGrid[oArray][iArray];
+                gCells[randomPosition]
                 vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[oArray].forEach(index => shadedIndexs.push(index));
+                gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
             }
         }
     }
@@ -132,9 +121,9 @@ function playerPosition(){
         let iArrayLen = lGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
             if(gCells[lGrid[oArray][iArray]].classList.contains('player')){
-                playerIndex = lGrid[oArray][iArray];
                 lGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 lGrid[oArray].forEach(index => shadedIndexs.push(index));
+                gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
             }
         }
     }
