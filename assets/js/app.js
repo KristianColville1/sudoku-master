@@ -60,29 +60,28 @@ let lGrid = [
     [60, 61, 62, 69, 70, 71, 78, 79, 80]
 ];
 
+let dummyFill = [
+    9,5,4,2,3,1,7,8,6,
+    5,9,2,1,4,7,6,3,8,
+    9,1,8,6,2,3,5,7,4,
+    8,2,5,9,1,7,4,6,3,
+    9,5,4,2,3,1,7,8,6,
+    5,9,2,1,4,7,6,3,8,
+    9,1,8,6,2,3,5,7,4,
+    8,2,5,9,1,7,4,6,3,
+    2,9,8,3,6,7,4,5,1
+]
+
 function setGridUp(){
-    
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].innerHTML= `<span class='numbers'>${randNum()}</span>`;
+    }
 }
-// emptyCells[i].innerHTML = `<span class="numbers"> ${randNum()}</span>`;
 
 // function to start game
 function startGame(){
     resetPosition();
     setGridUp();
-
-    //......................... Top.............................. Two functions for these...........................................................................//
-    // randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
-
-    // playerIndex = gCells.addEventListener('click', playerPosition);
-    // alert(playerIndex);
-    // lastIndex.push(playerIndex);
-
-
-    // playerIndex.forEach(index => gCells[index].classList.add('player'));
-    // gCells[playerIndex].innerHTML = `<span class="numbers"> ${playerIndex}</span>`;
-    //......................... bottom.............................. Two functions for these...........................................................................//
-
-    // playerPosition();
 }
 
 function resetPosition(){
@@ -143,8 +142,8 @@ function playerPosition(position){
 }
 
 // Use functions to call when new random numbers needed
-function randNum(n){
-    let num = Math.floor(Math.random() * n);
+function randNum(){
+    let num = Math.floor(Math.random() * 9);
     if(num === 0){
         num++;
     }
@@ -154,10 +153,6 @@ function randNum(n){
 // function darkMode(){
 //     document.documentElement.style.setProperty('')
 // }
-
-
-// startGame(); // calls the function and runs the game
-
 
 isGameStarted.addEventListener('click', startGame);
 isDarkMode.addEventListener('click', darkMode);
