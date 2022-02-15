@@ -76,6 +76,12 @@ function setGridUp(){
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${randNum()}</span>`;
     }
+
+    // classes to these rows and columns for readability
+    vGrid[3].forEach(index => gCells[index].classList.add('margin-left'));
+    vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
+    hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
+    hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 }
 
 // function to start game
