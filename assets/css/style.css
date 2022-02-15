@@ -4,22 +4,33 @@
 
 :root {
     /* CSS HEX */
+
+/* ...............................player position */
 --shaded-cells: #8AEEE2;
 --player-cell: #FFED66;
+--shaded-cells-dark: #8AEEE2;
+--player-cell-dark: #FFED66;
 
 
+/* ...............................background */
 --main-bg: #26F0F1;
---main-bg-2: #64d1f8;
+--main-bg-dark: #26F0F1;
 
+/* ...............................header and logo */
 --header-bg: #26F0F1;
+--header-bg-dark: #26F0F1;
 --logo: #464D77;
+--logo-dark: #464D77;
 
+/* ...............................dark mode */
 --dark-mode-light: #FFED66;
---dark-mode-dark: #FFED66;
+--dark-mode-dark: #464D77;
 
---game-bg: #9A9CA5;
---purple-navy: #464D77;
---st-patricks-blue: #2f307aff;
+/* ...............................Game background and shadow */
+--game-border: #464D77;
+--game-border-dark: #9A9CA5;
+--game-shadow: #9A9CA5;
+--game-shadow-dark: #9A9CA5;
 }
 
 body {
@@ -31,7 +42,7 @@ body {
     background-color: var(--main-bg);
 }
 
-/*-------------------------------------------------------special classes */
+/*-------------------------------------------------------Added with JavaScript */
 
 .hidden {
     visibility: hidden;
@@ -98,7 +109,7 @@ nav {
     height: 65px;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--purple-navy);
+    background-color: var(--dark-mode-dark);
     border: 2px solid var(--dark-mode-light);
     border-radius: 50%;
     position: absolute;
@@ -107,13 +118,13 @@ nav {
 
 .dark-mode-button:hover {
     background-color: var(--player-cell);
-    border-color: var(--purple-navy);
+    border-color: var(--dark-mode-dark);
     cursor: pointer;
 }
 
 .dark-mode-button:hover .fa-moon,
 .dark-mode-button:hover .fa-sun {
-    color: var(--purple-navy);
+    color: var(--dark-mode-dark);
 }
 
 .fa-moon,
@@ -137,7 +148,7 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 15px 15px 15px var(--game-bg);
+    box-shadow: 15px 15px 15px var(--game-shadow);
 }
 
 #grid {
@@ -146,14 +157,14 @@ nav {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    background-color: var(--main-bg-2);
-    box-shadow: 10px 10px 10px var(--game-bg);
+    background-color: transparent;
+    box-shadow: 10px 10px 10px var(--game-shadow);
 }
 
 .game-grid-cells {
     width: 50px;
     height: 50px;
-    border: 2px solid var(--purple-navy);
+    border: 2px solid var(--game-border);
     border-radius: 15%;
     display: flex;
     flex-wrap: wrap;
