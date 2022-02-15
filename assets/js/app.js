@@ -74,7 +74,7 @@ function startGame(){
     // playerPos = [a + 1]; // places player in the center of the board
     playerPos.forEach(index => gCells[index].classList.add('player'));
     gCells[playerPos].innerHTML = `<span class="numbers"> ${playerPos}</span>`;
-    checkGridArray();
+    playerPosition();
 
 
 
@@ -96,7 +96,7 @@ function createBoard(){
 }
 
 // function to search the main array to locate the player class and highlight the array with class shader horizontally
-function checkGridArray(){
+function playerPosition(){
 
     // check vertically and add lighter background to those cells
     for(let oArray = 0; oArray < hGrid.length; oArray++){
