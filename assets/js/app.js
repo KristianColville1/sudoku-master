@@ -105,19 +105,6 @@ function playerPosition(position){
     playerIndex.forEach(index => gCells[index].classList.add('player'));
 
     // check vertically and add lighter background to those cells
-    for(let oArray = 0; oArray < hGrid.length; oArray++){
-        let iArrayLen = hGrid[oArray].length;
-        for(let iArray = 0; iArray < iArrayLen; iArray++){
-            if(gCells[hGrid[oArray][iArray]].classList.contains('player')){
-                hGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
-                hGrid[oArray].forEach(index => shadedIndexs.push(index));
-                hGrid[oArray].forEach(index => lastIndex.push(index));
-                gCells[position].classList.remove('shaded'); // shows player position................................./
-            }
-        }
-    }
-
-    // check horizontally and add lighter background to those cells
     for(let oArray = 0; oArray < vGrid.length; oArray++){
         let iArrayLen = vGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
@@ -125,19 +112,18 @@ function playerPosition(position){
                 gCells[randomPosition]
                 vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[oArray].forEach(index => shadedIndexs.push(index));
-                hGrid[oArray].forEach(index => lastIndex.push(index));
+                vGrid[oArray].forEach(index => lastIndex.push(index));
                 gCells[position].classList.remove('shaded'); // shows player position................................./
             }
-        }
-    }
-
-    // check the surrounding area within the larger cell containing 9 smaller cells add shading
-    for(let oArray = 0; oArray < lGrid.length; oArray++){
-        let iArrayLen = lGrid[oArray].length;
-        for(let iArray = 0; iArray < iArrayLen; iArray++){
             if(gCells[lGrid[oArray][iArray]].classList.contains('player')){
                 lGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 lGrid[oArray].forEach(index => shadedIndexs.push(index));
+                lGrid[oArray].forEach(index => lastIndex.push(index));
+                gCells[position].classList.remove('shaded'); // shows player position................................./
+            }
+            if(gCells[hGrid[oArray][iArray]].classList.contains('player')){
+                hGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
+                hGrid[oArray].forEach(index => shadedIndexs.push(index));
                 hGrid[oArray].forEach(index => lastIndex.push(index));
                 gCells[position].classList.remove('shaded'); // shows player position................................./
             }
