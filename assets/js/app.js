@@ -71,14 +71,18 @@ function startGame(){
     setGridUp();
 
     //......................... Top.............................. Two functions for these...........................................................................//
-    randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
-    playerIndex = [randomPosition];
-    lastIndex.push(randomPosition);
-    playerIndex.forEach(index => gCells[index].classList.add('player'));
-    gCells[playerIndex].innerHTML = `<span class="numbers"> ${playerIndex}</span>`;
+    // randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
+
+    // playerIndex = gCells.addEventListener('click', playerPosition);
+    // alert(playerIndex);
+    // lastIndex.push(playerIndex);
+
+
+    // playerIndex.forEach(index => gCells[index].classList.add('player'));
+    // gCells[playerIndex].innerHTML = `<span class="numbers"> ${playerIndex}</span>`;
     //......................... bottom.............................. Two functions for these...........................................................................//
 
-    playerPosition();
+    // playerPosition();
 }
 
 function resetGame(){
@@ -91,7 +95,14 @@ function createBoard(){
 }
 
 // function to search the main array to locate the player class and highlight the array with class shader horizontally
-function playerPosition(){
+function playerPosition(position){
+    playerIndex = [Number(position)];
+    alert('activated');
+    // need to attach event to specific divs to activate shading colors
+    
+
+
+
 
     // check vertically and add lighter background to those cells
     for(let oArray = 0; oArray < hGrid.length; oArray++){
@@ -147,6 +158,6 @@ function randNum(n){
 
 // startGame(); // calls the function and runs the game
 
-mainGrid.addEventListener('click', playerPosition);
+
 isGameStarted.addEventListener('click', startGame);
 isDarkMode.addEventListener('click', darkMode);
