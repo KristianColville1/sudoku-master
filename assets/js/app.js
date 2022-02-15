@@ -1,8 +1,9 @@
 // global variables
+let mainGrid = document.getElementById('grid');
 let gCells = document.getElementsByClassName('game-grid-cells');
+
 const isGameStarted = document.querySelector('.start-game');
 const isDarkMode = document.querySelector('dark-mode-button');
-
 
 const length = 9;
 const width = 9;
@@ -12,9 +13,9 @@ let localZone = []; // 9 positions
 let conflictZone = []; // 19 positions
 let emptyArray = [];
 
-let shadedPos = [];
-let playerPos = [41]; // places player in the center of the board
-let playerIndex = 0;
+let shadedIndexs = [];
+let playerIndex = [41]; // places player in the center of the board
+let isPlayerHere = false; // is the player on the board
 
 // horizontal indexs
 let hGrid = [
@@ -63,17 +64,20 @@ function setGridUp(){
 // function to start game
 function startGame(){
     setGridUp();
+    
     // reset game each click
     // gCells.forEach(index => gCells[index].classList.remove('number'));
-    playerPos.forEach(index => gCells[index].classList.remove('player'));
-    shadedPos.forEach(index => gCells[index].classList.remove('shaded'));
+    playerIndex.forEach(index => gCells[index].classList.remove('player'));
+    alert('here');
+    shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
     a = Math.floor(Math.random() * 81);
     playerPos = [a]; // places player in the center of the board
     // alert('hey game working');
-    // a = Math.floor(Math.random() * 9);
-    // playerPos = [a + 1]; // places player in the center of the board
-    playerPos.forEach(index => gCells[index].classList.add('player'));
-    gCells[playerPos].innerHTML = `<span class="numbers"> ${playerPos}</span>`;
+    a = Math.floor(Math.random() * 9);
+    playerIndex = [a + 1]; // places player in the center of the board
+    playerIndex.forEach(index => gCells[index].classList.add('player'));
+    gCells[playerIndex].innerHTML = `<span class="numbers"> ${playerIndex}</span>`;
+
     playerPosition();
 
 
@@ -83,11 +87,15 @@ function startGame(){
     // pick a random grid and place a number between 1 and 9 in the grid
 
 
-    
+
     // for(let i = 0; i < gCells.length; i++){
 
     // }
 
+
+}
+
+function resetGame(){
 
 }
 
@@ -105,7 +113,7 @@ function playerPosition(){
             if(gCells[hGrid[oArray][iArray]].classList.contains('player')){
                 playerIndex = hGrid[oArray][iArray];
                 hGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
-                hGrid[oArray].forEach(index => shadedPos.push(index));
+                hGrid[oArray].forEach(index => shadedIndexs.push(index));
             }
         }
     }
@@ -117,7 +125,7 @@ function playerPosition(){
             if(gCells[vGrid[oArray][iArray]].classList.contains('player')){
                 playerIndex = vGrid[oArray][iArray];
                 vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
-                vGrid[oArray].forEach(index => shadedPos.push(index));
+                vGrid[oArray].forEach(index => shadedIndexs.push(index));
             }
         }
     }
@@ -129,7 +137,7 @@ function playerPosition(){
             if(gCells[lGrid[oArray][iArray]].classList.contains('player')){
                 playerIndex = lGrid[oArray][iArray];
                 lGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
-                lGrid[oArray].forEach(index => shadedPos.push(index));
+                lGrid[oArray].forEach(index => shadedIndexs.push(index));
             }
         }
     }
@@ -151,5 +159,6 @@ function randNum(n){
 
 // startGame(); // calls the function and runs the game
 
+mainGrid.addEventListener('click', playerPosition);
 isGameStarted.addEventListener('click', startGame);
 isDarkMode.addEventListener('click', darkMode);
