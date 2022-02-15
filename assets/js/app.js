@@ -124,6 +124,13 @@ function playerPosition(position){
     }
 }
 
+// function activates for the players choice
+function playerChoice(choice){
+    var playerChoice = Number(choice);
+
+    
+}
+
 // Use functions to call when new random numbers needed
 function randNum(){
     let num = Math.floor(Math.random() * 9);
