@@ -29,8 +29,8 @@
 --logo-dark: #F9CB40;
 
 /* ...............................dark mode */
---dark-mode: #FFED66;
---dark-mode-light: #FFED66;
+--dark-mode: #F9CB40;
+--dark-mode-light: #F9CB40;
 --dark-mode-dark: #37392E;
 
 /* ...............................Game background and shadow */
@@ -140,7 +140,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--dark-mode-dark);
-    border: 2px solid var(--dark-mode-light);
+    border: 2px solid var(--dark-mode);
     border-radius: 50%;
     position: absolute;
     left: 50%;
@@ -159,7 +159,7 @@ nav {
 
 .fa-moon,
 .fa-sun {
-    color: var(--dark-mode-light);
+    color: var(--dark-mode);
     padding-top: 15px;
     font-size: 1.8rem;
     position: absolute;
