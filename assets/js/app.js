@@ -15,7 +15,7 @@ let emptyArray = [];
 
 var dontShade = [];
 var shadedIndexs = [];
-let playerIndex = [40]; // places player in the center of the board
+let playerIndex = []; // places player in the center of the board
 var lastIndex = [];
 let isPlayerHere = false; // is the player on the board
 
@@ -67,7 +67,7 @@ function setGridUp(){
 
 // function to start game
 function startGame(){
-    resetGame();
+    resetPosition();
     setGridUp();
 
     //......................... Top.............................. Two functions for these...........................................................................//
@@ -85,7 +85,7 @@ function startGame(){
     // playerPosition();
 }
 
-function resetGame(){
+function resetPosition(){
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
 }
@@ -96,13 +96,10 @@ function createBoard(){
 
 // function to search the main array to locate the player class and highlight the array with class shader horizontally
 function playerPosition(position){
-    playerIndex = [Number(position)];
-    alert('activated');
+    resetPosition();
     // need to attach event to specific divs to activate shading colors
-    
-
-
-
+    playerIndex = [Number(position)];
+    playerIndex.forEach(index => gCells[index].classList.add('player'));
 
     // check vertically and add lighter background to those cells
     for(let oArray = 0; oArray < hGrid.length; oArray++){
@@ -111,6 +108,7 @@ function playerPosition(position){
             if(gCells[hGrid[oArray][iArray]].classList.contains('player')){
                 hGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 hGrid[oArray].forEach(index => shadedIndexs.push(index));
+                hGrid[oArray].forEach(index => lastIndex.push(index));
                 gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
             }
         }
@@ -124,6 +122,7 @@ function playerPosition(position){
                 gCells[randomPosition]
                 vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[oArray].forEach(index => shadedIndexs.push(index));
+                hGrid[oArray].forEach(index => lastIndex.push(index));
                 gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
             }
         }
@@ -136,6 +135,7 @@ function playerPosition(position){
             if(gCells[lGrid[oArray][iArray]].classList.contains('player')){
                 lGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 lGrid[oArray].forEach(index => shadedIndexs.push(index));
+                hGrid[oArray].forEach(index => lastIndex.push(index));
                 gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
             }
         }
