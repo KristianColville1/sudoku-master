@@ -5,18 +5,15 @@ let gCells = document.getElementsByClassName('game-grid-cells');
 const isGameStarted = document.querySelector('.start-game');
 const isDarkMode = document.querySelector('dark-mode-button');
 
-const length = 9;
-const width = 9;
-
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let localZone = []; // 9 positions
 let conflictZone = []; // 19 positions
 let emptyArray = [];
 
-var dontShade = [];
-var shadedIndexs = [];
-let playerIndex = []; // places player in the center of the board
-var lastIndex = [];
+var dontShade = []; // used to track shaded indexs
+var shadedIndexs = []; // current shaded indexs
+let playerIndex = []; // players current index
+var lastIndex = []; // players last index
 let isPlayerHere = false; // is the player on the board
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
@@ -72,16 +69,17 @@ let dummyFill = [
     2,9,8,3,6,7,4,5,1
 ]
 
+// classes to these rows and columns for readability
+vGrid[3].forEach(index => gCells[index].classList.add('margin-left'));
+vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
+hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
+hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
+
+
 function setGridUp(){
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${randNum()}</span>`;
     }
-
-    // classes to these rows and columns for readability
-    vGrid[3].forEach(index => gCells[index].classList.add('margin-left'));
-    vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
-    hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
-    hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 }
 
 // function to start game
