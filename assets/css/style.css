@@ -42,10 +42,6 @@
 --game-border-light: #37392E;
 --game-border-dark: #9A9CA5;
 
---game-shadow: #F4F4F9;
---game-shadow-light: #F4F4F9;
---game-shadow-dark: #9A9CA5;
-
 /* .................................game menu, buttons, numbers */
 --numbers: #37392E;
 --numbers-light: #37392E;
@@ -180,7 +176,6 @@ nav {
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 15px 15px 15px var(--game-shadow);
 }
 
 #grid {
