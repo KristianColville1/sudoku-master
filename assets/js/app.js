@@ -13,8 +13,8 @@ let conflictZone = []; // 19 positions
 let emptyArray = [];
 
 let shadedPos = [];
-let playerIndex = 0;
 let playerPos = [41]; // places player in the center of the board
+let playerIndex = 0;
 
 // horizontal indexs
 let hGrid = [
@@ -100,7 +100,7 @@ function checkGridArray(){
 
     // check vertically and add lighter background to those cells
     for(let oArray = 0; oArray < hGrid.length; oArray++){
-        var iArrayLen = hGrid[oArray].length;
+        let iArrayLen = hGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
             if(gCells[hGrid[oArray][iArray]].classList.contains('player')){
                 playerIndex = hGrid[oArray][iArray];
@@ -112,12 +112,24 @@ function checkGridArray(){
 
     // check horizontally and add lighter background to those cells
     for(let oArray = 0; oArray < vGrid.length; oArray++){
-        var iArrayLen = vGrid[oArray].length;
+        let iArrayLen = vGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
             if(gCells[vGrid[oArray][iArray]].classList.contains('player')){
                 playerIndex = vGrid[oArray][iArray];
                 vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[oArray].forEach(index => shadedPos.push(index));
+            }
+        }
+    }
+
+    // check the surrounding area within the larger cell containing 9 smaller cells add shading
+    for(let oArray = 0; oArray < lGrid.length; oArray++){
+        let iArrayLen = lGrid[oArray].length;
+        for(let iArray = 0; iArray < iArrayLen; iArray++){
+            if(gCells[lGrid[oArray][iArray]].classList.contains('player')){
+                playerIndex = lGrid[oArray][iArray];
+                lGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
+                lGrid[oArray].forEach(index => shadedPos.push(index));
             }
         }
     }
