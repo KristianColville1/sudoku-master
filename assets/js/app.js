@@ -84,12 +84,6 @@ function setGridUp(){
     }
 }
 
-// function to start game
-function startGame(){
-    resetPosition();
-    setGridUp();
-}
-
 function resetPosition(){
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
@@ -166,6 +160,12 @@ function darkMode(){
         document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-light'));
         enableDarkMode = false;
     }
+}
+
+// function to start game
+function startGame(){
+    resetPosition();
+    setGridUp();
 }
 
 // event listeners for starting game and darkmode
