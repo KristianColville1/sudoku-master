@@ -93,18 +93,15 @@ function resetPosition(){
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
 }
 
-function createBoard(){
-
-}
-
 // function to search the main array to locate the player class and highlight the array with class shader horizontally
 function playerPosition(position){
     resetPosition();
-    // need to attach event to specific divs to activate shading colors
+
+    // parameter position activates shading colors and player location on board
     playerIndex = [Number(position)];
     playerIndex.forEach(index => gCells[index].classList.add('player'));
 
-    // check vertically and add lighter background to those cells
+    // check every index in all arrays and add lighter background to those cells except player position
     for(let oArray = 0; oArray < vGrid.length; oArray++){
         let iArrayLen = vGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
@@ -140,9 +137,6 @@ function randNum(){
     return num;
 }
 
-// function darkMode(){
-//     document.documentElement.style.setProperty('')
-// }
-
+// event listeners for starting game and darkmode
 isGameStarted.addEventListener('click', startGame);
 isDarkMode.addEventListener('click', darkMode);
