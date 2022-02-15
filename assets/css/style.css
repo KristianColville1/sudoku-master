@@ -6,31 +6,36 @@
     /* CSS HEX */
 
 /* ...............................player position */
---shaded-cells: #8AEEE2;
---player-cell: #FFED66;
---shaded-cells-dark: #8AEEE2;
---player-cell-dark: #FFED66;
+--shaded-cells: #F4F4F9;
+--shaded-cells-dark: #00E8FC;
+--player-cell: #F9CB40;
+--player-cell-dark: #16DB65;
 
 
 /* ...............................background */
---main-bg: #26F0F1;
+--main-bg: #52B788;
 --main-bg-dark: #26F0F1;
 
 /* ...............................header and logo */
---header-bg: #26F0F1;
---header-bg-dark: #26F0F1;
---logo: #464D77;
---logo-dark: #464D77;
+--header-bg: #19647E;
+--header-bg-dark: #37392E;
+--logo: #F4F4F9;
+--logo-dark: #F9CB40;
 
 /* ...............................dark mode */
 --dark-mode-light: #FFED66;
---dark-mode-dark: #464D77;
+--dark-mode-dark: #37392E;
 
 /* ...............................Game background and shadow */
---game-border: #464D77;
+--game-bg: #00E8FC;
+--game-bg-dark: #37392E;
+--game-border: #37392E;
 --game-border-dark: #9A9CA5;
 --game-shadow: #9A9CA5;
 --game-shadow-dark: #9A9CA5;
+
+/* game menu and buttons */
+
 }
 
 body {
@@ -141,11 +146,11 @@ nav {
 /*-------------------------------------------------------Game board */
 
 .game {
-    width: 85vh; /*-------------------------------------------------------Game width */
+    width: 600px; /*-------------------------------------------------------Game width */
     height: 70vh;
-    background-color: transparent;
+    background-color: var(--game-bg);
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 15px 15px 15px var(--game-shadow);
@@ -162,22 +167,22 @@ nav {
 }
 
 .game-grid-cells {
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--game-border);
-    border-radius: 15%;
+    width: 44px;
+    height: 44px;
+    border: 4px solid var(--game-border);
+    border-radius: 10%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
 
 .game-grid-cells:hover {
-    border: 2px solid var(--player-cell);
+    border: 4px solid var(--player-cell);
     cursor: pointer;
 }
 
 .numbers {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     height: 40%;
     width: 33%;
     position: relative;
@@ -185,11 +190,11 @@ nav {
     left: 28%;
 }
 
-button.start-game {
+.start-game {
     height: 35px;
-    width: 45px;
+    width: 70px;
     color: red;
     font-weight: 600;
-    position: relative;
-    left: 80%;
+    position: absolute;
+    left: 87%;
 }
