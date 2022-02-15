@@ -109,7 +109,7 @@ function playerPosition(position){
                 hGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 hGrid[oArray].forEach(index => shadedIndexs.push(index));
                 hGrid[oArray].forEach(index => lastIndex.push(index));
-                gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
+                gCells[position].classList.remove('shaded'); // shows player position................................./
             }
         }
     }
@@ -123,7 +123,7 @@ function playerPosition(position){
                 vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[oArray].forEach(index => shadedIndexs.push(index));
                 hGrid[oArray].forEach(index => lastIndex.push(index));
-                gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
+                gCells[position].classList.remove('shaded'); // shows player position................................./
             }
         }
     }
@@ -136,7 +136,7 @@ function playerPosition(position){
                 lGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 lGrid[oArray].forEach(index => shadedIndexs.push(index));
                 hGrid[oArray].forEach(index => lastIndex.push(index));
-                gCells[randomPosition].classList.remove('shaded'); // shows player position................................./
+                gCells[position].classList.remove('shaded'); // shows player position................................./
             }
         }
     }
