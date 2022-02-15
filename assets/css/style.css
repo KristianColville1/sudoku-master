@@ -7,6 +7,7 @@
 
 /* ...............................player position */
 --shaded-cells: #F4F4F9;
+--shaded-cells-light: #F4F4F9;
 --shaded-cells-dark: #00E8FC;
 --player-cell: #F9CB40;
 --player-cell-dark: #16DB65;
@@ -14,27 +15,50 @@
 
 /* ...............................background */
 --main-bg: #52B788;
+--main-bg-light: #52B788;
 --main-bg-dark: #26F0F1;
 
 /* ...............................header and logo */
 --header-bg: #19647E;
+--header-bg-light: #19647E;
 --header-bg-dark: #37392E;
+
 --logo: #F4F4F9;
+--logo-light: #F4F4F9;
 --logo-dark: #F9CB40;
 
 /* ...............................dark mode */
+--dark-mode: #FFED66;
 --dark-mode-light: #FFED66;
 --dark-mode-dark: #37392E;
 
 /* ...............................Game background and shadow */
 --game-bg: #00E8FC;
+--game-bg-light: #00E8FC;
 --game-bg-dark: #37392E;
+
 --game-border: #37392E;
+--game-border-light: #37392E;
 --game-border-dark: #9A9CA5;
+
 --game-shadow: #F4F4F9;
+--game-shadow-light: #F4F4F9;
 --game-shadow-dark: #9A9CA5;
 
-/* game menu and buttons */
+/* .................................game menu, buttons, numbers */
+--numbers: #37392E;
+--numbers-light: #37392E;
+--numbers-dark:#F4F4F9;
+
+
+
+
+
+
+
+
+
+
 
 }
 
@@ -181,6 +205,7 @@ nav {
 }
 
 .numbers {
+    color: var(--numbers);
     font-size: 1.5rem;
     height: 40%;
     width: 33%;
