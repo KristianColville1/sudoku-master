@@ -89,6 +89,12 @@ function createSudokuBoard(){
     // determine what numbers and which indexs those are at.
     // place a random value in the grid and fill that grid 1 at
     // a time checking the three arrays in for 2 directions and the larger grid also.
+
+    // after research online the minimum amount of clues needed to generate a unique board with one answer is 17.
+    // if i populate one large grid with 9 random values that leaves 8 extra positions to be selected.
+
+    // I will first populate a board with all 9 values and make sure to add them to 3 arrays in the right positions.
+
 }
 
 function setGridUp(){
