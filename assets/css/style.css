@@ -140,7 +140,7 @@ nav {
     box-shadow: 15px 15px 15px var(--game-bg);
 }
 
-.grid {
+#grid {
     height: 506px;
     width: 506px;
     display: flex;
