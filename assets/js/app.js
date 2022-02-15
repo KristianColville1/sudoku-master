@@ -7,7 +7,7 @@ const isDarkMode = document.querySelector('.dark-mode-button');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let localZone = []; // 9 positions
-let conflictZone = []; // 19 positions
+let conflictZone = []; // 21 positions
 let emptyArray = [];
 
 var dontShade = []; // used to track shaded indexs
@@ -19,6 +19,7 @@ let enableDarkMode = false;
 let isPlayerHere = false; // is the player on the board
 
 var isThisDecision; // declared for players decision, initialised in playerChoice
+var decisionIndex = [];
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
@@ -63,14 +64,14 @@ let lGrid = [
 
 let dummyFill = [
     9,5,4,2,3,1,7,8,6,
-    5,9,2,1,4,7,6,3,8,
+    5,7,2,1,4,9,6,3,8,
     9,1,8,6,2,3,5,7,4,
     8,2,5,9,1,7,4,6,3,
     9,5,4,2,3,1,7,8,6,
     5,9,2,1,4,7,6,3,8,
     9,1,8,6,2,3,5,7,4,
-    8,2,5,9,1,7,4,6,3,
-    2,9,8,3,6,7,4,5,1
+    8,3,5,9,1,7,4,6,2,
+    2,4,8,3,6,7,9,5,1
 ]
 
 // classes to these rows and columns for readability
@@ -79,10 +80,20 @@ vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
 hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
+function createSudokuBoard(){
+    // Create a back tracking algorithm to determine the missing pieces based randomly
+
+    // Use indexs from hGrid, vGrid, lGrid.
+    // the first random logic is for the larger grids
+    // pick a random lGrid and check that it is empty
+    // determine what numbers and which indexs those are at.
+    // place a random value in the grid and fill that grid 1 at
+    // a time checking the three arrays in for 2 directions and the larger grid also.
+}
 
 function setGridUp(){
     for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='numbers'>${randNum()}</span>`;
+        gCells[i].innerHTML= `<span class='numbers'>${dummyFill[i]}</span>`;
     }
 }
 
