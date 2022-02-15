@@ -95,6 +95,44 @@ function createSudokuBoard(){
 
     // I will first populate a board with all 9 values and make sure to add them to 3 arrays in the right positions.
 
+    // horizontal test array
+    let array1 = [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ];
+
+    // vertical test array
+    let array2 = [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ];
+
+    // larger grid test array
+    let array3 = [
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
+    ];
 }
 
 function setGridUp(){
