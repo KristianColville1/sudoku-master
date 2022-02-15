@@ -18,6 +18,8 @@ var lastIndex = []; // players last index
 let enableDarkMode = false;
 let isPlayerHere = false; // is the player on the board
 
+var isThisDecision; // declared for players decision, initialised in playerChoice
+
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
 // horizontal indexs
@@ -130,28 +132,40 @@ function playerChoice(choice){
 
     switch(pChoice){
         case 1:
+            isThisDecision = `<span class='numbers'>${1}</span>`;
             break;
         case 2:
+            isThisDecision = `<span class='numbers'>${2}</span>`;
             break;
         case 3:
+            isThisDecision = `<span class='numbers'>${3}</span>`;
             break;
         case 4:
+            isThisDecision = `<span class='numbers'>${4}</span>`;
             break;
         case 5:
+            isThisDecision = `<span class='numbers'>${5}</span>`;
             break;
         case 6:
+            isThisDecision = `<span class='numbers'>${6}</span>`;
             break;
         case 7:
+            isThisDecision = `<span class='numbers'>${7}</span>`;
             break;
         case 8:
+            isThisDecision = `<span class='numbers'>${8}</span>`;
             break;
         case 9:
+            isThisDecision = `<span class='numbers'>${9}</span>`;
             break;
         case 10:
+            isThisDecision = `<span class='numbers'>${pencil}</span>`;
             break;
         case 11:
+            isThisDecision = `<span class='numbers'>${pen}</span>`;
             break;
-        case 12:
+        default:
+            isThisDecision = `<span class='numbers'>${eraser}</span>`;
             break;
     }
 }
