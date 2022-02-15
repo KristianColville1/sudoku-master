@@ -14,7 +14,7 @@ let conflictZone = []; // 19 positions
 let emptyArray = [];
 
 let shadedIndexs = [];
-let playerIndex = [41]; // places player in the center of the board
+let playerIndex = [40]; // places player in the center of the board
 let isPlayerHere = false; // is the player on the board
 
 // horizontal indexs
@@ -63,18 +63,11 @@ function setGridUp(){
 
 // function to start game
 function startGame(){
+    // resetGame();
     setGridUp();
+
+    let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
     
-    // reset game each click
-    // gCells.forEach(index => gCells[index].classList.remove('number'));
-    playerIndex.forEach(index => gCells[index].classList.remove('player'));
-    alert('here');
-    shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
-    a = Math.floor(Math.random() * 81);
-    playerPos = [a]; // places player in the center of the board
-    // alert('hey game working');
-    a = Math.floor(Math.random() * 9);
-    playerIndex = [a + 1]; // places player in the center of the board
     playerIndex.forEach(index => gCells[index].classList.add('player'));
     gCells[playerIndex].innerHTML = `<span class="numbers"> ${playerIndex}</span>`;
 
@@ -96,7 +89,11 @@ function startGame(){
 }
 
 function resetGame(){
-
+    // reset game each click
+    // gCells.forEach(index => gCells[index].classList.remove('number'));
+    alert('here');
+    playerIndex.forEach(index => gCells[index].classList.remove('player'));
+    shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
 }
 
 function createBoard(){
