@@ -14,6 +14,8 @@ var dontShade = []; // used to track shaded indexs
 var shadedIndexs = []; // current shaded indexs
 let playerIndex = []; // players current index
 var lastIndex = []; // players last index
+
+let enableDarkMode = false;
 let isPlayerHere = false; // is the player on the board
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
@@ -135,6 +137,24 @@ function randNum(){
         num++;
     }
     return num;
+}
+
+// darkmode function 
+function darkMode(){
+
+    if(enableDarkMode){// if dark mode is on do this
+        enableDarkMode = false;
+
+
+        
+
+
+    }else if(!enableDarkMode){ // if dark mode is off do this
+        enableDarkMode = true;
+
+
+
+    }
 }
 
 // event listeners for starting game and darkmode

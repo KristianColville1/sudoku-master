@@ -31,7 +31,7 @@
 --game-bg-dark: #37392E;
 --game-border: #37392E;
 --game-border-dark: #9A9CA5;
---game-shadow: #9A9CA5;
+--game-shadow: #F4F4F9;
 --game-shadow-dark: #9A9CA5;
 
 /* game menu and buttons */
@@ -163,7 +163,6 @@ nav {
     flex-wrap: wrap;
     position: absolute;
     background-color: transparent;
-    box-shadow: 10px 10px 10px var(--game-shadow);
 }
 
 .game-grid-cells {
