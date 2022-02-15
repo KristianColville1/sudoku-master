@@ -1,9 +1,11 @@
 // global variables
-let gameGridCells = document.getElementsByClassName('game-grid-cells');
+let gCells = document.getElementsByClassName('game-grid-cells');
 const isGameStarted = document.querySelector('.start-game');
 const isDarkMode = document.querySelector('dark-mode-button');
-let direction = 1;
+
+
 const length = 9;
+const width = 9;
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let localZone = []; // 9 positions
@@ -14,8 +16,8 @@ let shadedPos = [];
 let playerIndex = 0;
 let playerPos = [41]; // places player in the center of the board
 
-
-let horizontalGrid = [
+// horizontal indexs
+let hGrid = [
     [0, 1, 2, 3, 4, 5, 6, 7, 8],
     [9, 10, 11, 12, 13, 14, 15, 16, 17],
     [18, 19, 20, 21, 22, 23, 24, 25, 26],
@@ -27,7 +29,8 @@ let horizontalGrid = [
     [72, 73, 74, 75, 76, 77, 78, 79, 80]
 ];
 
-let verticalGrid = [
+// vertical indexs
+let vGrid = [
     [0, 9, 18, 27, 36, 45, 54, 63, 72],
     [1, 10, 19, 28, 37, 46, 55, 64, 73],
     [2, 11, 20, 29, 38, 47, 56, 65, 74],
@@ -39,6 +42,8 @@ let verticalGrid = [
     [8, 17, 26, 35, 44, 53, 62, 71, 80]
 ];
 
+// 
+
 function setGridUp(){
     
 }
@@ -48,16 +53,16 @@ function setGridUp(){
 function startGame(){
     setGridUp();
     // reset game each click
-    // gameGridCells.forEach(index => gameGridCells[index].classList.remove('number'));
-    playerPos.forEach(index => gameGridCells[index].classList.remove('player'));
-    shadedPos.forEach(index => gameGridCells[index].classList.remove('shaded'));
+    // gCells.forEach(index => gCells[index].classList.remove('number'));
+    playerPos.forEach(index => gCells[index].classList.remove('player'));
+    shadedPos.forEach(index => gCells[index].classList.remove('shaded'));
     a = Math.floor(Math.random() * 81);
     playerPos = [a]; // places player in the center of the board
     // alert('hey game working');
     // a = Math.floor(Math.random() * 9);
     // playerPos = [a + 1]; // places player in the center of the board
-    playerPos.forEach(index => gameGridCells[index].classList.add('player'));
-    gameGridCells[playerPos].innerHTML = `<span class="numbers"> ${playerPos}</span>`;
+    playerPos.forEach(index => gCells[index].classList.add('player'));
+    gCells[playerPos].innerHTML = `<span class="numbers"> ${playerPos}</span>`;
     checkGridArray();
 
 
@@ -68,7 +73,7 @@ function startGame(){
 
 
     
-    // for(let i = 0; i < gameGridCells.length; i++){
+    // for(let i = 0; i < gCells.length; i++){
 
     // }
 
@@ -83,25 +88,25 @@ function createBoard(){
 function checkGridArray(){
 
     // check vertically and add lighter background to those cells
-    for(let outerArray = 0; outerArray < horizontalGrid.length; outerArray++){
-        var innerArraylength = horizontalGrid[outerArray].length;
-        for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
-            if(gameGridCells[horizontalGrid[outerArray][innerArray]].classList.contains('player')){
-                playerIndex = horizontalGrid[outerArray][innerArray];
-                horizontalGrid[outerArray].forEach(index => gameGridCells[index].classList.add('shaded'));
-                horizontalGrid[outerArray].forEach(index => shadedPos.push(index));
+    for(let oArray = 0; oArray < hGrid.length; oArray++){
+        var iArrayLen = hGrid[oArray].length;
+        for(let iArray = 0; iArray < iArrayLen; iArray++){
+            if(gCells[hGrid[oArray][iArray]].classList.contains('player')){
+                playerIndex = hGrid[oArray][iArray];
+                hGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
+                hGrid[oArray].forEach(index => shadedPos.push(index));
             }
         }
     }
 
     // check horizontally and add lighter background to those cells
-    for(let outerArray = 0; outerArray < verticalGrid.length; outerArray++){
-        var innerArraylength = verticalGrid[outerArray].length;
-        for(let innerArray = 0; innerArray < innerArraylength; innerArray++){
-            if(gameGridCells[verticalGrid[outerArray][innerArray]].classList.contains('player')){
-                playerIndex = verticalGrid[outerArray][innerArray];
-                verticalGrid[outerArray].forEach(index => gameGridCells[index].classList.add('shaded'));
-                verticalGrid[outerArray].forEach(index => shadedPos.push(index));
+    for(let oArray = 0; oArray < vGrid.length; oArray++){
+        var iArrayLen = vGrid[oArray].length;
+        for(let iArray = 0; iArray < iArrayLen; iArray++){
+            if(gCells[vGrid[oArray][iArray]].classList.contains('player')){
+                playerIndex = vGrid[oArray][iArray];
+                vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
+                vGrid[oArray].forEach(index => shadedPos.push(index));
             }
         }
     }
