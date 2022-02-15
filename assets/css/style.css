@@ -51,15 +51,13 @@
 --numbers-light: #37392E;
 --numbers-dark:#F4F4F9;
 
+--choice: #A33D8D;
+--choice-light: #A33D8D;
+--choice-dark: #00E8FC;
 
-
-
-
-
-
-
-
-
+--choice-active: #A33D8D;
+--choice-active-light: #A33D8D;
+--choice-active-dark: #00E8FC;
 
 }
 
@@ -92,6 +90,10 @@ body {
 
 .shaded {
     background-color: var(--shaded-cells);
+}
+
+.choice-active {
+    background-color: var(--choice-active);
 }
 
 /*-------------------------------------------------------Navigational menu */
@@ -244,4 +246,12 @@ nav {
     border: 4px solid var(--game-border);
     border-radius: 10%;
     margin-right: 5px;
+}
+
+.p-number:hover,
+.pen:hover,
+.pencil:hover,
+.eraser:hover {
+    background-color: var(--choice);
+    cursor: pointer;
 }

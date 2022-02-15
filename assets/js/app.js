@@ -151,6 +151,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-dark'));
         document.documentElement.style.setProperty('--game-shadow', getComputedStyle(document.documentElement).getPropertyValue('--game-shadow-dark'));
         document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-dark'));
+        document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-dark'));
         enableDarkMode = true;
     }else if(enableDarkMode === true){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
@@ -162,6 +163,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-light'));
         document.documentElement.style.setProperty('--game-shadow', getComputedStyle(document.documentElement).getPropertyValue('--game-shadow-light'));
         document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-light'));
+        document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-light'));
         enableDarkMode = false;
     }
 }
