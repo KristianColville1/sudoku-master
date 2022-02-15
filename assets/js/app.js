@@ -70,11 +70,13 @@ function startGame(){
     resetGame();
     setGridUp();
 
+    //......................... Top.............................. Two functions for these...........................................................................//
     randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
     playerIndex = [randomPosition];
     lastIndex.push(randomPosition);
     playerIndex.forEach(index => gCells[index].classList.add('player'));
     gCells[playerIndex].innerHTML = `<span class="numbers"> ${playerIndex}</span>`;
+    //......................... bottom.............................. Two functions for these...........................................................................//
 
     playerPosition();
 }
