@@ -8,15 +8,16 @@
 /* ...............................player position */
 --shaded-cells: #F4F4F9;
 --shaded-cells-light: #F4F4F9;
---shaded-cells-dark: #00E8FC;
+--shaded-cells-dark: #6D76B2;
 --player-cell: #F9CB40;
+--player-cell-light: #F9CB40;
 --player-cell-dark: #16DB65;
 
 
 /* ...............................background */
 --main-bg: #52B788;
 --main-bg-light: #52B788;
---main-bg-dark: #26F0F1;
+--main-bg-dark: #19647E;
 
 /* ...............................header and logo */
 --header-bg: #19647E;
