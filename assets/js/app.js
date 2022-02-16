@@ -85,32 +85,16 @@ function createSudokuBoard(){
     let sudokuArray = [];
 
     // fill array with blank space
-    for(let s = 0; s < gCells.length; s++){
-        sudokuArray[s] = 'A';
+    for(let o = 0; o < possibleChoices.length; o++){
+        for(let i = 0; i < possibleChoices.length; i++){
+            sudokuArray.push('X');
+        }
     }
 
-    let currentGrid = getRandomIntInclusive(0, 8);
-    nineGrids.push(currentGrid);
-
     while(isGameBoardCreated === false){ // while loop to keep running while the game is created.
-        for(let i = 0; i < possibleChoices.length; i++){
 
-            //...........................................speed up random number generation.....................Top.............
-            if(nineGrids.includes(0) && nineGrids.includes(1) && nineGrids.includes(2)){
-                currentGrid = getRandomIntInclusive(3, 8)
-            }
-            if(nineGrids.includes(3) && nineGrids.includes(4) && nineGrids.includes(5)){
-                currentGrid = getRandomIntInclusive(6, 8);
-            }
-            //...........................................speed up random number generation.......................End...........
-            
-        }
-
-        if(sudokuArray.includes('A')){
-            continue;
-        } else{
-            isGameBoardCreated = true;
-        }
+        
+        isGameBoardCreated = true;
     }
     
     for(let i = 0; i < gCells.length; i++){
