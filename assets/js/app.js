@@ -111,10 +111,10 @@ function createSudokuBoard(){
 
     // fill positions with hash symbol
     for(let s = 0; s < gCells.length; s++){
-        sudokuArray[s] = '#';
-        hArray[s] = '#';
-        vArray[s] = '#';
-        lArray[s] = '#';
+        sudokuArray[s] = s+1;
+        hArray[s] =  s+1;
+        vArray[s] =  s+1;
+        lArray[s] =  s+1;
     }
 
     // approach one:
@@ -125,7 +125,13 @@ function createSudokuBoard(){
     let insideIndex = getRandomIntInclusive(0, 8);
     let rNum = getRandomIntInclusive(1, 9);
 
+    // using similar logic from earlier when adding classes to array elements
     sudokuArray[hGrid[outsideIndex][insideIndex]] = rNum;
+    hArray[hGrid[outsideIndex][insideIndex]] = rNum;
+
+
+    vArray[vGrid[outsideIndex][insideIndex]] = rNum;
+    lArray[lGrid[outsideIndex][insideIndex]] = rNum;
 
     // first grid and position successful
 
@@ -135,6 +141,11 @@ function createSudokuBoard(){
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${sudokuArray[i]}</span>`;
     }
+
+    alert(sudokuArray);
+    alert(hArray); // working correctly
+    alert(vArray); // result comming up in wrong position?.............................Problem > bug
+    alert(lArray);
 }
 
 function setGridUp(){
