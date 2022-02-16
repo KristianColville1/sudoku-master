@@ -81,58 +81,30 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function createSudokuBoard(){
-    // Create a back tracking algorithm to determine the missing pieces based randomly
+    // sudoku array for testing
+    let sudokuArray = [[],[],[],[],[],[],[],[],[]];
 
-    // Use indexs from hGrid, vGrid, lGrid.
-    // the first random logic is for the larger grids
-    // pick a random lGrid and check that it is empty
-    // determine what numbers and which indexs those are at.
-    // place a random value in the grid and fill that grid 1 at
-    // a time checking the three arrays in for 2 directions and the larger grid also.
+    // We need to get 17 values on the board.
+    // one grid is 9.
+    // one grid plus vertically and horizontally is 21.
+    // get 17 places and then solve the board.
 
-    // after research online the minimum amount of clues needed to generate a unique board with one answer is 17.
-    // if i populate one large grid with 9 random values that leaves 8 extra positions to be selected.
+    
 
-    // I will first populate a board with all 9 values and make sure to add them to 3 arrays in the right positions.
-
-    // horizontal test array
-    let array1 = [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
-    ];
-
-    // vertical test array
-    let array2 = [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
-    ];
-
-    // larger grid test array
-    let array3 = [
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        [],
-        []
-    ];
+    // test array direction is horizontal.
+    // add 81 values to test array
+    // add blank space to test array values.
+    // pick one of the 9 larger grids randomly.
+    // if all the cells in the larger grid are empty
+    // and the cells horizontally & vertically are empty
+    // add a random number between 1 & 9.
+    // save that number to the sudoku array.
+    // remove that number from possible choices.
+    // exclude that index from possible positions.
+    // stay in this larger grid and fill positions with 1 - 9
+    // keep checking for conflict.
+    // if larger grid filled.
+    // remov
 }
 
 function setGridUp(){
