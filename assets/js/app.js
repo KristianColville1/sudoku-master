@@ -101,35 +101,22 @@ function createSudokuBoard(){
     // remov
 
 
-    // sudoku array for testing
+    // sudoku array for testing, places blank space in all indexs
     let sudokuArray = [[],[],[],[],[],[],[],[],[]];
     for(let s = 0; s < gCells.length; s++){
         sudokuArray[s] = '';
     }
 
-    let counter = 0;
-    let currentRandomValue = 9;
-    let r = Math.floor(Math.random() * currentRandomValue);
-
-    if(r === 0){
-        r = 9;
-    }
-
-    getRandomIntInclusive()
+    let counter = 77;
+    do{
 
 
 
 
-
-
-
-
-
-
-
-
-
-
+        
+        alert(counter);
+        counter++;
+    }while(gCells.length > counter);
 
 
 
@@ -150,7 +137,7 @@ function resetPosition(){
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
 }
 
-// function to search the main array to locate the player class and highlight the array with class shader horizontally
+// function to search all arrays to locate the player class and highlight arrays with class shader
 function playerPosition(position){
     resetPosition();
 
@@ -163,7 +150,6 @@ function playerPosition(position){
         let iArrayLen = vGrid[oArray].length;
         for(let iArray = 0; iArray < iArrayLen; iArray++){
             if(gCells[vGrid[oArray][iArray]].classList.contains('player')){
-                gCells[randomPosition]
                 vGrid[oArray].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[oArray].forEach(index => shadedIndexs.push(index));
                 vGrid[oArray].forEach(index => lastIndex.push(index));
