@@ -83,13 +83,17 @@ hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 function createSudokuBoard(){
     // sudoku array for testing
     let sudokuArray = [[],[],[],[],[],[],[],[],[]];
+    for(let s = 0; s < gCells.length; s++){
+        sudokuArray[s] = '';
+    }
+
 
     // We need to get 17 values on the board.
     // one grid is 9.
     // one grid plus vertically and horizontally is 21.
     // get 17 places and then solve the board.
 
-    
+
 
     // test array direction is horizontal.
     // add 81 values to test array
@@ -105,6 +109,10 @@ function createSudokuBoard(){
     // keep checking for conflict.
     // if larger grid filled.
     // remov
+
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].innerHTML= `<span class='numbers'>${sudokuArray[i]}</span>`;
+    }
 }
 
 function setGridUp(){
@@ -236,7 +244,8 @@ function darkMode(){
 // function to start game
 function startGame(){
     resetPosition();
-    setGridUp();
+    createSudokuBoard();
+    // setGridUp();
 }
 
 // event listeners for starting game and darkmode
