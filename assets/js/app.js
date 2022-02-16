@@ -6,15 +6,15 @@ const isGameStarted = document.querySelector('.start-game');
 const isDarkMode = document.querySelector('.dark-mode-button');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let localZone = []; // 9 positions
-let conflictZone = []; // 21 positions
-let emptyArray = [];
+let nineGrids = []; // to hold grids
 
 var dontShade = []; // used to track shaded indexs
 var shadedIndexs = []; // current shaded indexs
 let playerIndex = []; // players current index
 var lastIndex = []; // players last index
 
+let isGameBoardCreated = false;
+let isGameOver = false;
 let enableDarkMode = false;
 let isPlayerHere = false; // is the player on the board
 
@@ -81,71 +81,28 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function createSudokuBoard(){
-    // We need to get 17 values on the board.
-    // one grid is 9.
-    // one grid plus vertically and horizontally is 21.
-    // get 17 places and then solve the board.
-    // test array direction is horizontal.
-    // add 81 values to test array
-    // add blank space to test array values.
-    // pick one of the 9 larger grids randomly.
-    // if all the cells in the larger grid are empty
-    // and the cells horizontally & vertically are empty
-    // add a random number between 1 & 9.
-    // save that number to the sudoku array.
-    // remove that number from possible choices.
-    // exclude that index from possible positions.
-    // stay in this larger grid and fill positions with 1 - 9
-    // keep checking for conflict.
-    // if larger grid filled.
-    // remov
-
-
     // sudoku array for testing, places blank space in all indexs
-    let sudokuArray = [[],[],[],[],[],[],[],[],[]];
+    let sudokuArray = [];
 
-    // Add the first position to these empty array values
-    let hArray = [[],[],[],[],[],[],[],[],[]];
-    let vArray = [[],[],[],[],[],[],[],[],[]];
-    let lArray = [[],[],[],[],[],[],[],[],[]];
-
-    // fill positions with hash symbol
+    // fill array with blank space
     for(let s = 0; s < gCells.length; s++){
-        sudokuArray[s] = s+1;
-        hArray[s] =  s+1;
-        vArray[s] =  s+1;
-        lArray[s] =  s+1;
+        sudokuArray[s] = '';
     }
+    
+    while(isGameOver === false){
+        let currentGrid;
+        if(nineGrids.contains(currentGrid)){
 
-    // approach one:
-    // get a random grid and assign a random value to one of the 3x3
-    // figure out how to assign a value in the correct position with the sudoku grid.
-
-    let outsideIndex = getRandomIntInclusive(0, 8);
-    let insideIndex = getRandomIntInclusive(0, 8);
-    let rNum = getRandomIntInclusive(1, 9);
-
-    // using similar logic from earlier when adding classes to array elements
-    sudokuArray[hGrid[outsideIndex][insideIndex]] = rNum;
-    hArray[hGrid[outsideIndex][insideIndex]] = rNum;
-
-
-    vArray[vGrid[outsideIndex][insideIndex]] = rNum;
-    lArray[lGrid[outsideIndex][insideIndex]] = rNum;
-
-    // first grid and position successful
-
-
-
-
+        }
+        for(let i = 0; i < possibleChoices.length; i++){
+            
+        }
+    }
+    
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${sudokuArray[i]}</span>`;
     }
 
-    alert(sudokuArray);
-    alert(hArray); // working correctly
-    alert(vArray); // result comming up in wrong position?.............................Problem > bug
-    alert(lArray);
 }
 
 function setGridUp(){
