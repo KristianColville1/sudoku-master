@@ -104,6 +104,9 @@ You now have a local copy of this repository to use on your machine.
 
 [Back to the top](#table-of-contents)
 ## Credits
+
+I sourced a function from [Mozilla.org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to generate some of my random numbers to help with the game logic.
+
 [Back to the top](#table-of-contents)
 ## Acknowledgements
 [Back to the top](#table-of-contents)
