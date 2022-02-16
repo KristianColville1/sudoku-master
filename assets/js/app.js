@@ -94,12 +94,16 @@ function createSudokuBoard(){
 
     while(isGameBoardCreated === false){ // while loop to keep running while the game is created.
         for(let i = 0; i < possibleChoices.length; i++){
+
+            //...........................................speed up random number generation.....................Top.............
             if(nineGrids.includes(0) && nineGrids.includes(1) && nineGrids.includes(2)){
                 currentGrid = getRandomIntInclusive(3, 8)
             }
             if(nineGrids.includes(3) && nineGrids.includes(4) && nineGrids.includes(5)){
                 currentGrid = getRandomIntInclusive(6, 8);
             }
+            //...........................................speed up random number generation.......................End...........
+            
         }
 
         if(sudokuArray.includes('A')){
