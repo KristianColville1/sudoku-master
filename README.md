@@ -51,7 +51,7 @@ Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku g
 | --- | --- |
 | The second array I set up showed the players position in the wrong location between grids 5 & 9 | Created new array for indexs starting from 0 put the players position in the correct location|
 | Creating a backtracking algorithm to solve the board with one array for horizontal navigation | Using mutiple arrays for the index helped simplify creating boards, without this no boards could be created|
-| 1| 2|
+| values not showing in correct place for creating the board with different Arrays | 2|
 | 1| 2|
 [Back to the top](#table-of-contents)
 
