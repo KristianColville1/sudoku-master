@@ -104,16 +104,20 @@ function createSudokuBoard(){
     // sudoku array for testing, places blank space in all indexs
     let sudokuArray = [[],[],[],[],[],[],[],[],[]];
     for(let s = 0; s < gCells.length; s++){
-        sudokuArray[s] = 0;
+        sudokuArray[s] = '#';
     }
 
     // approach one:
     // get a random grid and assign a random value to one of the 3x3
     // figure out how to assign a value in the correct position with the sudoku grid.
 
-    // let randomR = getRandomIntInclusive(1, 9);
-    // let cellIndex = getRandomIntInclusive(0, 80);
-    // sudokuArray[cellIndex] = randomR;
+    let outsideIndex = getRandomIntInclusive(0, 8);
+    let insideIndex = getRandomIntInclusive(0, 8);
+    let rNum = getRandomIntInclusive(1, 9);
+
+    sudokuArray[hGrid[outsideIndex][insideIndex]] = rNum;
+
+    // first grid and position successful
 
 
     for(let i = 0; i < gCells.length; i++){
