@@ -103,8 +103,18 @@ function createSudokuBoard(){
 
     // sudoku array for testing, places blank space in all indexs
     let sudokuArray = [[],[],[],[],[],[],[],[],[]];
+
+    // Add the first position to these empty array values
+    let hArray = [[],[],[],[],[],[],[],[],[]];
+    let vArray = [[],[],[],[],[],[],[],[],[]];
+    let lArray = [[],[],[],[],[],[],[],[],[]];
+
+    // fill positions with hash symbol
     for(let s = 0; s < gCells.length; s++){
         sudokuArray[s] = '#';
+        hArray[s] = '#';
+        vArray[s] = '#';
+        lArray[s] = '#';
     }
 
     // approach one:
@@ -118,6 +128,8 @@ function createSudokuBoard(){
     sudokuArray[hGrid[outsideIndex][insideIndex]] = rNum;
 
     // first grid and position successful
+
+
 
 
     for(let i = 0; i < gCells.length; i++){
