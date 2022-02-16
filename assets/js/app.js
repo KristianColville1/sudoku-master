@@ -88,15 +88,20 @@ function createSudokuBoard(){
     for(let s = 0; s < gCells.length; s++){
         sudokuArray[s] = '';
     }
-    
-    while(isGameOver === false){
-        let currentGrid;
-        if(nineGrids.contains(currentGrid)){
 
+    let currentGrid = getRandomIntInclusive(0, 8);
+    nineGrids.push(currentGrid);
+    while(isGameBoardCreated === false){
+        
+        if(nineGrids.includes(0) && nineGrids.includes(1) && nineGrids.includes(2)){
+            currentGrid = getRandomIntInclusive(3, 8)
         }
-        for(let i = 0; i < possibleChoices.length; i++){
+        if(nineGrids.includes(3) && nineGrids.includes(4) && nineGrids.includes(5)){
+            currentGrid = getRandomIntInclusive(6, 8);
+        }
+        // for(let i = 0; i < possibleChoices.length; i++){
             
-        }
+        // }
     }
     
     for(let i = 0; i < gCells.length; i++){
