@@ -104,23 +104,10 @@ function createSudokuBoard(){
     // sudoku array for testing, places blank space in all indexs
     let sudokuArray = [[],[],[],[],[],[],[],[],[]];
     for(let s = 0; s < gCells.length; s++){
-        sudokuArray[s] = '';
+        sudokuArray[s] = 0;
     }
 
-    let counter = 77;
-    do{
-
-
-
-
-        
-        alert(counter);
-        counter++;
-    }while(gCells.length > counter);
-
-
-
-
+    
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${sudokuArray[i]}</span>`;
     }
