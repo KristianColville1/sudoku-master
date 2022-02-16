@@ -107,7 +107,15 @@ function createSudokuBoard(){
         sudokuArray[s] = 0;
     }
 
-    
+    // approach one:
+    // get a random grid and assign a random value to one of the 3x3
+    // figure out how to assign a value in the correct position with the sudoku grid.
+
+    // let randomR = getRandomIntInclusive(1, 9);
+    // let cellIndex = getRandomIntInclusive(0, 80);
+    // sudokuArray[cellIndex] = randomR;
+
+
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${sudokuArray[i]}</span>`;
     }
