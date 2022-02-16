@@ -81,20 +81,10 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function createSudokuBoard(){
-    // sudoku array for testing
-    let sudokuArray = [[],[],[],[],[],[],[],[],[]];
-    for(let s = 0; s < gCells.length; s++){
-        sudokuArray[s] = '';
-    }
-
-
     // We need to get 17 values on the board.
     // one grid is 9.
     // one grid plus vertically and horizontally is 21.
     // get 17 places and then solve the board.
-
-
-
     // test array direction is horizontal.
     // add 81 values to test array
     // add blank space to test array values.
@@ -109,6 +99,40 @@ function createSudokuBoard(){
     // keep checking for conflict.
     // if larger grid filled.
     // remov
+
+
+    // sudoku array for testing
+    let sudokuArray = [[],[],[],[],[],[],[],[],[]];
+    for(let s = 0; s < gCells.length; s++){
+        sudokuArray[s] = '';
+    }
+
+    let counter = 0;
+    let currentRandomValue = 9;
+    let r = Math.floor(Math.random() * currentRandomValue);
+
+    if(r === 0){
+        r = 9;
+    }
+
+    getRandomIntInclusive()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${sudokuArray[i]}</span>`;
@@ -196,23 +220,18 @@ function playerChoice(choice){
         case 10:
             isThisDecision = `<span class='numbers'>${pencil}</span>`;
             break;
-        case 11:
-            isThisDecision = `<span class='numbers'>${pen}</span>`;
-            break;
         default:
             isThisDecision = `<span class='numbers'>${eraser}</span>`;
             break;
     }
 }
 
-// Use functions to call when new random numbers needed
-function randNum(){
-    let num = Math.floor(Math.random() * 9);
-    if(num === 0){
-        num++;
-    }
-    return num;
-}
+// code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random 
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  } // end of code sourced.
 
 // darkmode function 
 function darkMode(){
