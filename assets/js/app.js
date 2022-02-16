@@ -6,7 +6,6 @@ const isGameStarted = document.querySelector('.start-game');
 const isDarkMode = document.querySelector('.dark-mode-button');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let nineGrids = []; // to hold grids
 
 var dontShade = []; // used to track shaded indexs
 var shadedIndexs = []; // current shaded indexs
@@ -62,46 +61,11 @@ let lGrid = [
     [60, 61, 62, 69, 70, 71, 78, 79, 80]
 ];
 
-let dummyFill = [
-    9,5,4,2,3,1,7,8,6,
-    5,7,2,1,4,9,6,3,8,
-    9,1,8,6,2,3,5,7,4,
-    8,2,5,9,1,7,4,6,3,
-    9,5,4,2,3,1,7,8,6,
-    5,9,2,1,4,7,6,3,8,
-    9,1,8,6,2,3,5,7,4,
-    8,3,5,9,1,7,4,6,2,
-    2,4,8,3,6,7,9,5,1
-]
-
 // classes to these rows and columns for readability
 vGrid[3].forEach(index => gCells[index].classList.add('margin-left'));
 vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
 hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
-
-function createSudokuBoard(){
-    // sudoku array for testing, places blank space in all indexs
-    let sudokuArray = [];
-
-    // fill array with blank space
-    for(let o = 0; o < possibleChoices.length; o++){
-        for(let i = 0; i < possibleChoices.length; i++){
-            sudokuArray.push('X');
-        }
-    }
-
-    while(isGameBoardCreated === false){ // while loop to keep running while the game is created.
-
-        
-        isGameBoardCreated = true;
-    }
-    
-    for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='numbers'>${sudokuArray[i]}</span>`;
-    }
-
-}
 
 function setGridUp(){
     for(let i = 0; i < gCells.length; i++){
@@ -226,8 +190,7 @@ function darkMode(){
 // function to start game
 function startGame(){
     resetPosition();
-    createSudokuBoard();
-    // setGridUp();
+    setGridUp();
 }
 
 // event listeners for starting game and darkmode
