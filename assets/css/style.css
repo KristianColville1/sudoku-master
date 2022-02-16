@@ -73,11 +73,11 @@ body {
 }
 
 .margin-top {
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .margin-left {
-    margin-left: 10px;
+    margin-left: 8px;
 }
 
 .player {
@@ -95,6 +95,7 @@ body {
 /*-------------------------------------------------------Navigational menu */
 
 header {
+    height: 5vh;
     background-color: var(--header-bg);
     border-bottom: 2px solid var(--header-bg)
 }
@@ -107,7 +108,7 @@ a {
 
 li {
     display: inline-block;
-    padding: 0 30px;
+    padding: 0px 0px;
 }
 
 ul {
@@ -125,23 +126,23 @@ nav {
 .logo {
     color: var(--logo);
     padding: 0;
-    font-size: 2rem;
+    font-size: 1.8rem;
     letter-spacing: 2px;
     font-family: 'Alfa Slab One', cursive;
     position: absolute;
-    margin: 20px 20px;
+    margin: 5px 20px;
 }
 
 .dark-mode-button {
-    width: 65px;
-    height: 65px;
+    width: 35px;
+    height: 35px;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--dark-mode-dark);
     border: 2px solid var(--dark-mode);
     border-radius: 50%;
     position: absolute;
-    left: 50%;
+    left: 95%;
 }
 
 .dark-mode-button:hover {
@@ -158,10 +159,9 @@ nav {
 .fa-moon,
 .fa-sun {
     color: var(--dark-mode);
-    padding-top: 15px;
-    font-size: 1.8rem;
+    font-size: 1rem;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -170,17 +170,17 @@ nav {
 
 .game {
     width: 600px; /*-------------------------------------------------------Game width */
-    height: 70vh;
+    height: 78vh;
     background-color: var(--game-bg);
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #grid {
-    height: 506px;
-    width: 506px;
+    height: 30vh;
+    width: 390px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -188,17 +188,17 @@ nav {
 }
 
 .game-grid-cells {
-    width: 44px;
-    height: 44px;
-    border: 4px solid var(--game-border);
-    border-radius: 10%;
+    width: 38px;
+    height: 38px;
+    border: 1px solid var(--game-border);
+    border-radius: 5%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
 
 .game-grid-cells:hover {
-    border: 4px solid var(--player-cell);
+    border: 1px solid var(--player-cell);
     cursor: pointer;
 }
 
@@ -218,15 +218,20 @@ nav {
     color: red;
     font-weight: 600;
     position: absolute;
-    left: 87%;
+    left: 70%;
 }
 
-.player-choice {
-    width: 450px;
+.player-num-choice,
+.player-pen-choice {
+    width: 200px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: 80%;
+    top: 44vh;
+}
+
+.player-pen-choice {
+    left: 35%;
 }
 
 .p-number,
@@ -235,11 +240,11 @@ nav {
 .eraser {
     text-align: center;
     color: var(--numbers);
-    font-size: 1.8rem;
-    width: 50px;
-    height: 50px;
-    border: 4px solid var(--game-border);
-    border-radius: 10%;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--game-border);
+    border-radius: 50%;
     margin-right: 5px;
 }
 
