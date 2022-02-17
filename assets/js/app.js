@@ -81,88 +81,40 @@ vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
 hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
-function setGridUp(){
+function createBoard(){
 
     let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let grids = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // these are the 3x3 grids
     let firstFill = [];
+
+    
     let newArray = shuffle(testArray);
     let firstGrid = getRandomIntInclusive(0, 8);
 
     // fills cells with placeholder
     for(let i = 0; i < gCells.length; i++){
-        firstFill.push(' ');
+        firstFill[i] = '';
     }
 
     // shuffles the available 3x3 options
     shuffle(grids);
 
-    let a = [];
-    let b = [];
-    let c = [];
-    // picks a random 3x3 grid and populates it with values 1 - 9, it adds those to the lgrids index values.
-    for(let i = 0; i < possibleChoices.length; i++){
-        let lCellIndex = lGrid[grids[0]][i];
-        if(firstFill.includes(' ', lCellIndex)){
-            firstFill.splice(lCellIndex, 1, newArray[i]);
-        }
-    }
-    for(let i = 0; i < possibleChoices.length; i++){
-        let hCellIndex = hGrid[grids[0]][i];
-        if(firstFill.includes(' ', hCellIndex)){
-            firstFill.splice(hCellIndex, 1, newArray[i]);
-        }
-    }
-    for(let i = 0; i < possibleChoices.length; i++){
-        let vCellIndex = vGrid[grids[0]][i];
-        if(firstFill.includes(' ', vCellIndex)){
-            firstFill.splice(vCellIndex, 1, newArray[i]);
-        }
-    }
-
     // remove the the first grid from the available grid options
     grids.splice(firstGrid, 1);
+
+    for(let i = 0; i < possibleChoices.length; i++){
+        firstFill.splice(lGrid[firstGrid][i], 1, newArray[i]);
+    }
 
     // shuffles the available 3x3 options again increase random outcome
     shuffle(grids);
 
     newArray = shuffle(testArray);
 
-
-    
-
-    // Currently developing this logic
-    // While the array includes blank space this will solve the array
-    while(!firstFill.includes(' ')){
-        for(let i = 0; i < gCells.length; i++){
-
-            if(firstFill){}
-        }
-
-        for(let i = 0; i < possibleChoices.length; i++){
-            firstFill.splice(hGrid[firstGrid][i], 1, newArray[i]);
-            firstFill.splice(vGrid[firstGrid][i], 1, newArray[i]);
-            firstFill.splice(lGrid[firstGrid][i], 1, newArray[i]);
-        }
-    }
-
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${firstFill[i]}</span>`;
     }
 }
-
-// This function will return true or false if the grid, 
-function checkingConflict(grid, hCellIndex, vCellIndex){
-
-    let myBoolean = false;
-    vGrid[0].forEach(index => alert(index))
-
-
-    return myBoolean;
-}
-
-
-
 
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
 function shuffle(array) {
@@ -183,24 +135,6 @@ function shuffle(array) {
     return array;
   }
 // ...........END.......................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function resetPosition(){
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
@@ -319,7 +253,7 @@ function darkMode(){
 // function to start game
 function startGame(){
     resetPosition();
-    setGridUp();
+    createBoard();
 }
 
 // event listeners for starting game and darkmode
