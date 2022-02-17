@@ -62,6 +62,19 @@ let lGrid = [
     [60, 61, 62, 69, 70, 71, 78, 79, 80]
 ];
 
+// Larger grid indexs 1 - 81
+let lGridTwo = [
+    0, 1, 2, 9, 10, 11, 18, 19, 20,
+    3, 4, 5, 12, 13, 14, 21, 22, 23,
+    6, 7, 8, 15, 16, 17, 24, 25, 26,
+    27, 28, 29, 36, 37, 38, 45, 46, 47,
+    30, 31, 32, 39, 40, 41, 48, 49, 50,
+    33, 34, 35, 42, 43, 44, 51, 52, 53,
+    54, 55, 56, 63, 64, 65, 72, 73, 74,
+    57, 58, 59, 66, 67, 68, 75, 76, 77,
+    60, 61, 62, 69, 70, 71, 78, 79, 80
+];
+
 // let dummyFill = [
 //     0, 1, 2, 9, 10, 11, 18, 19, 20,
 //     3, 4, 5, 12, 13, 14, 21, 22, 23,
@@ -122,13 +135,16 @@ function setGridUp(){
     // work out random logic so that every number is correctly output.
 
 
-    // let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    // let newArray = shuffle(testArray);
+    let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let newArray = shuffle(testArray);
     // alert(newArray);
 
+    for(let i = 0; i < lGrid.length; i++){
 
 
+        dummyFill.splice(lGridTwo[i], 1, newArray[i]);
 
+    }
 
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${dummyFill[i]}</span>`;
