@@ -84,6 +84,7 @@ hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 function setGridUp(){
 
     let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let grids = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // these are the 3x3 grids
     let firstFill = [];
     let newArray = shuffle(testArray);
     let firstGrid = getRandomIntInclusive(0, 8);
@@ -93,11 +94,20 @@ function setGridUp(){
         firstFill.push(' ');
     }
 
+    // shuffles the available 3x3 options
+    shuffle(grids);
+
     // picks a random 3x3 grid and populates it with values 1 - 9, it adds those to the lgrids index values.
     for(let i = 0; i < possibleChoices.length; i++){
-        firstFill.splice(lGrid[firstGrid][i], 1, newArray[i]);;
+        firstFill.splice(lGrid[grids[0]][i], 1, newArray[i]);;
     }
 
+    // remove the the first grid from the available grid options
+    grids.splice(firstGrid, 1);
+    alert(grids);
+
+    // Currently developing this logic
+    // While the array includes blank space this will solve the array
     while(!firstFill.includes(' ')){
         for(let i = 0; i < gCells.length; i++){
 
