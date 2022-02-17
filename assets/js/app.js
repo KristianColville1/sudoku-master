@@ -117,16 +117,17 @@ function createBoard(){
     for(let i = 0; i < possibleChoices.length; i++){
         currentBoard.splice((lGrid[firstGrid][i]), 1, rValues[i]);
         firstRow.push(currentBoard[hGrid[firstGrid][i]]);
-        firstCol.push(currentBoard[vGrid[i][firstGrid]]);
         for(let c = 0; c < possibleChoices.length; c++){
-
             if(currentBoard[hGrid[firstGrid][i]] === '-'){
                 currentBoard.splice((hGrid[firstGrid][i]), 1, rValues[i]);
             }
         }
-
-
     }
+
+    for(let i = 0; i < possibleChoices.length; i++){
+        firstCol.push(currentBoard[vGrid[firstGrid][i]]);
+    }
+
     alert(firstRow);
     alert(firstCol);
 

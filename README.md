@@ -52,10 +52,12 @@ Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku g
 | The second array I set up showed the players position in the wrong location between grids 5 & 9 | Created new array for indexs starting from 0 put the players position in the correct location|
 | Creating a backtracking algorithm to solve the board with one array for horizontal navigation | Using mutiple arrays for the index helped simplify creating boards, without this no boards could be created|
 | The vertical array to hold the values generating the sudoku board not in the correct position | Swapping the outer index with the inner index positioned the value correctly |
-| The 3x3 array to hold the values generating the sudoku board not in the correct position | remove code and start over|
-| Generating 3x3 and horizontal values successful but vertical values conflicting | Removed code for vertically populating the grid|
-| Grid only capable of generating 12 random values successfully and it needs 17 inorder to generate a single outcome each time | pushing the values generated vertically and horizontally to empty arrays for use later in conflict checking |
-| Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving in the same manner | 2|
+| The 3x3 array to hold the values generating the sudoku board not in the correct position | Removed code and started over |
+| Generating 3x3 and horizontal values successful but vertical values conflicting | Removed code for vertically populating the grid |
+| Grid only capable of generating 12 random values successfully and it needs 17 to generate a single outcome each time | pushing the values generated vertically and horizontally to empty arrays for use later in conflict checking |
+| Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving in the same manner | Isolating the code in its own for loop solved the problem, the cell was not updating the previous values accordingly as the horizontal and 3x3 filled |
+| 1 | 2|
+| 1 | 2|
 | 1 | 2|
 [Back to the top](#table-of-contents)
 
