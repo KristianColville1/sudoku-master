@@ -176,6 +176,10 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    border-color: var(--choice);
+    border-style: outset;
+    padding: 1vh 1vh;
+
 }
 
 #grid {
