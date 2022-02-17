@@ -119,7 +119,8 @@ function setGridUp(){
     // }
 
     // test if you can just populate a random grid with the correct values 1 - 9 and no repeats
-    
+    // work out random logic so that every number is correctly output.
+
 
 
 
@@ -131,6 +132,44 @@ function setGridUp(){
         gCells[i].innerHTML= `<span class='numbers'>${dummyFill[i]}</span>`;
     }
 }
+
+// ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  
+    return array;
+  }
+// ...........END.......................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function resetPosition(){
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
