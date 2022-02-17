@@ -86,6 +86,7 @@ function createBoard(){
     let p = '-'; // placeholder
     let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let gridsToFill = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // these are the 3x3 grids
+    let nextGridsToFill = [];
     let currentBoard = [
         p,p,p,p,p,p,p,p,p,
         p,p,p,p,p,p,p,p,p,
@@ -105,6 +106,7 @@ function createBoard(){
     shuffle(gridsToFill);
 
     // remove the the first grid from the available grid options
+    
     gridsToFill.splice(firstGrid, 1);
 
 
@@ -122,6 +124,12 @@ function createBoard(){
 
 
     }
+
+    //check a random vertical grid and check if can fill
+    for(let i = 0; i < possibleChoices.length; i++){
+        
+    }
+
 
     while(true){
         rValues = shuffle(testArray);
