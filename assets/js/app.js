@@ -82,19 +82,23 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function createBoard(){
-
+    let p = '-'; // placeholder
     let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let grids = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // these are the 3x3 grids
-    let firstFill = [];
+    let firstFill = [
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p],
+        [p,p,p,p,p,p,p,p,p]
+    ];
 
-    
     let newArray = shuffle(testArray);
     let firstGrid = getRandomIntInclusive(0, 8);
-
-    // fills cells with placeholder
-    for(let i = 0; i < gCells.length; i++){
-        firstFill[i] = '';
-    }
 
     // shuffles the available 3x3 options
     shuffle(grids);
@@ -102,17 +106,28 @@ function createBoard(){
     // remove the the first grid from the available grid options
     grids.splice(firstGrid, 1);
 
-    for(let i = 0; i < possibleChoices.length; i++){
-        firstFill.splice(lGrid[firstGrid][i], 1, newArray[i]);
-    }
+    let firstIndexes = [];
+    let firstValues = [];
 
     // shuffles the available 3x3 options again increase random outcome
     shuffle(grids);
 
     newArray = shuffle(testArray);
 
+    
+
+
+
+
+
+    let o = 0;
+    let inner = 0;
     for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='numbers'>${firstFill[i]}</span>`;
+        gCells[i].innerHTML= `<span class='numbers'>${firstFill[o][inner++]}</span>`;
+        if(inner === 9){
+            inner = 0;
+            o++;
+        }
     }
 }
 
