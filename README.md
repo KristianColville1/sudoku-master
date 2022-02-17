@@ -54,8 +54,8 @@ Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku g
 | The vertical array to hold the values generating the sudoku board not in the correct position | Swapping the outer index with the inner index positioned the value correctly |
 | The 3x3 array to hold the values generating the sudoku board not in the correct position | remove code and start over|
 | Generating 3x3 and horizontal values successful but vertical values conflicting | Removed code for vertically populating the grid|
-| Grid only capable of generating 12 random values successfully and it needs 17 inorder to generate a single outcome each time | 2|
-| 1 | 2|
+| Grid only capable of generating 12 random values successfully and it needs 17 inorder to generate a single outcome each time | pushing the values generated vertically and horizontally to empty arrays for use later in conflict checking |
+| Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving in the same manner | 2|
 | 1 | 2|
 [Back to the top](#table-of-contents)
 
