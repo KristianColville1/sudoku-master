@@ -87,15 +87,15 @@ function createBoard(){
     let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let gridsToFill = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // these are the 3x3 grids
     let currentBoard = [
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p],
-        [p,p,p,p,p,p,p,p,p]
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p,
+        p,p,p,p,p,p,p,p,p
     ];
 
     let rValues = shuffle(testArray);
@@ -107,14 +107,26 @@ function createBoard(){
     // remove the the first grid from the available grid options
     gridsToFill.splice(firstGrid, 1);
 
-    // populates one of the inner arrays with values 1 - 9
+
+    // populates one of the inner arrays with values 1 - 9 and a horizontal array bringing solved to: 12 places
+    // need 17 places to create a unique sudoku board
     for(let i = 0; i < possibleChoices.length; i++){
-        currentBoard[firstGrid][i] = rValues[i];
+        currentBoard.splice((lGrid[firstGrid][i]), 1, rValues[i]);
+
+        for(let c = 0; c < possibleChoices.length; c++){
+
+            if(currentBoard[hGrid[firstGrid][i]] === '-'){
+                currentBoard.splice((hGrid[firstGrid][i]), 1, rValues[i]);
+            }
+        }
+
+
     }
 
     while(true){
         rValues = shuffle(testArray);
         
+
         
         break;
     }
@@ -124,20 +136,8 @@ function createBoard(){
 
     rValues = shuffle(testArray);
 
-
-
-
-
-
-
-    let o = 0;
-    let inner = 0;
     for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='numbers'>${currentBoard[o][inner++]}</span>`;
-        if(inner === 9){
-            inner = 0;
-            o++;
-        }
+        gCells[i].innerHTML= `<span class='numbers'>${currentBoard[i]}</span>`;
     }
 }
 
