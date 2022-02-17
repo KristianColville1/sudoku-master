@@ -97,14 +97,39 @@ function setGridUp(){
     // shuffles the available 3x3 options
     shuffle(grids);
 
+    let a = [];
+    let b = [];
+    let c = [];
     // picks a random 3x3 grid and populates it with values 1 - 9, it adds those to the lgrids index values.
     for(let i = 0; i < possibleChoices.length; i++){
-        firstFill.splice(lGrid[grids[0]][i], 1, newArray[i]);;
+        let lCellIndex = lGrid[grids[0]][i];
+        if(firstFill.includes(' ', lCellIndex)){
+            firstFill.splice(lCellIndex, 1, newArray[i]);
+        }
+    }
+    for(let i = 0; i < possibleChoices.length; i++){
+        let hCellIndex = hGrid[grids[0]][i];
+        if(firstFill.includes(' ', hCellIndex)){
+            firstFill.splice(hCellIndex, 1, newArray[i]);
+        }
+    }
+    for(let i = 0; i < possibleChoices.length; i++){
+        let vCellIndex = vGrid[grids[0]][i];
+        if(firstFill.includes(' ', vCellIndex)){
+            firstFill.splice(vCellIndex, 1, newArray[i]);
+        }
     }
 
     // remove the the first grid from the available grid options
     grids.splice(firstGrid, 1);
-    alert(grids);
+
+    // shuffles the available 3x3 options again increase random outcome
+    shuffle(grids);
+
+    newArray = shuffle(testArray);
+
+
+    
 
     // Currently developing this logic
     // While the array includes blank space this will solve the array
@@ -125,6 +150,7 @@ function setGridUp(){
         gCells[i].innerHTML= `<span class='numbers'>${firstFill[i]}</span>`;
     }
 }
+
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
