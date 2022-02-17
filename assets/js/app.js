@@ -106,12 +106,12 @@ function createBoard(){
     shuffle(gridsToFill);
 
     // remove the the first grid from the available grid options
-    
     gridsToFill.splice(firstGrid, 1);
 
     let firstRow = [];
     let firstCol = [];
     let nextRow = [];
+
     // populates one of the inner arrays with values 1 - 9 and a horizontal array bringing solved to: 12 places
     // need 17 places to create a unique sudoku board
     for(let i = 0; i < possibleChoices.length; i++){
@@ -128,23 +128,8 @@ function createBoard(){
         firstCol.push(currentBoard[vGrid[firstGrid][i]]);
     }
 
-    alert(firstRow);
-    alert(firstCol);
-
-
-
     rValues = shuffle(testArray); // shuffling the random values to populate vertically
     //check a random vertical grid and check if can fill
-    
-
-
-    while(true){
-        rValues = shuffle(testArray);
-        
-
-        
-        break;
-    }
 
     // shuffles the available 3x3 options again increase random outcome
     shuffle(gridsToFill);
