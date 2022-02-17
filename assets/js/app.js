@@ -86,7 +86,7 @@ function createBoard(){
     let p = '-'; // placeholder
     let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let gridsToFill = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // these are the 3x3 grids
-    let nextGridsToFill = [];
+    let nextGridsToFill = gridsToFill; // assigning the array again here for later
     let currentBoard = [
         p,p,p,p,p,p,p,p,p,
         p,p,p,p,p,p,p,p,p,
@@ -109,12 +109,15 @@ function createBoard(){
     
     gridsToFill.splice(firstGrid, 1);
 
-
+    let firstRow = [];
+    let firstCol = [];
+    let nextRow = [];
     // populates one of the inner arrays with values 1 - 9 and a horizontal array bringing solved to: 12 places
     // need 17 places to create a unique sudoku board
     for(let i = 0; i < possibleChoices.length; i++){
         currentBoard.splice((lGrid[firstGrid][i]), 1, rValues[i]);
-
+        firstRow.push(currentBoard[hGrid[firstGrid][i]]);
+        firstCol.push(currentBoard[vGrid[i][firstGrid]]);
         for(let c = 0; c < possibleChoices.length; c++){
 
             if(currentBoard[hGrid[firstGrid][i]] === '-'){
@@ -124,11 +127,14 @@ function createBoard(){
 
 
     }
+    alert(firstRow);
+    alert(firstCol);
 
+
+
+    rValues = shuffle(testArray); // shuffling the random values to populate vertically
     //check a random vertical grid and check if can fill
-    for(let i = 0; i < possibleChoices.length; i++){
-        
-    }
+    
 
 
     while(true){
@@ -147,6 +153,14 @@ function createBoard(){
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${currentBoard[i]}</span>`;
     }
+}
+
+function checkIfNumPresent(cell){
+
+    if(cell.includes(1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9)){
+        return true;
+    }
+    return false;
 }
 
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
