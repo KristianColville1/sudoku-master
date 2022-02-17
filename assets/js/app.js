@@ -98,7 +98,7 @@ function createBoard(){
         [p,p,p,p,p,p,p,p,p]
     ];
 
-    let newArray = shuffle(testArray);
+    let rValues = shuffle(testArray);
     let firstGrid = getRandomIntInclusive(0, 8);
 
     // shuffles the available 3x3 options
@@ -109,18 +109,22 @@ function createBoard(){
 
     // populates one of the inner arrays with values 1 - 9
     for(let i = 0; i < possibleChoices.length; i++){
-        currentBoard[firstGrid][i] = newArray[i];
+        currentBoard[firstGrid][i] = rValues[i];
+    }
+
+    while(true){
+        rValues = shuffle(testArray);
+        
+        
+        break;
     }
 
     // shuffles the available 3x3 options again increase random outcome
     shuffle(gridsToFill);
 
-    newArray = shuffle(testArray);
-
-    for(let i = 0; i < possibleChoices.length; i++){
+    rValues = shuffle(testArray);
 
 
-    }
 
 
 
