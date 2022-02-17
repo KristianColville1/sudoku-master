@@ -12,13 +12,14 @@ var shadedIndexs = []; // current shaded indexs
 let playerIndex = []; // players current index
 var lastIndex = []; // players last index
 
-let isGameBoardCreated = false;
-let isGameOver = false;
-let enableDarkMode = false;
+let isGameBoardCreated = false; // not used yet
+let isGameOver = false; // not used yet
+
+let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
 
 var isThisDecision; // declared for players decision, initialised in playerChoice
-var decisionIndex = [];
+var decisionIndex = []; // not used yet, for above 
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
@@ -80,9 +81,23 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function setGridUp(){
-    for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='numbers'>${dummyFill[i]}</span>`;
-    }
+    // for(let i = 0; i < gCells.length; i++){
+    //     gCells[i].innerHTML= `<span class='numbers'>${dummyFill[i]}</span>`;
+    // }
+
+    // new game logic for creating boards
+    // approach two.
+    // if this is a new game 
+    // create a new board.
+    // otherwise reset the board and recursion. if the arrays lenght is greater than one. empty the array.
+    // select a random grid and populate it with all numbers one to nine first.
+    // with the last random number populate the cells horizontally and vertically.
+    // Create a function to call that checks A: the grid B: horizontally before entering cell C: vertically if the cell to populate is empty etc.
+
+    // what I need to do is figure out how to:
+    // select a certain grid and populate those indexs specifically with values.
+    // Today test that you can replace empty indexs on the board.
+    // create a way for the random numbers to decrease 'N' so the game doesn't take a year to create.
 }
 
 function resetPosition(){
