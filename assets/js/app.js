@@ -151,6 +151,19 @@ function setGridUp(){
     }
 }
 
+// This function will return true or false if the grid, 
+function checkingConflict(grid, hCellIndex, vCellIndex){
+
+    let myBoolean = false;
+    vGrid[0].forEach(index => alert(index))
+
+
+    return myBoolean;
+}
+
+
+
+
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
