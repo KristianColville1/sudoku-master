@@ -62,17 +62,22 @@ let lGrid = [
     [60, 61, 62, 69, 70, 71, 78, 79, 80]
 ];
 
-let dummyFill = [
-    0, 1, 2, 9, 10, 11, 18, 19, 20,
-    3, 4, 5, 12, 13, 14, 21, 22, 23,
-    6, 7, 8, 15, 16, 17, 24, 25, 26,
-    27, 28, 29, 36, 37, 38, 45, 46, 47,
-    30, 31, 32, 39, 40, 41, 48, 49, 50,
-    33, 34, 35, 42, 43, 44, 51, 52, 53,
-    54, 55, 56, 63, 64, 65, 72, 73, 74,
-    57, 58, 59, 66, 67, 68, 75, 76, 77,
-    60, 61, 62, 69, 70, 71, 78, 79, 80
-];
+// let dummyFill = [
+//     0, 1, 2, 9, 10, 11, 18, 19, 20,
+//     3, 4, 5, 12, 13, 14, 21, 22, 23,
+//     6, 7, 8, 15, 16, 17, 24, 25, 26,
+//     27, 28, 29, 36, 37, 38, 45, 46, 47,
+//     30, 31, 32, 39, 40, 41, 48, 49, 50,
+//     33, 34, 35, 42, 43, 44, 51, 52, 53,
+//     54, 55, 56, 63, 64, 65, 72, 73, 74,
+//     57, 58, 59, 66, 67, 68, 75, 76, 77,
+//     60, 61, 62, 69, 70, 71, 78, 79, 80
+// ];
+
+let dummyFill = [];
+for(let i = 0; i < gCells.length; i++){
+    dummyFill[i] = '';
+}
 
 // classes to these rows and columns for readability
 vGrid[3].forEach(index => gCells[index].classList.add('margin-left'));
@@ -81,10 +86,6 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function setGridUp(){
-    // for(let i = 0; i < gCells.length; i++){
-    //     gCells[i].innerHTML= `<span class='numbers'>${dummyFill[i]}</span>`;
-    // }
-
     // new game logic for creating boards
     // approach two.
     // if this is a new game 
@@ -98,6 +99,37 @@ function setGridUp(){
     // select a certain grid and populate those indexs specifically with values.
     // Today test that you can replace empty indexs on the board.
     // create a way for the random numbers to decrease 'N' so the game doesn't take a year to create.
+
+    // using dummy fill array see if you can manipulate grid 6 and put in the letter 'A' for those indexes.
+
+    // theres a method called splice that allows you to add/remove items from an array.
+
+
+
+
+
+
+    // this will populate the entire grid randomly.
+    // for(let i = 0; i < gCells.length; i++){
+    //     let r = getRandomIntInclusive(1, 9);
+    //     let n = getRandomIntInclusive(0, 80);
+    //     dummyFill.splice(n, 1, r);
+
+    //     // if(dummyFill[])
+    // }
+
+    // test if you can just populate a random grid with the correct values 1 - 9 and no repeats
+    
+
+
+
+
+
+
+
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].innerHTML= `<span class='numbers'>${dummyFill[i]}</span>`;
+    }
 }
 
 function resetPosition(){
