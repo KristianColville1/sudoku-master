@@ -44,9 +44,9 @@
 
 /* .................................game menu, buttons, numbers */
 
---system-numbers: #A33D8D;
---system-numbers-light: #A33D8D; 
---system-numbers-dark: #F9CB40;
+--system-numbers: black;
+--system-numbers-light: black; 
+--system-numbers-dark: #00E8FC;
 
 --numbers: #37392E;
 --numbers-light: #37392E;
@@ -187,6 +187,7 @@ nav {
 
 /*-------------------------------------------------------Game board */
 
+.welcome-menu ,
 .game {
     width: 600px; /*-------------------------------------------------------Game width */
     height: 78vh;
@@ -195,10 +196,12 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-color: var(--choice);
-    border-style: outset;
-    padding: 1vh 1vh;
+    border: 10px outset var(--choice);
+    padding: 5px 5px;
+}
 
+.welcome-menu {
+    z-index: 2;
 }
 
 #grid {
@@ -267,4 +270,14 @@ nav {
 .eraser:hover {
     background-color: var(--choice);
     cursor: pointer;
+}
+
+/*-------------------------------------------------------Welcome menu */
+
+.welcome-menu h1 {
+    color: var(--choice);
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    font-weight: 700;
 }
