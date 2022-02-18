@@ -20,12 +20,12 @@ let solvedBoard =[
     7, 6, 3, 4, 1, 8, 2, 5, 9
 ]
 
+let randomBoard = [];
+
 // Approach four:
 // using this solved board going to try swapping values randomly with other values.
 
 function printBoard(){
-
-
     solvedBoard = createBoard(solvedBoard);
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${solvedBoard[i]}</span>`;
@@ -33,10 +33,12 @@ function printBoard(){
 }
 
 function createBoard(solvedBoard){
-    let randomBoard = [];
-    let num1 = getRandomIntInclusive(1, 9);
-    let num2 = getRandomIntInclusive(1, 9);
+    randomBoard = [];
+    repeat();
+    return solvedBoard;
+}
 
+function randomTheBoard(num1, num2){
     for(let i = 0; i < 81; i++){
         randomBoard.push("?");
     }
@@ -70,6 +72,37 @@ function createBoard(solvedBoard){
     return solvedBoard;
 }
 
-function randomTheBoard(){
-
+function repeat(){
+    let num1 = getRandomIntInclusive(1, 9);
+    let num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
+    num1 = getRandomIntInclusive(1, 9);
+    num2 = getRandomIntInclusive(1, 9);
+    randomTheBoard(num1, num2);
 }
