@@ -74,7 +74,19 @@ let lGridTwo = [
     57, 58, 59, 66, 67, 68, 75, 76, 77,
     60, 61, 62, 69, 70, 71, 78, 79, 80
 ];
+let p = '-'; // placeholder
 
+let currentBoard = [
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p,
+    p,p,p,p,p,p,p,p,p
+];
 // classes to these rows and columns for readability
 vGrid[3].forEach(index => gCells[index].classList.add('margin-left'));
 vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
@@ -82,71 +94,9 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function createBoard(){
-
-    let p = '-'; // placeholder
-    let testArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let gridsToFill = [0, 1, 2, 3, 4, 5, 6, 7, 8]; // these are the 3x3 grids
-    let nextGridsToFill = gridsToFill; // assigning the array again here for later
-    let currentBoard = [
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p
-    ];
-
-    let rValues = shuffle(testArray);
-    let firstGrid = getRandomIntInclusive(0, 8);
-
-    // shuffles the available 3x3 options
-    shuffle(gridsToFill);
-
-    // remove the the first grid from the available grid options
-    gridsToFill.splice(firstGrid, 1);
-
-    let firstRow = [];
-    let firstCol = [];
-    let nextRow = [];
-
-    // populates one of the inner arrays with values 1 - 9 and a horizontal array bringing solved to: 12 places
-    // need 17 places to create a unique sudoku board
-    for(let i = 0; i < possibleChoices.length; i++){
-        currentBoard.splice((lGrid[firstGrid][i]), 1, rValues[i]);
-        firstRow.push(currentBoard[hGrid[firstGrid][i]]);
-        for(let c = 0; c < possibleChoices.length; c++){
-            if(currentBoard[hGrid[firstGrid][i]] === '-'){
-                currentBoard.splice((hGrid[firstGrid][i]), 1, rValues[i]);
-            }
-        }
-    }
-
-    for(let i = 0; i < possibleChoices.length; i++){
-        firstCol.push(currentBoard[vGrid[firstGrid][i]]);
-    }
-
-    rValues = shuffle(testArray); // shuffling the random values to populate vertically
-    //check a random vertical grid and check if can fill
-
-    // shuffles the available 3x3 options again increase random outcome
-    shuffle(gridsToFill);
-
-    rValues = shuffle(testArray);
-
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${currentBoard[i]}</span>`;
     }
-}
-
-function checkIfNumPresent(cell){
-
-    if(cell.includes(1 || 2 || 3 || 4 || 5 || 6 || 7 || 8 || 9)){
-        return true;
-    }
-    return false;
 }
 
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
