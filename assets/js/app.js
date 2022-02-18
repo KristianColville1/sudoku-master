@@ -64,6 +64,9 @@ vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
 hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
+function lightOn(){
+    
+}
 // darkmode function 
 function darkMode(){
     if(enableDarkMode === false){
@@ -76,6 +79,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-dark'));
         document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-dark'));
         document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-dark'));
+        document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-dark'));
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-dark'));
         enableDarkMode = true;
     }else if(enableDarkMode === true){
@@ -88,19 +92,18 @@ function darkMode(){
         document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-light'));
         document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-light'));
         document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-light'));
+        document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-light'));
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-light'));
         enableDarkMode = false;
     }
 }
 
-// code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random 
 function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-  } // end of code sourced.
+  }// code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
-// ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   
@@ -115,10 +118,8 @@ function shuffle(array) {
       [array[currentIndex], array[randomIndex]] = [
         array[randomIndex], array[currentIndex]];
     }
-  
     return array;
-  }
-// ...........END.......................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
+  }//function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 
 function resetPosition(position){
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
@@ -133,30 +134,28 @@ function resetPosition(position){
 function playerPosition(position){
     resetPosition(position);
 
-    // check every index in all arrays and add lighter background to those cells except player position
+    // Adds lighter background to those cells except player position
     for(let o = 0; o < vGrid.length; o++){
         let iArrayLen = vGrid[o].length;
         for(let i = 0; i < iArrayLen; i++){
             if(gCells[vGrid[o][i]].classList.contains('player')){
                 vGrid[o].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[o].forEach(index => shadedIndexs.push(index));
-                vGrid[o].forEach(index => lastIndex.push(index));
-                gCells[position].classList.remove('shaded'); 
+                vGrid[o].forEach(index => lastIndex.push(index)); 
             }
             if(gCells[lGrid[o][i]].classList.contains('player')){
                 lGrid[o].forEach(index => gCells[index].classList.add('shaded'));
                 lGrid[o].forEach(index => shadedIndexs.push(index));
                 lGrid[o].forEach(index => lastIndex.push(index));
-                gCells[position].classList.remove('shaded'); 
             }
             if(gCells[hGrid[o][i]].classList.contains('player')){
                 hGrid[o].forEach(index => gCells[index].classList.add('shaded'));
                 hGrid[o].forEach(index => shadedIndexs.push(index));
                 hGrid[o].forEach(index => lastIndex.push(index));
-                gCells[position].classList.remove('shaded'); 
             }
         }
     }
+    gCells[position].classList.remove('shaded'); 
 }
 
 let hasDecided = false;
