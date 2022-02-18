@@ -1,2 +1,5 @@
 tasks.txt
 design.txt
+node_modules
+package-lock.json
+package.json
