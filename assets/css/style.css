@@ -201,7 +201,7 @@ nav {
 }
 
 .welcome-menu {
-    z-index: 2;
+    z-index: -99;
 }
 
 #grid {
@@ -210,7 +210,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    background-color: transparent;
+    /* background-color: transparent; */
 }
 
 .game-grid-cells {
@@ -251,7 +251,6 @@ nav {
 }
 
 .p-number,
-.pen,
 .pencil,
 .eraser {
     text-align: center;
@@ -265,7 +264,6 @@ nav {
 }
 
 .p-number:hover,
-.pen:hover,
 .pencil:hover,
 .eraser:hover {
     background-color: var(--choice);
