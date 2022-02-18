@@ -7,7 +7,7 @@
 
 // 17 valid sudoku numbers are needed to generate a single unique solution.
 
-// 2D solved board, with 9 arrays inside for the rows
+// solved board
 let solvedBoard =[
     4, 3, 5, 2, 6, 9, 7, 8, 1,
     6, 8, 2, 5, 7, 1, 4, 9, 3,
@@ -24,7 +24,52 @@ let solvedBoard =[
 // using this solved board going to try swapping values randomly with other values.
 
 function printBoard(){
+
+
+    solvedBoard = createBoard(solvedBoard);
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${solvedBoard[i]}</span>`;
     }
+}
+
+function createBoard(solvedBoard){
+    let randomBoard = [];
+    let num1 = getRandomIntInclusive(1, 9);
+    let num2 = getRandomIntInclusive(1, 9);
+
+    for(let i = 0; i < 81; i++){
+        randomBoard.push("?");
+    }
+
+    for(let i = 0; i < 81; i++){
+        if(solvedBoard[i] === num2){
+            randomBoard.splice(i, 1, num1);
+            solvedBoard[i] = '+';
+        }
+    }
+
+    for(let i = 0; i < 81; i++){
+        if(solvedBoard[i] === num1){
+            randomBoard.splice(i, 1, num2);
+            solvedBoard[i] = '-';
+        }
+    }
+
+    for(let i = 0; i < 81; i++){
+        if(solvedBoard[i] === '+'){
+            solvedBoard.splice(i, 1, num1);
+        }
+    }
+
+    for(let i = 0; i < 81; i++){
+        if(solvedBoard[i] === '-'){
+            solvedBoard.splice(i, 1, num2);
+        }
+    }
+
+    return solvedBoard;
+}
+
+function randomTheBoard(){
+
 }
