@@ -56,7 +56,7 @@ Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku g
 | Generating 3x3 and horizontal values successful but vertical values conflicting | Removed code for vertically populating the grid |
 | Grid only capable of generating 12 random values successfully and it needs 17 to generate a single outcome each time | pushing the values generated vertically and horizontally to empty arrays for use later in conflict checking |
 | Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving in the same manner | Isolating the code in its own for loop solved the problem, the cell was not updating the previous values accordingly as the horizontal and 3x3 filled |
-| 1 | 2|
+| Solving the board unsuccessful, values in wrong positions each time | Went with my fourth approach and removed all code and used a solved sudoku board to generate values correctly |
 | 1 | 2|
 | 1 | 2|
 [Back to the top](#table-of-contents)
