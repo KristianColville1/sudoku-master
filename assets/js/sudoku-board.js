@@ -22,6 +22,7 @@ function printBoard(){
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='system-numbers'>${solvedBoard[i]}</span>`;
     }
+    return solvedBoard;
 }
 
 // creates the sudoku board
