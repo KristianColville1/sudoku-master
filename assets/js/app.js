@@ -213,6 +213,7 @@ function darkMode(){
 // function to start game
 function startGame(){
     resetPosition();
+    printBoard();
 }
 
 // event listeners for starting game and darkmode
