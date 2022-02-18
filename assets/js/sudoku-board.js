@@ -1,13 +1,4 @@
-
-// Sudoku Rules:
-// the grid contains 81 cells made of 9 x 9 cells
-// horizontal cell numbers need to include 1 to 9 
-// vertical cell numbers need to include 1 to 9
-// each 3 x 3 must also contain the numbers 1 to 9
-
-// 17 valid sudoku numbers are needed to generate a single unique solution.
-
-// solved board
+// solved board - increased performance and quicker to implement
 let solvedBoard =[
     4, 3, 5, 2, 6, 9, 7, 8, 1,
     6, 8, 2, 5, 7, 1, 4, 9, 3,
@@ -25,6 +16,7 @@ let randomBoard = [];
 // Approach four:
 // using this solved board going to try swapping values randomly with other values.
 
+// displays the final sudoku board
 function printBoard(){
     solvedBoard = createBoard(solvedBoard);
     for(let i = 0; i < gCells.length; i++){
@@ -32,12 +24,14 @@ function printBoard(){
     }
 }
 
+// creates the sudoku board
 function createBoard(solvedBoard){
     randomBoard = [];
-    repeat();
+    repeatManyTimes();
     return solvedBoard;
 }
 
+// takes random values num1 and num2 and switches those values within the sudoku array
 function randomTheBoard(num1, num2){
     for(let i = 0; i < 81; i++){
         randomBoard.push("?");
@@ -72,6 +66,7 @@ function randomTheBoard(num1, num2){
     return solvedBoard;
 }
 
+// repeats the above function many times and gets new num1 and num2 values
 function repeat(){
     let num1 = getRandomIntInclusive(1, 9);
     let num2 = getRandomIntInclusive(1, 9);
@@ -105,4 +100,18 @@ function repeat(){
     num1 = getRandomIntInclusive(1, 9);
     num2 = getRandomIntInclusive(1, 9);
     randomTheBoard(num1, num2);
+}
+
+// repeats this process again and again to increase random board generation
+function repeatManyTimes(){
+    repeat();
+    repeat();
+    repeat();
+    repeat();
+    repeat();
+    repeat();
+    repeat();
+    repeat();
+    repeat();
+    repeat();
 }
