@@ -104,41 +104,52 @@ function createBoard(){
     // index the values and remove them from random array options.
     // 
     // 
-    fillHorizontally(currentBoard);
-
-    removeDupsVertically(currentBoard);
+    fillLargeGrids(currentBoard);
+    currentBoard = removeAllDuplicatesHorizontally(currentBoard);
     
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${currentBoard[i]}</span>`;
     }
 }
 
-function fillHorizontally(arr){
+function fillLargeGrids(arr){
     let arrValues = [1, 2, 3, 4, 5, 6, 7, 8, 9];
     let rValues = shuffle(arrValues);
     for(let o = 0; o < 9; o++){
         rValues = shuffle(arrValues);
         for(let i = 0; i < 9; i++){
-            arr.splice(hGrid[o][i], 1, rValues[i]);
+            arr.splice(lGrid[o][i], 1, rValues[i]);
         }
     }
     return arr;
 }
 
-function removeDupsVertically(arr){
-    let dups = [];
-
-    for(let i = 0; i < 9; i++){
-        if(dups.includes(arr[vGrid[0][i]])){
-            dups.push('-');
-        } else{
-            dups.push(arr[vGrid[0][i]]);
+function removeAllDuplicatesHorizontally(arr){
+    let duplicates = [];
+    let noDuplicates = [];
+    let lastIndex = 0;
+    let nextIndex = lastIndex + 9;
+    let row = currentBoard.slice(lastIndex, nextIndex);
+    let counter = 0;
+    while(noDuplicates.length < 81){
+        duplicates = [];
+        row = currentBoard.slice(lastIndex, nextIndex);
+        for(let i = 0; i < 9; i++){
+            if(!duplicates.includes(row[i])){
+                duplicates.push(row[i]);
+                noDuplicates.push(row[i]);
+            } else{
+                duplicates.push('-');
+                noDuplicates.push('-');
+            }
+            arr.splice(i + counter, 1, duplicates[i]);
         }
-        console.log(dups);
+        lastIndex = nextIndex;
+        nextIndex = lastIndex + 9;
     }
-
-    return arr;
+    return noDuplicates;
 }
+
 
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
 function shuffle(array) {
