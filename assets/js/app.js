@@ -104,6 +104,10 @@ function createBoard(){
     // index the values and remove them from random array options.
     // 
     // 
+    fillHorizontally(currentBoard);
+
+    removeDupsVertically(currentBoard);
+    
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${currentBoard[i]}</span>`;
     }
@@ -115,9 +119,24 @@ function fillHorizontally(arr){
     for(let o = 0; o < 9; o++){
         rValues = shuffle(arrValues);
         for(let i = 0; i < 9; i++){
-            arr.splice(hGrid[o][i], 1, rValues[i])
+            arr.splice(hGrid[o][i], 1, rValues[i]);
         }
     }
+    return arr;
+}
+
+function removeDupsVertically(arr){
+    let dups = [];
+
+    for(let i = 0; i < 9; i++){
+        if(dups.includes(arr[vGrid[0][i]])){
+            dups.push('-');
+        } else{
+            dups.push(arr[vGrid[0][i]]);
+        }
+        console.log(dups);
+    }
+
     return arr;
 }
 
