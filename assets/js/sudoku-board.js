@@ -20,7 +20,7 @@ let randomBoard = [];
 function printBoard(){
     solvedBoard = createBoard(solvedBoard);
     for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='numbers'>${solvedBoard[i]}</span>`;
+        gCells[i].innerHTML= `<span class='system-numbers'>${solvedBoard[i]}</span>`;
     }
 }
 
