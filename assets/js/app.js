@@ -9,18 +9,13 @@ let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var dontShade = []; // used to track shaded indexs
 var shadedIndexs = []; // current shaded indexs
+
 let playerIndex = []; // players current index
 var lastIndex = []; // players last index
-
-let isGameBoardCreated = false; // not used yet
-let isGameOver = false; // not used yet
-
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
-
 var isThisDecision; // declared for players decision, initialised in playerChoice
 var decisionIndex = []; // not used yet, for above 
-
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
 // horizontal indexs
@@ -75,118 +70,11 @@ let lGridTwo = [
     60, 61, 62, 69, 70, 71, 78, 79, 80
 ];
 
-let p = '-'; // placeholder
-
-let currentBoard = [
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p,
-    p,p,p,p,p,p,p,p,p
-];
 // classes to these rows and columns for readability
 vGrid[3].forEach(index => gCells[index].classList.add('margin-left'));
 vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
 hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
-
-function createBoard(){
-    currentBoard = [
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p,
-        p,p,p,p,p,p,p,p,p
-    ];
-    // approach three:
-    // fill each index horizontally with values 1 - 9 randomly
-    // when grid filled.
-    // create an empty array 
-    // remove any duplicate values vertically for all outer arrays.
-    // going back over the values 
-    // index the values and remove them from random array options.
-    
-    for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='numbers'>${currentBoard[i]}</span>`;
-    }
-}
-
-function fillLargeGrids(arr){
-    let arrValues = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let rValues = shuffle(arrValues);
-    for(let o = 0; o < 9; o++){
-        rValues = shuffle(arrValues);
-        for(let i = 0; i < 9; i++){
-            if(arr[lGrid[o][i]] === '-'){
-                arr.splice(lGrid[o][i], 1, rValues[i]);
-            }
-        }
-    }
-    return arr;
-}
-
-// removes any duplicates for 2D element array with 9 elements in each array
-function removeAllDuplicatesHorizontally(arr){
-    let duplicates = [];
-    let noDuplicates = [];
-    let lastIndex = 0;
-    let nextIndex = lastIndex + 9;
-    let row = currentBoard.slice(lastIndex, nextIndex);
-    while(noDuplicates.length < 81){
-        duplicates = [];
-        row = currentBoard.slice(lastIndex, nextIndex);
-        for(let i = 0; i < 9; i++){
-            if(!duplicates.includes(row[i])){
-                duplicates.push(row[i]);
-                noDuplicates.push(row[i]);
-            } else{
-                duplicates.push('-');
-                noDuplicates.push('-');
-            }
-        }
-        lastIndex = nextIndex;
-        nextIndex = lastIndex + 9;
-    }
-    return noDuplicates;
-}
-
-// removes any duplicates for 9 element array
-function removeDuplicatesHorizontally(arr){ 
-    let duplicates = [];
-    let noDuplicates = [];
-    let lastIndex = 0;
-    let nextIndex = lastIndex + 9;
-    let row = currentBoard.slice(lastIndex, nextIndex);
-    while(noDuplicates.length < 9){
-        row = currentBoard.slice(lastIndex, nextIndex);
-        for(let i = 0; i < 9; i++){
-            if(!duplicates.includes(row[i])){
-                duplicates.push(row[i]);
-                noDuplicates.push(row[i]);
-            } else{
-                duplicates.push('-');
-                noDuplicates.push('-');
-            }
-        }
-        lastIndex = nextIndex;
-        nextIndex = lastIndex + 9;
-    }
-    return noDuplicates;
-}
-
-function removeAllDuplicatesVertically(arr){
-    let noDuplicates = [];
-    return noDuplicates;
-}
-
 
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
 function shuffle(array) {
@@ -325,7 +213,6 @@ function darkMode(){
 // function to start game
 function startGame(){
     resetPosition();
-    createBoard();
 }
 
 // event listeners for starting game and darkmode
