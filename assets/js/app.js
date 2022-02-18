@@ -94,9 +94,31 @@ hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 function createBoard(){
+
+    // approach three:
+    // fill each index horizontally with values 1 - 9 randomly
+    // when grid filled.
+    // create an empty array 
+    // remove any duplicate values vertically for all outer arrays.
+    // going back over the values 
+    // index the values and remove them from random array options.
+    // 
+    // 
     for(let i = 0; i < gCells.length; i++){
         gCells[i].innerHTML= `<span class='numbers'>${currentBoard[i]}</span>`;
     }
+}
+
+function fillHorizontally(arr){
+    let arrValues = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let rValues = shuffle(arrValues);
+    for(let o = 0; o < 9; o++){
+        rValues = shuffle(arrValues);
+        for(let i = 0; i < 9; i++){
+            arr.splice(hGrid[o][i], 1, rValues[i])
+        }
+    }
+    return arr;
 }
 
 // ..........TOP........................function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. 
