@@ -43,6 +43,11 @@
 --game-border-dark: #9A9CA5;
 
 /* .................................game menu, buttons, numbers */
+
+--system-numbers: #A33D8D;
+--system-numbers-light: #A33D8D; 
+--system-numbers-dark: #F9CB40;
+
 --numbers: #37392E;
 --numbers-light: #37392E;
 --numbers-dark:#F4F4F9;
@@ -78,6 +83,20 @@ body {
 
 .margin-left {
     margin-left: 8px;
+}
+
+.system-numbers{
+    color: var(--system-numbers);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.numbers {
+    color: var(--numbers);
+    font-size: 1.5rem;
+    border-radius: 50%;
+    text-align: center;
 }
 
 .player {
@@ -204,16 +223,6 @@ nav {
 .game-grid-cells:hover {
     border: 1px solid var(--player-cell);
     cursor: pointer;
-}
-
-.numbers {
-    color: var(--numbers);
-    font-size: 1.5rem;
-    height: 40%;
-    width: 33%;
-    position: relative;
-    top: 10%;
-    left: 28%;
 }
 
 .start-game {
