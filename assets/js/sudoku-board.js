@@ -9,7 +9,7 @@ let solvedBoard =[
     5, 1, 9, 3, 2, 6, 8, 7, 4,
     2, 4, 8, 9, 5, 7, 1, 3, 6,
     7, 6, 3, 4, 1, 8, 2, 5, 9
-]
+];
 
 let randomBoard = [];
 
@@ -19,9 +19,7 @@ let randomBoard = [];
 // displays the final sudoku board
 function printBoard(){
     solvedBoard = createBoard(solvedBoard);
-    for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML= `<span class='system-numbers'>${solvedBoard[i]}</span>`;
-    }
+
     return solvedBoard;
 }
 
@@ -115,4 +113,24 @@ function repeatManyTimes(){
     repeat();
     repeat();
     repeat();
+}
+
+
+function displayedBoard(){
+    let tempBoard =  printBoard();
+    let comparison = tempBoard;
+    let displayedBoard = [];
+
+
+
+
+}
+
+function howDifficultIsGame(diff){
+    let veryEasy = 20;
+    let easy = 30;
+    let medium = 45;
+    let hard = 54;
+    let veryHard = 59;
+    let insane = 68;
 }

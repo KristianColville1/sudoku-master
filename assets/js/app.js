@@ -122,18 +122,15 @@ function shuffle(array) {
     return array;
   }//function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 
-function resetPosition(position){
+// locate the player class and highlight arrays with class shader
+function playerPosition(position){
+    // resets the board and then adds the players position back each time when called
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
 
     // parameter position activates shading colors and player location on board
     playerIndex = [Number(position)];
     playerIndex.forEach(index => gCells[index].classList.add('player'));
-}
-
-// locate the player class and highlight arrays with class shader
-function playerPosition(position){
-    resetPosition(position);
 
     // Adds lighter background to those cells except player position
     for(let o = 0; o < vGrid.length; o++){
@@ -158,18 +155,17 @@ function playerPosition(position){
     gCells[position].classList.remove('shaded'); 
 }
 
-let hasDecided = false;
 // function activates for the players choice
 function playerChoice(position){
-    let playerIndex = position - 1;
+    let playerChoiceIndex = position - 1;
 
     for(let i = 0; i < pChoice.length; i++){
         pChoice[i].classList.remove('choice-active');
     }
-    pChoice[playerIndex].classList.add('choice-active');
+    pChoice[playerChoiceIndex].classList.add('choice-active');
 
-    playerIndex = position;
-    switch(playerIndex){
+    playerChoiceIndex = position;
+    switch(playerChoiceIndex){
         case 1:
             isThisDecision = `<span class='numbers'>${1}</span>`;
             break;
@@ -197,9 +193,6 @@ function playerChoice(position){
         case 9:
             isThisDecision = `<span class='numbers'>${9}</span>`;
             break;
-        case 10:
-            isThisDecision = `<span class='numbers'>${pencil}</span>`;
-            break;
         default:
             isThisDecision = `<span class='numbers'>${eraser}</span>`;
             break;
@@ -207,15 +200,12 @@ function playerChoice(position){
     return isThisDecision;
 }
 
-function playGame(){
-
-}
-
 // function to start game
 function startGame(){
-    resetPosition();
-    playGame();
+
 }
+
+
 
 // event listeners for starting game and darkmode
 isGameStarted.addEventListener('click', startGame);
