@@ -1,6 +1,6 @@
 // global variables
 let mainGrid = document.getElementById('grid');
-let gCells = document.getElementsByClassName('game-grid-cells');
+const gCells = document.getElementsByClassName('game-grid-cells');
 let pChoice = document.getElementsByClassName('choice');
 
 const isGameStarted = document.querySelector('.start-game');
@@ -9,10 +9,11 @@ const isDarkMode = document.querySelector('.dark-mode-button');
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var dontShade = []; // used to track shaded indexs
-var shadedIndexs = []; // current shaded indexs
+const shadedIndexs = []; // current shaded indexs
 
 let playerIndex = []; // players current index
-var lastIndex = []; // players last index
+const lastIndex = []; // players last index
+
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
 var isThisDecision = ''; // in playerChoice
@@ -136,12 +137,11 @@ function playerPosition(position){
 
     // Adds lighter background to those cells except player position
     for(let o = 0; o < vGrid.length; o++){
-        let iArrayLen = vGrid[o].length;
-        for(let i = 0; i < iArrayLen; i++){
+        for(let i = 0; i < 9; i++){
             if(gCells[vGrid[o][i]].classList.contains('player')){
                 vGrid[o].forEach(index => gCells[index].classList.add('shaded'));
                 vGrid[o].forEach(index => shadedIndexs.push(index));
-                vGrid[o].forEach(index => lastIndex.push(index)); 
+                vGrid[o].forEach(index => lastIndex.push(index));
             }
             if(gCells[lGrid[o][i]].classList.contains('player')){
                 lGrid[o].forEach(index => gCells[index].classList.add('shaded'));
