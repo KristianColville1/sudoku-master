@@ -6,8 +6,8 @@
     /* CSS HEX */
 
 /* ...............................player position */
---shaded-cells: #F4F4F9;
---shaded-cells-light: #F4F4F9;
+--shaded-cells: #00E8FC;
+--shaded-cells-light: #00E8FC;
 --shaded-cells-dark: #6D76B2;
 --player-cell: #F9CB40;
 --player-cell-light: #F9CB40;
@@ -34,8 +34,8 @@
 --dark-mode-dark: #37392E;
 
 /* ...............................Game background and shadow */
---game-bg: #00E8FC;
---game-bg-light: #00E8FC;
+--game-bg: #F4F4F9;
+--game-bg-light: #F4F4F9;
 --game-bg-dark: #37392E;
 
 --game-border: #37392E;
@@ -52,12 +52,12 @@
 --numbers-light: #37392E;
 --numbers-dark:#F4F4F9;
 
---choice: #A33D8D;
---choice-light: #A33D8D;
+--choice: #6D76B2;
+--choice-light: #6D76B2;
 --choice-dark: #00E8FC;
 
---choice-active: #A33D8D;
---choice-active-light: #A33D8D;
+--choice-active: #6D76B2;
+--choice-active-light: #6D76B2;
 --choice-active-dark: #00E8FC;
 
 }
@@ -190,23 +190,25 @@ nav {
 .welcome-menu ,
 .game {
     width: 600px; /*-------------------------------------------------------Game width */
-    height: 78vh;
+    height: 600px;
     background-color: var(--game-bg);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 10px outset var(--choice);
+    border: 10px outset var(--shaded-cells);
     padding: 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .welcome-menu {
-    z-index: -99;
+    visibility: hidden;
 }
 
 #grid {
-    height: 50vh;
-    width: 390px;
+    height: 370px;
+    width: 380px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
@@ -238,11 +240,11 @@ nav {
 
 .player-num-choice,
 .player-pen-choice {
-    width: 200px;
+    width: 150px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    top: 44vh;
+    top: 385px;
 }
 
 .player-pen-choice {
@@ -281,10 +283,15 @@ nav {
 
 /*-------------------------------------------------------Media Queries */
 
-/*----------------------------------------------1080px wide */
+/*----------------------------------------------1440px wide */
 @media screen and (max-width: 1440px){
     .player-num-choice,
     .player-pen-choice {
         top: 58vh;
     }
+}
+
+/*----------------------------------------------610px wide */
+@media screen and (max-width: 610px){
+
 }
