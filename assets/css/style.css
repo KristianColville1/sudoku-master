@@ -205,12 +205,11 @@ nav {
 }
 
 #grid {
-    height: 30vh;
+    height: 50vh;
     width: 390px;
     display: flex;
     flex-wrap: wrap;
     position: absolute;
-    /* background-color: transparent; */
 }
 
 .game-grid-cells {
@@ -278,4 +277,14 @@ nav {
     letter-spacing: 3px;
     text-align: center;
     font-weight: 700;
+}
+
+/*-------------------------------------------------------Media Queries */
+
+/*----------------------------------------------1080px wide */
+@media screen and (max-width: 1440px){
+    .player-num-choice,
+    .player-pen-choice {
+        top: 58vh;
+    }
 }
