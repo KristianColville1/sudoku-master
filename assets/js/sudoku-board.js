@@ -114,23 +114,3 @@ function repeatManyTimes(){
     repeat();
     repeat();
 }
-
-
-function displayedBoard(){
-    let tempBoard =  printBoard();
-    let comparison = tempBoard;
-    let displayedBoard = [];
-
-
-
-
-}
-
-function howDifficultIsGame(diff){
-    let veryEasy = 20;
-    let easy = 30;
-    let medium = 45;
-    let hard = 54;
-    let veryHard = 59;
-    let insane = 68;
-}

@@ -124,6 +124,7 @@ function shuffle(array) {
 
 // locate the player class and highlight arrays with class shader
 function playerPosition(position){
+
     // resets the board and then adds the players position back each time when called
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
@@ -198,6 +199,49 @@ function playerChoice(position){
             break;
     }
     return isThisDecision;
+}
+
+function displayedBoard(decide){
+    let boardBefore =  printBoard();
+    let boardMiddleWay = boardBefore;
+
+    let displayedBoard = [];
+
+
+ 
+}
+
+function howDifficultIsGame(diff){
+    let decide = 0;
+    // user difficulty will select different outcome
+    switch(diff){
+        case 1:
+            // very easy, remove 28 pieces
+            decide = 28;
+            break;
+        case 2:
+            // easy, remove 37 pieces
+            decide = 37;
+            break;
+        case 3:
+            // medium, remove 45 pieces
+            decide = 45;
+            break;
+        case 4:
+            // hard, remove 51 pieces
+            decide = 51;
+            break;
+        case 5:
+            // very hard, remove 59 pieces
+            decide = 59;
+            break;
+        default:
+            // insane, remove 64 pieces
+            decide = 64;
+            break;
+    }
+
+    displayedBoard(decide);
 }
 
 // function to start game
