@@ -9,9 +9,9 @@
 --shaded-cells: #00E8FC;
 --shaded-cells-light: #00E8FC;
 --shaded-cells-dark: #6D76B2;
---player-cell: #F9CB40;
---player-cell-light: #F9CB40;
---player-cell-dark: #16DB65;
+--player-cell: #6D76B2;
+--player-cell-light: #6D76B2;
+--player-cell-dark: #00E8FC;
 
 
 /* ...............................background */
@@ -225,7 +225,7 @@ nav {
 }
 
 .game-grid-cells:hover {
-    border: 1px solid var(--player-cell);
+    background-color: var(--player-cell);
     cursor: pointer;
 }
 
