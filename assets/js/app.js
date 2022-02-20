@@ -203,11 +203,28 @@ function playerChoice(position){
 
 function displayedBoard(decide){
     let boardBefore =  printBoard();
-    let boardMiddleWay = boardBefore;
+    let displayedBoard = []; // board to be displayed to the user
 
-    let displayedBoard = [];
+    for(let i = 0; i < gCells.length; i++){
+        displayedBoard.push(boardBefore[i]);
+    }
 
+    let counter = 0;
+    let interval = getRandomIntInclusive(1, 3);
+    while(decide > 0){
+        interval = getRandomIntInclusive(1, 3);
 
+        if(counter >= 81){
+            counter = 0;
+        }
+
+        displayedBoard.splice(counter+=interval, 1, '');
+        decide--;
+    }
+
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].innerHTML = `<span class='numbers'>${displayedBoard[i]}</span>`;
+    }
  
 }
 
@@ -246,7 +263,7 @@ function howDifficultIsGame(diff){
 
 // function to start game
 function startGame(){
-
+    displayedBoard(64);
 }
 
 
