@@ -201,25 +201,24 @@ function playerChoice(position){
     return isThisDecision;
 }
 
-function displayedBoard(decide){
+function displayedBoard(toRemove){
     let boardBefore =  printBoard();
     let displayedBoard = []; // board to be displayed to the user
 
-    for(let i = 0; i < gCells.length; i++){
-        displayedBoard.push(boardBefore[i]);
+    for(let i = 0; i <= toRemove; i++){ 
+        displayedBoard.push(''); // pushes the disired amount of blank spaces
     }
 
-    let counter = 0;
-    let interval = getRandomIntInclusive(1, 3);
-    while(decide > 0){
-        interval = getRandomIntInclusive(1, 3);
+    while(displayedBoard.length < 81){
+        displayedBoard.push('-');
+    }
 
-        if(counter >= 81){
-            counter = 0;
+    displayedBoard = shuffle(displayedBoard); // shuffles the boards blank spaces so its random each time
+
+    for(let i = 0; i < gCells.length; i++){
+        if(displayedBoard[i] === '-'){
+            displayedBoard[i] = boardBefore[i]; // adds the numbers to the board for the user
         }
-
-        displayedBoard.splice(counter+=interval, 1, '');
-        decide--;
     }
 
     for(let i = 0; i < gCells.length; i++){
@@ -229,36 +228,36 @@ function displayedBoard(decide){
 }
 
 function howDifficultIsGame(diff){
-    let decide = 0;
+    let toRemove = 0;
     // user difficulty will select different outcome
     switch(diff){
         case 1:
             // very easy, remove 28 pieces
-            decide = 28;
+            toRemove = 28;
             break;
         case 2:
             // easy, remove 37 pieces
-            decide = 37;
+            toRemove = 37;
             break;
         case 3:
             // medium, remove 45 pieces
-            decide = 45;
+            toRemove = 45;
             break;
         case 4:
             // hard, remove 51 pieces
-            decide = 51;
+            toRemove = 51;
             break;
         case 5:
             // very hard, remove 59 pieces
-            decide = 59;
+            toRemove = 59;
             break;
         default:
             // insane, remove 64 pieces
-            decide = 64;
+            toRemove = 64;
             break;
     }
 
-    displayedBoard(decide);
+    displayedBoard(toRemove);
 }
 
 // function to start game
