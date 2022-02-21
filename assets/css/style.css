@@ -211,7 +211,7 @@ nav {
     width: 380px;
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .game-grid-cells {
@@ -240,15 +240,12 @@ nav {
 
 .player-num-choice,
 .player-pen-choice {
+    height: 150px;
     width: 150px;
     display: flex;
     flex-wrap: wrap;
-    position: absolute;
-    top: 385px;
-}
-
-.player-pen-choice {
-    left: 35%;
+    position: relative;
+    top: 30%;
 }
 
 .p-number,
