@@ -190,12 +190,12 @@ nav {
 .welcome-menu ,
 .game {
     width: 600px; /*-------------------------------------------------------Game width */
-    height: 600px;
+    height: 450px;
     background-color: var(--game-bg);
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     border: 10px outset var(--shaded-cells);
     padding: 5px 5px;
     display: flex;
