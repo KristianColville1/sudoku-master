@@ -93,10 +93,13 @@ body {
 }
 
 .numbers {
+    height: 100%;
+    width: 100%;
     color: var(--numbers);
     font-size: 1.5rem;
     border-radius: 50%;
     text-align: center;
+    display: block;
 }
 
 .player {
@@ -282,8 +285,5 @@ nav {
 
 /*----------------------------------------------630px wide */
 @media screen and (max-width: 630px){
-    .welcome-menu,
-    .game {
 
-    }
 }
