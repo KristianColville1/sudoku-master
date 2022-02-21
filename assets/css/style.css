@@ -114,7 +114,7 @@ body {
 /*-------------------------------------------------------Navigational menu */
 
 header {
-    height: 5vh;
+    height: 55px;
     background-color: var(--header-bg);
     border-bottom: 2px solid var(--header-bg)
 }
@@ -161,7 +161,8 @@ nav {
     border: 2px solid var(--dark-mode);
     border-radius: 50%;
     position: absolute;
-    left: 95%;
+    left: 90%;
+    margin: 10px;
 }
 
 .dark-mode-button:hover {
@@ -193,13 +194,14 @@ nav {
     height: 450px;
     background-color: var(--game-bg);
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -40%);
+    transform: translate(-50%, -50%);
     border: 10px outset var(--shaded-cells);
     padding: 5px 5px;
     display: flex;
     flex-wrap: wrap;
+    flex: 1 1 auto;
 }
 
 .welcome-menu {
@@ -211,7 +213,6 @@ nav {
     width: 380px;
     display: flex;
     flex-wrap: wrap;
-    /* position: absolute; */
 }
 
 .game-grid-cells {
@@ -219,9 +220,7 @@ nav {
     height: 38px;
     border: 1px solid var(--game-border);
     border-radius: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    flex: 1 1 auto;
 }
 
 .game-grid-cells:hover {
@@ -259,6 +258,7 @@ nav {
     border: 2px solid var(--game-border);
     border-radius: 50%;
     margin-right: 5px;
+    flex: 1 1 auto;
 }
 
 .p-number:hover,
@@ -280,15 +280,10 @@ nav {
 
 /*-------------------------------------------------------Media Queries */
 
-/*----------------------------------------------1440px wide */
-@media screen and (max-width: 1440px){
-    .player-num-choice,
-    .player-pen-choice {
-        top: 58vh;
+/*----------------------------------------------630px wide */
+@media screen and (max-width: 630px){
+    .welcome-menu,
+    .game {
+
     }
-}
-
-/*----------------------------------------------610px wide */
-@media screen and (max-width: 610px){
-
 }
