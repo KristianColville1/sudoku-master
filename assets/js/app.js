@@ -215,9 +215,10 @@ function playerPosition(position){
         }
     }
     gCells[position].classList.remove('shaded'); 
+    isOnTheBoard();
 }
 
-
+let result = 0;
 // function activates for the players choice
 function playerChoice(position){
     let playerChoiceIndex = position - 1;
@@ -226,11 +227,14 @@ function playerChoice(position){
         pChoice[i].classList.remove('choice-active');
     }
     pChoice[playerChoiceIndex].classList.add('choice-active');
-    isOnTheBoard(result);
+
+    result = position;
 }
 
-function isOnTheBoard(result){
-    alert(isThisDecision);
+function isOnTheBoard(){
+    if(result === 0 || result === 10){
+        result = ' ';
+    }
     gCells[playerIndex[0]].innerHTML = `<span class='numbers'>${result}</span>`;
 }
 
