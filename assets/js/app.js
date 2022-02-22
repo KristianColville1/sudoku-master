@@ -11,11 +11,12 @@ let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 var dontShade = []; // used to track shaded indexs
 const shadedIndexs = []; // current shaded indexs
 
-let playerIndex = []; // players current index
+var playerIndex = []; // players current index
 const lastIndex = []; // players last index
 
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
+let isGameOver = false;
 var isThisDecision = ''; // in playerChoice
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
@@ -122,6 +123,66 @@ function shuffle(array) {
     return array;
   }//function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 
+
+function howDifficultIsGame(diff){
+    let toRemove = 0;
+    // user difficulty will select different outcome
+    switch(diff){
+        case 1:
+            // very easy, remove 28 pieces
+            toRemove = 28;
+            break;
+        case 2:
+            // easy, remove 37 pieces
+            toRemove = 37;
+            break;
+        case 3:
+            // medium, remove 45 pieces
+            toRemove = 45;
+            break;
+        case 4:
+            // hard, remove 51 pieces
+            toRemove = 51;
+            break;
+        case 5:
+            // very hard, remove 59 pieces
+            toRemove = 59;
+            break;
+        default:
+            // insane, remove 64 pieces
+            toRemove = 64;
+            break;
+    }
+
+    displayedBoard(toRemove); // board to display will be called here.
+}
+
+function displayedBoard(toRemove){
+    let boardBefore =  printBoard();
+    let displayedBoard = []; // board to be displayed to the user
+
+    for(let i = 0; i <= toRemove; i++){ 
+        displayedBoard.push(''); // pushes the disired amount of blank spaces
+    }
+
+    while(displayedBoard.length < 81){
+        displayedBoard.push('-');
+    }
+
+    displayedBoard = shuffle(displayedBoard); // shuffles the boards blank spaces so its random each time
+
+    for(let i = 0; i < gCells.length; i++){
+        if(displayedBoard[i] === '-'){
+            displayedBoard[i] = boardBefore[i]; // adds the numbers to the board for the user
+        }
+    }
+
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].innerHTML = `<span class='system-numbers'>${displayedBoard[i]}</span>`;
+    }
+ 
+}
+
 // locate the player class and highlight arrays with class shader
 function playerPosition(position){
 
@@ -156,6 +217,7 @@ function playerPosition(position){
     gCells[position].classList.remove('shaded'); 
 }
 
+
 // function activates for the players choice
 function playerChoice(position){
     let playerChoiceIndex = position - 1;
@@ -164,105 +226,17 @@ function playerChoice(position){
         pChoice[i].classList.remove('choice-active');
     }
     pChoice[playerChoiceIndex].classList.add('choice-active');
-
-    playerChoiceIndex = position;
-    switch(playerChoiceIndex){
-        case 1:
-            isThisDecision = `<span class='numbers'>${1}</span>`;
-            break;
-        case 2:
-            isThisDecision = `<span class='numbers'>${2}</span>`;
-            break;
-        case 3:
-            isThisDecision = `<span class='numbers'>${3}</span>`;
-            break;
-        case 4:
-            isThisDecision = `<span class='numbers'>${4}</span>`;
-            break;
-        case 5:
-            isThisDecision = `<span class='numbers'>${5}</span>`;
-            break;
-        case 6:
-            isThisDecision = `<span class='numbers'>${6}</span>`;
-            break;
-        case 7:
-            isThisDecision = `<span class='numbers'>${7}</span>`;
-            break;
-        case 8:
-            isThisDecision = `<span class='numbers'>${8}</span>`;
-            break;
-        case 9:
-            isThisDecision = `<span class='numbers'>${9}</span>`;
-            break;
-        default:
-            isThisDecision = `<span class='numbers'>${eraser}</span>`;
-            break;
-    }
-    return isThisDecision;
+    isOnTheBoard(result);
 }
 
-function displayedBoard(toRemove){
-    let boardBefore =  printBoard();
-    let displayedBoard = []; // board to be displayed to the user
-
-    for(let i = 0; i <= toRemove; i++){ 
-        displayedBoard.push(''); // pushes the disired amount of blank spaces
-    }
-
-    while(displayedBoard.length < 81){
-        displayedBoard.push('-');
-    }
-
-    displayedBoard = shuffle(displayedBoard); // shuffles the boards blank spaces so its random each time
-
-    for(let i = 0; i < gCells.length; i++){
-        if(displayedBoard[i] === '-'){
-            displayedBoard[i] = boardBefore[i]; // adds the numbers to the board for the user
-        }
-    }
-
-    for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML = `<span class='numbers'>${displayedBoard[i]}</span>`;
-    }
- 
-}
-
-function howDifficultIsGame(diff){
-    let toRemove = 0;
-    // user difficulty will select different outcome
-    switch(diff){
-        case 1:
-            // very easy, remove 28 pieces
-            toRemove = 28;
-            break;
-        case 2:
-            // easy, remove 37 pieces
-            toRemove = 37;
-            break;
-        case 3:
-            // medium, remove 45 pieces
-            toRemove = 45;
-            break;
-        case 4:
-            // hard, remove 51 pieces
-            toRemove = 51;
-            break;
-        case 5:
-            // very hard, remove 59 pieces
-            toRemove = 59;
-            break;
-        default:
-            // insane, remove 64 pieces
-            toRemove = 64;
-            break;
-    }
-
-    displayedBoard(toRemove);
+function isOnTheBoard(result){
+    alert(isThisDecision);
+    gCells[playerIndex[0]].innerHTML = `<span class='numbers'>${result}</span>`;
 }
 
 // function to start game
 function startGame(){
-    displayedBoard(64);
+    displayedBoard(50);
 }
 
 
