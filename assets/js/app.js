@@ -22,6 +22,8 @@ let isPlayerHere = false; // is the player on the board
 let isGameOver = false;
 var isThisDecision = ''; // in playerChoice
 
+let userInput = 0; // this is the users input
+
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
 // horizontal indexs
@@ -221,7 +223,6 @@ function playerPosition(position){
     isOnTheBoard();
 }
 
-let result = 0;
 // function activates for the players choice
 function playerChoice(position){
     let playerChoiceIndex = position - 1;
@@ -231,19 +232,20 @@ function playerChoice(position){
     }
     pChoice[playerChoiceIndex].classList.add('choice-active');
 
-    result = position;
+    userInput = position;
 }
 
 function isOnTheBoard(){
     let content = gCells[playerIndex].textContent;
-    if(result === 0 || result === 10){
-        result = ' ';
+    if(userInput === 0 || userInput === 10){
+        userInput = ' ';
     }
     if(content !== ''){
         // do not add this option if the inner contents contain anything other than a blank space
         // left empty.
     } else{
-        gCells[playerIndex].innerHTML = `<span class='numbers'>${result}</span>`;
+        // this is a different class to highlight users input and contrast from system numbers
+        gCells[playerIndex].innerHTML = `<span class='numbers'>${userInput}</span>`; 
     }
 }
 
