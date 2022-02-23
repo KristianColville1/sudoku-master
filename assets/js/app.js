@@ -14,6 +14,9 @@ const shadedIndexs = []; // current shaded indexs
 var playerIndex = []; // players current index
 const lastIndex = []; // players last index
 
+let boardOnScreen = []; // board to be displayed to the user
+let boardToCompare = []; // board to compare results when game finished
+
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
 let isGameOver = false;
@@ -158,27 +161,27 @@ function howDifficultIsGame(diff){
 }
 
 function displayedBoard(toRemove){
-    let boardBefore =  printBoard();
-    let displayedBoard = []; // board to be displayed to the user
+    let boardBefore =  printBoard(); // The full board of valid numbers
+    boardOnScreen = []; // board to be displayed to the user
 
     for(let i = 0; i <= toRemove; i++){ 
-        displayedBoard.push(''); // pushes the disired amount of blank spaces
+        boardOnScreen.push(''); // pushes the disired amount of blank spaces
     }
 
-    while(displayedBoard.length < 81){
-        displayedBoard.push('-');
+    while(boardOnScreen.length < 81){
+        boardOnScreen.push('-');
     }
 
-    displayedBoard = shuffle(displayedBoard); // shuffles the boards blank spaces so its random each time
+    boardOnScreen = shuffle(boardOnScreen); // shuffles the boards blank spaces so its random each time
 
     for(let i = 0; i < gCells.length; i++){
-        if(displayedBoard[i] === '-'){
-            displayedBoard[i] = boardBefore[i]; // adds the numbers to the board for the user
+        if(boardOnScreen[i] === '-'){
+            boardOnScreen[i] = boardBefore[i]; // adds the numbers to the board for the user
         }
     }
 
     for(let i = 0; i < gCells.length; i++){
-        gCells[i].innerHTML = `<span class='system-numbers'>${displayedBoard[i]}</span>`;
+        gCells[i].innerHTML = `<span class='system-numbers'>${boardOnScreen[i]}</span>`;
     }
  
 }
@@ -232,10 +235,16 @@ function playerChoice(position){
 }
 
 function isOnTheBoard(){
+    let content = gCells[playerIndex].textContent;
     if(result === 0 || result === 10){
         result = ' ';
     }
-    gCells[playerIndex[0]].innerHTML = `<span class='numbers'>${result}</span>`;
+    if(content !== ''){
+        // do not add this option if the inner contents contain anything other than a blank space
+        // left empty.
+    } else{
+        gCells[playerIndex].innerHTML = `<span class='numbers'>${result}</span>`;
+    }
 }
 
 // function to start game
