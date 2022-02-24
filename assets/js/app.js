@@ -167,6 +167,11 @@ function displayedBoard(toRemove){
     let boardBefore =  printBoard(); // The full board of valid numbers
     boardOnScreen = []; // board to be displayed to the user
 
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].classList.remove('system-numbers');
+        gCells[i].classList.remove('numbers');
+    }
+
     for(let i = 0; i <= toRemove; i++){ 
         boardOnScreen.push(''); // pushes the disired amount of blank spaces
     }
