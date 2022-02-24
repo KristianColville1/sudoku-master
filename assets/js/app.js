@@ -22,8 +22,7 @@ let isPlayerHere = false; // is the player on the board
 let isGameOver = false;
 var isThisDecision = ''; // in playerChoice
 
-let userInput = 0; // this is the users input
-let eraser = ' ';
+let userInput = ''; // this is the users input
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
@@ -239,7 +238,7 @@ function playerChoice(position){
     pChoice[playerChoiceIndex].classList.add('choice-active');
     userInput = position;
     if(userInput === 0 || userInput === 10){
-        userInput = eraser;
+        userInput = '';
     }
 }
 
