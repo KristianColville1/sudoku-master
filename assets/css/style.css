@@ -46,11 +46,11 @@
 
 --system-numbers: black;
 --system-numbers-light: black; 
---system-numbers-dark: #00E8FC;
+--system-numbers-dark: #F4F4F9;
 
---numbers: #37392E;
---numbers-light: #37392E;
---numbers-dark:#F4F4F9;
+--numbers: black;
+--numbers-light: black;
+--numbers-dark:#F9CB40;
 
 --choice: #6D76B2;
 --choice-light: #6D76B2;
@@ -85,21 +85,19 @@ body {
     margin-left: 8px;
 }
 
-.system-numbers{
+.system-numbers,
+.numbers {
+    height: 100%;
+    width: 100%;
     color: var(--system-numbers);
     font-size: 1.5rem;
     border-radius: 50%;
     text-align: center;
+    display: block;
 }
 
 .numbers {
-    height: 100%;
-    width: 100%;
-    color: var(--numbers);
-    font-size: 1.5rem;
-    border-radius: 50%;
-    text-align: center;
-    display: block;
+    background-color: var(--main-bg);
 }
 
 .player {
@@ -254,7 +252,7 @@ nav {
 .pencil,
 .eraser {
     text-align: center;
-    color: var(--numbers);
+    color: var(--system-numbers);
     font-size: 1.5rem;
     width: 40px;
     height: 40px;
