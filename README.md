@@ -57,7 +57,7 @@ Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku g
 | Grid only capable of generating 12 random values successfully and it needs 17 to generate a single outcome each time | pushing the values generated vertically and horizontally to empty arrays for use later in conflict checking |
 | Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving in the same manner | Isolating the code in its own for loop solved the problem, the cell was not updating the previous values accordingly as the horizontal and 3x3 filled |
 | Solving the board unsuccessful, values in wrong positions each time | Went with my fourth approach and removed all code and used a solved sudoku board to generate values correctly |
-| Moving on from situations the boards are generating but the current issue is user input to the board, I can successfully seperate user input from the system numbers but once the user puts a number on the board it acts like a system number | 2|
+| Moving on from situations the boards are generating but the current issue is user input to the board, I can successfully seperate user input from the system numbers but once the user puts a number on the board it acts like a system number | I removed the classes from the spans and added them to the divs instead and used classList.Contains to locate them and decide the appropiate outcome so the user could not change the displayed numbers |
 | 1 | 2|
 [Back to the top](#table-of-contents)
 
