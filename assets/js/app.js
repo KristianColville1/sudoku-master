@@ -88,6 +88,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-dark'));
         document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-dark'));
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-dark'));
+        document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-dark'));
         enableDarkMode = true;
     }else if(enableDarkMode === true){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
@@ -101,6 +102,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-light'));
         document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-light'));
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-light'));
+        document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-light'));
         enableDarkMode = false;
     }
 }
@@ -225,7 +227,7 @@ function playerPosition(position){
         }
     }
     gCells[position].classList.remove('shaded'); 
-    isOnTheBoard();
+    isOnTheBoard(); // calls the function to place the users input on the board
 }
 
 // function activates for the players choice
@@ -242,8 +244,8 @@ function playerChoice(position){
     }
 }
 
+// adds the users input to the board based on the cell number and if it contains the numbers class
 function isOnTheBoard(){
-    let content = gCells[playerIndex].textContent;
     if(gCells[playerIndex].classList.contains('numbers')){
         gCells[playerIndex].innerHTML = `<span>${userInput}</span>`;
     }

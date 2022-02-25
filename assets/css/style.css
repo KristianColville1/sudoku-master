@@ -52,6 +52,10 @@
 --numbers-light: black;
 --numbers-dark:#F9CB40;
 
+--num-bg: #BDEED4;
+--num-bg-light: #BDEED4;
+--num-bg-dark: #436D98;
+
 --choice: #6D76B2;
 --choice-light: #6D76B2;
 --choice-dark: #00E8FC;
@@ -97,7 +101,7 @@ body {
 }
 
 .numbers {
-    background-color: var(--main-bg);
+    background-color: var(--num-bg);
 }
 
 .player {
