@@ -89,6 +89,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-dark'));
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-dark'));
         document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-dark'));
+        document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-dark'));
         enableDarkMode = true;
     }else if(enableDarkMode === true){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
@@ -103,6 +104,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-light'));
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-light'));
         document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-light'));
+        document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-light'));
         enableDarkMode = false;
     }
 }
@@ -234,13 +236,27 @@ function playerPosition(position){
 function playerChoice(position){
     let playerChoiceIndex = position - 1;
 
+    // removes the highlighted cells from the last cells
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].classList.remove('num-highlight');
+    }
+
     for(let i = 0; i < pChoice.length; i++){
         pChoice[i].classList.remove('choice-active');
     }
+
     pChoice[playerChoiceIndex].classList.add('choice-active');
+
     userInput = position;
     if(userInput === 0 || userInput === 10){
-        userInput = '';
+        userInput = ' ';
+    }
+
+    // adds the new highlighted cells for the user to see
+    for(let i = 0; i < gCells.length; i++){
+        if(boardOnScreen[i] === userInput){
+            gCells[i].classList.add('num-highlight');
+        }
     }
 }
 

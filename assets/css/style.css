@@ -56,6 +56,10 @@
 --num-bg-light: #BDEED4;
 --num-bg-dark: #436D98;
 
+--num-highlight: #F9CB40;
+--num-highlight-light: #F9CB40;
+--num-highlight-dark: #16db85;
+
 --choice: #6D76B2;
 --choice-light: #6D76B2;
 --choice-dark: #00E8FC;
@@ -104,6 +108,7 @@ body {
     background-color: var(--num-bg);
 }
 
+/*-----------------------------------------Player, shaded cells, position and numbers highlighted */
 .player {
     background-color: var(--player-cell);
 }
@@ -115,6 +120,11 @@ body {
 .choice-active {
     background-color: var(--choice-active);
 }
+
+.num-highlight {
+    background-color: var(--num-highlight);
+}
+
 
 /*-------------------------------------------------------Navigational menu */
 
