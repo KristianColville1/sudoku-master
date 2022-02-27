@@ -95,17 +95,20 @@ body {
 
 .system-numbers,
 .numbers {
+    text-align: center;
     height: 100%;
     width: 100%;
     color: var(--system-numbers);
     font-size: 1.5rem;
-    border-radius: 50%;
-    text-align: center;
-    display: block;
+
 }
 
 .numbers {
     background-color: var(--num-bg);
+}
+
+.center-cell{
+    width: 100%;
 }
 
 /*-----------------------------------------Player, shaded cells, position and numbers highlighted */
@@ -125,6 +128,13 @@ body {
     background-color: var(--num-highlight);
 }
 
+.pencil-mark {
+    width: 12px;
+    height: 12px;
+    text-align: center;
+    font-size: .5rem;
+    color: var(--system-numbers);
+}
 
 /*-------------------------------------------------------Navigational menu */
 
@@ -252,6 +262,8 @@ footer a:hover {
     border: 1px solid var(--game-border);
     border-radius: 5%;
     flex: 1 1 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .game-grid-cells:hover {

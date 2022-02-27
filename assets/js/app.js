@@ -169,14 +169,6 @@ function howDifficultIsGame(diff){
     displayedBoard(toRemove); // board to display will be called here.
 }
 
-function createEmptyInnerArrays(){
-    // creates an empty array and fills it with 81 empty arrays
-    trackPencilMarks = [];
-    for(let i = 0; i < 81; i++){
-        trackPencilMarks.push([]);
-    }
-}
-
 function displayedBoard(toRemove){
     let boardBefore =  printBoard(); // The full board of valid numbers
     boardOnScreen = []; // board to be displayed to the user
@@ -199,10 +191,10 @@ function displayedBoard(toRemove){
     for(let i = 0; i < gCells.length; i++){
         if(boardOnScreen[i] === '-'){
             boardOnScreen[i] = boardBefore[i]; // adds the numbers to the board for the user
-            gCells[i].innerHTML = `<span>${boardOnScreen[i]}</span>`;
+            gCells[i].innerHTML = `<span class='center-cell'>${boardOnScreen[i]}</span>`;
             gCells[i].classList.add('system-numbers');
         } else{
-            gCells[i].innerHTML = `<span>${boardOnScreen[i]}</span>`; // seperates blank spaces for user input only
+            gCells[i].innerHTML = `<span class='center-cell'>${boardOnScreen[i]}</span>`; // seperates blank spaces for user input only
             gCells[i].classList.add('numbers');
         }
     }
@@ -210,8 +202,6 @@ function displayedBoard(toRemove){
 
 // locate the player class and highlight arrays with class shader
 function playerPosition(position){
-
-    highlightThisChoiceOnBoard(); // calls when user picks a cell so the number is highlighted
 
     // resets the board and then adds the players position back each time when called
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
@@ -269,7 +259,7 @@ function playerChoice(position){
         pChoice[playerChoiceIndex].classList.remove('choice-active');
     }
 
-    highlightThisChoiceOnBoard(); // calls when user picks a choice
+    highlightThisChoiceOnBoard(); // calls when user picks a choice 
 }
 
 // adds the users input to the board based on the cell number and if it contains the numbers class
@@ -283,7 +273,17 @@ function isOnTheBoard(){
     }
 }
 
+function createEmptyInnerArrays(){
+    // creates an empty array and fills it with 81 empty arrays to track marks
+    trackPencilMarks = [];
+    for(let i = 0; i < 81; i++){
+        trackPencilMarks.push([]);
+    }
+}
+
+// adds a pencil mark or removes a pencil mark
 function createPencilMark(){
+
     if(trackPencilMarks[playerIndex].includes(userInput)){
         let index = trackPencilMarks[playerIndex].indexOf(userInput);
         trackPencilMarks[playerIndex].splice(index, 1, '');
@@ -291,16 +291,34 @@ function createPencilMark(){
         trackPencilMarks[playerIndex].push(userInput);
     }
 
-    trackPencilMarks[playerIndex].sort();
-
+    let newArray = [];
     for(let i = 0; i < trackPencilMarks[playerIndex].length; i++){
-        let num = trackPencilMarks[playerIndex][i];
-        trackPencilMarks[playerIndex][i] = `<span class='pencil-mark'>${num}</span>`;
+        if(trackPencilMarks[playerIndex][i] !== ''){
+            let num = trackPencilMarks[playerIndex][i];
+            newArray.push(num);
+        }
     }
 
+    trackPencilMarks[playerIndex] = [];
+    for(let i = 0; i < newArray.length; i++){
+        trackPencilMarks[playerIndex].push(newArray[i]);
+    }
 
-    gCells[playerIndex].innerHTML = trackPencilMarks[playerIndex];
+    trackPencilMarks[playerIndex].sort();
+
+    printNewPencilMarks(trackPencilMarks[playerIndex]);
 }
+
+// if called upon takes array and creates a string to make a code block for pencil markings
+function printNewPencilMarks(innerPencilArray){
+    let incrementalString = '';
+    for(let i = 0; i < innerPencilArray.length; i++){
+        incrementalString+=`<span class='pencil-mark'>${innerPencilArray[i]}</span>`;
+    }
+
+    gCells[playerIndex].innerHTML = incrementalString;
+}
+
 
 function highlightThisChoiceOnBoard(){
 
