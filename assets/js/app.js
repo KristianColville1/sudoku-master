@@ -235,21 +235,32 @@ function playerPosition(position){
 // function activates for the players choice
 function playerChoice(position){
     let playerChoiceIndex = position - 1;
-
-    // removes the highlighted cells from the last cells
-    for(let i = 0; i < gCells.length; i++){
-        gCells[i].classList.remove('num-highlight');
-    }
-
     for(let i = 0; i < pChoice.length; i++){
         pChoice[i].classList.remove('choice-active');
     }
 
     pChoice[playerChoiceIndex].classList.add('choice-active');
-
     userInput = position;
     if(userInput === 0 || userInput === 10){
         userInput = ' ';
+    }
+
+    highlightThisChoiceOnBoard();
+}
+
+// adds the users input to the board based on the cell number and if it contains the numbers class
+function isOnTheBoard(){
+    if(gCells[playerIndex].classList.contains('numbers')){
+        gCells[playerIndex].innerHTML = `<span>${userInput}</span>`;
+        boardOnScreen.splice(playerIndex, 1, userInput);
+    }
+}
+
+function highlightThisChoiceOnBoard(){
+
+    // removes the highlighted cells from the last cells
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].classList.remove('num-highlight');
     }
 
     // adds the new highlighted cells for the user to see
@@ -260,19 +271,10 @@ function playerChoice(position){
     }
 }
 
-// adds the users input to the board based on the cell number and if it contains the numbers class
-function isOnTheBoard(){
-    if(gCells[playerIndex].classList.contains('numbers')){
-        gCells[playerIndex].innerHTML = `<span>${userInput}</span>`;
-    }
-}
-
 // function to start game
 function startGame(){
     displayedBoard(50);
 }
-
-
 
 // event listeners for starting game and darkmode
 isGameStarted.addEventListener('click', startGame);
