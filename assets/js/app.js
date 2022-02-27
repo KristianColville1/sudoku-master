@@ -17,7 +17,7 @@ const lastIndex = []; // players last index
 let boardOnScreen = []; // board to be displayed to the user
 let boardToCompare = []; // board to compare results when game finished
 
-let emptyArrayForPencil = []; // creates 81 empty arrays for pencil marking
+let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
 
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
@@ -171,9 +171,9 @@ function howDifficultIsGame(diff){
 
 function createEmptyInnerArrays(){
     // creates an empty array and fills it with 81 empty arrays
-    emptyArrayForPencil = [];
+    trackPencilMarks = [];
     for(let i = 0; i < 81; i++){
-        emptyArrayForPencil.push([]);
+        trackPencilMarks.push([]);
     }
 }
 
@@ -272,8 +272,6 @@ function playerChoice(position){
     highlightThisChoiceOnBoard(); // calls when user picks a choice
 }
 
-
-
 // adds the users input to the board based on the cell number and if it contains the numbers class
 function isOnTheBoard(){
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
@@ -285,7 +283,24 @@ function isOnTheBoard(){
     }
 }
 
+function createPencilMark(){
+    if(trackPencilMarks[playerIndex].includes(userInput)){
+        let index = trackPencilMarks[playerIndex].indexOf(userInput);
+        trackPencilMarks[playerIndex].splice(index, 1, '');
+    } else{
+        trackPencilMarks[playerIndex].push(userInput);
+    }
 
+    trackPencilMarks[playerIndex].sort();
+
+    for(let i = 0; i < trackPencilMarks[playerIndex].length; i++){
+        let num = trackPencilMarks[playerIndex][i];
+        trackPencilMarks[playerIndex][i] = `<span class='pencil-mark'>${num}</span>`;
+    }
+
+
+    gCells[playerIndex].innerHTML = trackPencilMarks[playerIndex];
+}
 
 function highlightThisChoiceOnBoard(){
 
