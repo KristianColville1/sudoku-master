@@ -20,8 +20,9 @@ let boardToCompare = []; // board to compare results when game finished
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
 let isGameOver = false;
-var isThisDecision = ''; // in playerChoice
+let pencilActive = false; // boolean for turning pencil on and off.
 
+var isThisDecision = ''; // in playerChoice
 let userInput = ''; // this is the users input
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
@@ -200,6 +201,8 @@ function displayedBoard(toRemove){
 // locate the player class and highlight arrays with class shader
 function playerPosition(position){
 
+    highlightThisChoiceOnBoard(); // calls when user picks a cell so the number is highlighted
+
     // resets the board and then adds the players position back each time when called
     lastIndex.forEach(index => gCells[index].classList.remove('player'));
     shadedIndexs.forEach(index => gCells[index].classList.remove('shaded'));
@@ -232,6 +235,7 @@ function playerPosition(position){
     isOnTheBoard(); // calls the function to place the users input on the board
 }
 
+
 // function activates for the players choice
 function playerChoice(position){
     let playerChoiceIndex = position - 1;
@@ -245,7 +249,16 @@ function playerChoice(position){
         userInput = ' ';
     }
 
-    highlightThisChoiceOnBoard();
+    if(userInput === 11 && pencilActive === false){
+        pencilActive = true;
+        // when pencil active do this
+    } else if(userInput === 11 && pencilActive === true){
+        pencilActive = false;
+        pChoice[playerChoiceIndex].classList.remove('choice-active');
+        // when pencil clicked again turn off pencil active
+    }
+
+    highlightThisChoiceOnBoard(); // calls when user picks a choice
 }
 
 // adds the users input to the board based on the cell number and if it contains the numbers class
@@ -263,9 +276,9 @@ function highlightThisChoiceOnBoard(){
         gCells[i].classList.remove('num-highlight');
     }
 
-    // adds the new highlighted cells for the user to see
+    // adds the new highlighted cells for the user to see and if eraser do not highlight
     for(let i = 0; i < gCells.length; i++){
-        if(boardOnScreen[i] === userInput){
+        if(boardOnScreen[i] === userInput && userInput !== ' '){
             gCells[i].classList.add('num-highlight');
         }
     }
