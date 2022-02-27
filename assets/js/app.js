@@ -17,6 +17,8 @@ const lastIndex = []; // players last index
 let boardOnScreen = []; // board to be displayed to the user
 let boardToCompare = []; // board to compare results when game finished
 
+let emptyArrayForPencil = []; // creates 81 empty arrays for pencil marking
+
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let isPlayerHere = false; // is the player on the board
 let isGameOver = false;
@@ -167,6 +169,14 @@ function howDifficultIsGame(diff){
     displayedBoard(toRemove); // board to display will be called here.
 }
 
+function createEmptyInnerArrays(){
+    // creates an empty array and fills it with 81 empty arrays
+    emptyArrayForPencil = [];
+    for(let i = 0; i < 81; i++){
+        emptyArrayForPencil.push([]);
+    }
+}
+
 function displayedBoard(toRemove){
     let boardBefore =  printBoard(); // The full board of valid numbers
     boardOnScreen = []; // board to be displayed to the user
@@ -239,7 +249,9 @@ function playerPosition(position){
 // function activates for the players choice
 function playerChoice(position){
     let playerChoiceIndex = position - 1;
-    for(let i = 0; i < pChoice.length; i++){
+
+    // removes the choice if its not a pencil choice
+    for(let i = 0; i < 10; i++){
         pChoice[i].classList.remove('choice-active');
     }
 
@@ -249,33 +261,35 @@ function playerChoice(position){
         userInput = ' ';
     }
 
+    // decides what to do if pencil is Active
     if(userInput === 11 && pencilActive === false){
         pencilActive = true;
-        // when pencil active do this
     } else if(userInput === 11 && pencilActive === true){
         pencilActive = false;
         pChoice[playerChoiceIndex].classList.remove('choice-active');
-        // when pencil clicked again turn off pencil active
     }
 
     highlightThisChoiceOnBoard(); // calls when user picks a choice
 }
 
+
+
 // adds the users input to the board based on the cell number and if it contains the numbers class
 function isOnTheBoard(){
-    if(gCells[playerIndex].classList.contains('numbers')){
+    if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
         gCells[playerIndex].innerHTML = `<span>${userInput}</span>`;
         boardOnScreen.splice(playerIndex, 1, userInput);
     }
+    if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
+        createPencilMark();
+    }
 }
+
+
 
 function highlightThisChoiceOnBoard(){
 
-    // removes the highlighted cells from the last cells
-    for(let i = 0; i < gCells.length; i++){
-        gCells[i].classList.remove('num-highlight');
-    }
-
+    removeHighlighted();
     // adds the new highlighted cells for the user to see and if eraser do not highlight
     for(let i = 0; i < gCells.length; i++){
         if(boardOnScreen[i] === userInput && userInput !== ' '){
@@ -284,11 +298,20 @@ function highlightThisChoiceOnBoard(){
     }
 }
 
+function removeHighlighted(){
+    // removes the highlighted cells from the last cells
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].classList.remove('num-highlight');
+    }
+}
+
 // function to start game
-function startGame(){
-    displayedBoard(50);
+function newGame(){
+    removeHighlighted();
+    createEmptyInnerArrays();
+    displayedBoard(45);
 }
 
 // event listeners for starting game and darkmode
-isGameStarted.addEventListener('click', startGame);
+isGameStarted.addEventListener('click', newGame);
 isDarkMode.addEventListener('click', darkMode);
