@@ -339,13 +339,17 @@ h1 {
     cursor: pointer;
 }
 
-.start-game {
+.next {
     height: 35px;
-    width: 70px;
-    color: red;
+    width: 100px;
+    color: var(--logo);
+    background-color: var(--main-bg);
     font-weight: 600;
     position: absolute;
-    left: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }
 
 .player-num-choice,

@@ -3,7 +3,7 @@ let mainGrid = document.getElementById('grid');
 const gCells = document.getElementsByClassName('game-grid-cells');
 let pChoice = document.getElementsByClassName('choice');
 
-const isGameStarted = document.querySelector('.start-game');
+const isGameStarted = document.querySelector('.next');
 const isDarkMode = document.querySelector('.dark-mode-button');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];

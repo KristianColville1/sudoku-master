@@ -34,19 +34,8 @@
         <div class="game">
             <div class="game-menu layer-two">
                 <h1>Welcome to Sudoku Master!</h1>
-                <div class="login-options">
-                    <button type="button" id="guest" class="guest"><i class="fas fa-sign-in"></i>Guest login</button>
-                    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                    <div class="data">
-                        <p>Name</p>
-                        <p id="name"></p>
-                        <img id="image" class="rounded-circle">
-                        <p>Email</p>
-                        <p id="email"></p>
-                        <button class="btn" onclick="signOut();">Sign Out</button>
-                    </div>
-                    <button type="button" id="start-game" class="start-game hidden">Start</button>
-                </div>
+
+                <button type="button" id="start-game" class="next">next</button>
             </div>
             <div id="grid">
                 <!-- game numbers 81 -->
@@ -152,7 +141,7 @@
     <!--top of footer-->
     <footer>
         <ul id="footer-list">
-            <li>&copy;Kristian Colville</a></li>
+            <li>&copy; Created by Kristian C.</a></li>
             <li><a href="contact.html"><i class="far fa-envelope"></i></a></li>
             <li><a href="https://github.com/KristianColville1" target="_blank"><i class="fab fa-github"></i></a></li>
             <li><a href="https://www.linkedin.com/in/kristian-colville-711727133/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
@@ -163,12 +152,7 @@
     <!-- font awesome icons script-->
     <script src="https://kit.fontawesome.com/0d880835d2.js" crossorigin="anonymous"></script>
     <!-- game/page scripts-->
-    <script src="index.js"></script>
     <script src="assets/js/app.js" type="text/javascript"></script>
     <script src="assets/js/sudoku-board.js" type="text/javascript"></script>
-    <!--log in scripts-->
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <!--jQuery hosted by google-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>
