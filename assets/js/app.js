@@ -93,6 +93,8 @@ function darkMode(){
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-dark'));
         document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-dark'));
         document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-dark'));
+        document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-dark'));
+        document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-dark'));
         enableDarkMode = true;
     }else if(enableDarkMode === true){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
@@ -108,6 +110,8 @@ function darkMode(){
         document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-light'));
         document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-light'));
         document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-light'));
+        document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-light'));
+        document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-light'));
         enableDarkMode = false;
     }
 }
