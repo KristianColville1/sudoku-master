@@ -277,6 +277,10 @@ h1 {
 
 /*-------------------------------------------------------Sign in options */
 
+.data {
+    display: none;
+}
+
 .login-options {
     width: 50%;
     height: 50%;
