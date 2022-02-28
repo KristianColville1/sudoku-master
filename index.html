@@ -37,6 +37,14 @@
                 <div class="login-options">
                     <button type="button" id="guest" class="guest"><i class="fas fa-sign-in"></i>Guest login</button>
                     <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <div class="data hidden">
+                        <p>Name</p>
+                        <p id="alert alert-success"></p>
+                        <img id="image" class="rounded-circle">
+                        <p>Email</p>
+                        <p id="email"></p>
+                        <button class="btn" onclick="signOut();">Sign Out</button>
+                    </div>
                     <button type="button" id="start-game" class="start-game hidden">Start</button>
                 </div>
             </div>
