@@ -233,6 +233,7 @@ function playerPosition(position){
     }
     gCells[position].classList.remove('shaded'); 
     isOnTheBoard(); // calls the function to place the users input on the board
+    highlightThisChoiceOnBoard(); // calls when user picks a choice 
 }
 
 
@@ -259,13 +260,17 @@ function playerChoice(position){
         pChoice[playerChoiceIndex].classList.remove('choice-active');
     }
 
-    highlightThisChoiceOnBoard(); // calls when user picks a choice 
+    if(userInput === 11){ // after users input turns on pencilActive reset here, dont want 11
+        userInput = '  '; // two blanks for pencil
+    }
+
+    highlightThisChoiceOnBoard(); // calls when user picks a choice
 }
 
 // adds the users input to the board based on the cell number and if it contains the numbers class
 function isOnTheBoard(){
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
-        gCells[playerIndex].innerHTML = `<span>${userInput}</span>`;
+        gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
         boardOnScreen.splice(playerIndex, 1, userInput);
     }
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
@@ -323,9 +328,9 @@ function printNewPencilMarks(innerPencilArray){
 function highlightThisChoiceOnBoard(){
 
     removeHighlighted();
-    // adds the new highlighted cells for the user to see and if eraser do not highlight
+    // adds the new highlighted cells for the user to see and if eraser do not highlight or same again except pencil
     for(let i = 0; i < gCells.length; i++){
-        if(boardOnScreen[i] === userInput && userInput !== ' '){
+        if(boardOnScreen[i] === userInput && userInput !== ' ' || boardOnScreen[i] === userInput && userInput !== '  '){
             gCells[i].classList.add('num-highlight');
         }
     }
