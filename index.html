@@ -33,14 +33,26 @@
     <main>
         <div class="game">
             <div class="game-menu layer-two">
-                <h1>Welcome to Sudoku Master!</h1>
-                <form id="user-name">
+                <h1 class="welcome-menu">Welcome to Sudoku Master!</h1>
+                <form id="user-name" class="welcome-menu" onsubmit="getUserName()" action="">
                     <label for="name">Enter Your Name</label>
                     <br>
                     <input type="text" id="name" class="name" maxLength="18" required>
                     <br>
-                    <input type="submit" id="next" class="next" value="Next">
+                    <button type="button" id="next" class="next">Next</button>
                 </form>
+                <div id="diff-menu">
+                    <h2>Choose difficulty</h2>
+                    <p class="move-left arrow-icon"><i class="fas fa-angle-left"></i></p>
+                    <div class="diff-choice">Easy</div>
+                    <div class="diff-choice">Very Easy</div>
+                    <div class="diff-choice">Medium</div>
+                    <div class="diff-choice">Hard</div>
+                    <div class="diff-choice">Very Hard</div>
+                    <div class="diff-choice">Insane</div>
+                    <p class="move-right arrow-icon"><i class="fas fa-angle-right"></i></p>
+                    <button type="button" id="next" class="next">Next</button>
+                </div>
             </div>
             <div id="grid">
                 <!-- game numbers 81 -->
