@@ -3,6 +3,7 @@ let mainGrid = document.getElementById('grid');
 const gCells = document.getElementsByClassName('game-grid-cells');
 let pChoice = document.getElementsByClassName('choice');
 
+const firstMenu = document.getElementsByClassName('menu-part-one');
 const hasEnteredName = document.getElementById('next');
 const isDarkMode = document.querySelector('.dark-mode-button');
 
@@ -357,14 +358,27 @@ function getUserName(){
 
     userName = name.value; // assign the users name to this variable
 
-    // call a function to display the next screen
-    pullMenuOne();
+    if(name.value.length > 3){
+        pullUpDiffMenu();
+    } else{
+        alert('Enter a name at least 3 characters long to continue');
+    }
+        // call a function to display the next screen
+    return false;
 }
 
-// function to start game
-function pullMenuOne(){
+function pullUpDiffMenu(){
+    for(let i = 0; i < firstMenu.length; i++){
+        firstMenu[i].classList.add('hidden');
+    }
+    checkUserDiff();
+}
+
+
+function checkUserDiff(){
 
 }
+
 
 // function to start game
 function pullMenuTwo(){
@@ -372,8 +386,6 @@ function pullMenuTwo(){
     createEmptyInnerArrays();
     displayedBoard(45);
 }
-
-
 
 
 // event listeners for starting game and darkmode

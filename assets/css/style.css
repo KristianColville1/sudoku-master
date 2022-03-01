@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Space+Mono&display=swap'); /*-----Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Raleway:ital,wght@0,500;1,300&display=swap'); /*-----Google fonts */
 
 /*-------------------------------------------------------Defaults */
 
@@ -87,9 +87,13 @@ body {
     margin: 0;
     border: 0;
     padding: 0;
-    font-family: 'Alfa Slab One', cursive;
+    font-family:'Raleway', sans-serif;
     overflow-x: hidden;
     background-color: var(--main-bg);
+}
+
+h1, h2, h3, button {
+    font-family: 'Lato', sans-serif;
 }
 
 /*-------------------------------------------------------Added with JavaScript */
@@ -192,7 +196,7 @@ nav {
     color: var(--logo);
     display: flex;
     flex-wrap: wrap;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Raleway', sans-serif;
     justify-content: space-between;
 }
 
@@ -201,7 +205,7 @@ nav {
     padding: 0;
     font-size: 1.8rem;
     letter-spacing: 2px;
-    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Lato', sans-serif;
     position: absolute;
     margin: 5px 20px;
 }
@@ -258,7 +262,6 @@ footer a:hover {
 
 /*-------------------------------------------------------Game board */
 .game,
-.game-menu,
 .menu {
     width: 600px; /*-------------------------------------------------------Game width */
     height: 450px;
@@ -272,103 +275,39 @@ footer a:hover {
     display: flex;
     flex-wrap: wrap;
     flex: 1 1 auto;
-}
-
-h1 {
-    width: 100%;
-    text-align: center;
-    font-weight: 300;
-    color: var(--menu);
-}
-
-/*-------------------------------------------------------User name */
-#user-name {
-    width: 50%;
-    height: 60%;
-    font-size: 1.5rem;
-    font-family: 'Alfa Slab One', cursive;
-    color: var(--menu-text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--menu);
-    border: 3px solid var(--player-cell);
-
-    display: flex;
-    flex-wrap: wrap;
     align-content: center;
     justify-content: center;
 }
 
-#user-name input {
-    font-size: 1.2rem;
-    font-weight: 300;
-    font-family: 'Alfa Slab One', cursive;
-    height: 32px;
-    width: 200px;
-    margin-bottom: 15px;
+h1.welcome-menu {
+    color: var(--menu);
+    font-size: 2.5rem;
+    font-style: italic;
+}
+
+form {
+    font-size: 2rem;
+    color: var(--menu-text);
+    width: 50%;
+    padding: 25px;
+    background-color: var(--menu);
+    border: 2px solid var(--menu-text);
+}
+
+input {
+    height: 35px;
+    width: 60%;
+    font-size: 1.5rem;
+    margin: 5px;
 }
 
 .next {
-    height: 35px;
-    width: 100px;
+    width: 70px;
+    font-size: 1.5rem;
     color: var(--menu-text);
     background-color: var(--menu);
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#diff-menu {
-    width: 320px;
-    height: 320px;
-    font-family: 'Space Mono', monospace;
-    font-size: 1rem;
-    color: var(--menu-text);
-    letter-spacing: 2px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--menu);
-    border: 3px solid var(--player-cell);
-
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-}
-
-#diff-menu h2 {
-    position: absolute;
-    top: 0;
-}
-
-.diff-choice {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#diff-menu button {
-    position: absolute;
-    bottom: 20%;
-}
-
-.arrow-icon {
-    font-size: 3rem;
-    position: absolute;
-    top: 25%;
-    cursor: pointer;
-}
-
-.move-left {
-    left: 15%;
-}
-
-.move-right {
-    right: 15%;
+    margin-top: 10px;
+    float: right;
 }
 
 #grid {
@@ -423,16 +362,6 @@ h1 {
 .eraser:hover {
     background-color: var(--choice);
     cursor: pointer;
-}
-
-/*-------------------------------------------------------Welcome menu */
-
-.welcome-menu h1 {
-    color: var(--choice);
-    font-size: 3rem;
-    letter-spacing: 3px;
-    text-align: center;
-    font-weight: 700;
 }
 
 /*-------------------------------------------------------Media Queries */

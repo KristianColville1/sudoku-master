@@ -32,29 +32,15 @@
     <!-- top of main -->
     <main>
         <div class="game">
-            <div class="game-menu layer-two">
-                <h1 class="welcome-menu">Welcome to Sudoku Master!</h1>
-                <form id="user-name" class="welcome-menu" onsubmit="getUserName()" action="">
-                    <label for="name">Enter Your Name</label>
-                    <br>
-                    <input type="text" id="name" class="name" maxLength="18" required>
-                    <br>
-                    <button type="button" id="next" class="next">Next</button>
-                </form>
-                <div id="diff-menu">
-                    <h2>Choose difficulty</h2>
-                    <p class="move-left arrow-icon"><i class="fas fa-angle-left"></i></p>
-                    <div class="diff-choice">Easy</div>
-                    <div class="diff-choice">Very Easy</div>
-                    <div class="diff-choice">Medium</div>
-                    <div class="diff-choice">Hard</div>
-                    <div class="diff-choice">Very Hard</div>
-                    <div class="diff-choice">Insane</div>
-                    <p class="move-right arrow-icon"><i class="fas fa-angle-right"></i></p>
-                    <button type="button" id="next" class="next">Next</button>
-                </div>
-            </div>
-            <div id="grid">
+            <h1 class="menu-part-one welcome-menu">Welcome to Sudoku Master!</h1>
+            <form onsubmit="getUserName()" class="menu-part-one">
+                <label for="name">Enter Your Name</label>
+                <br>
+                <input type="text" id="name" class="name" maxLength="18" required>
+                <br>
+                <button type="button" id="next" class="next">Next</button>
+            </form>
+            <div id="grid" class="hidden">
                 <!-- game numbers 81 -->
                 <div class="game-grid-cells" onclick="playerPosition('0')"></div>
                 <div class="game-grid-cells" onclick="playerPosition('1')"></div>
@@ -138,7 +124,7 @@
                 <div class="game-grid-cells" onclick="playerPosition('79')"></div>
                 <div class="game-grid-cells" onclick="playerPosition('80')"></div>
             </div>
-            <div class="player-num-choice">
+            <div class="player-num-choice hidden">
                 <div class="choice p-number" onclick="playerChoice(1)">1</div>
                 <div class="choice p-number" onclick="playerChoice(2)">2</div>
                 <div class="choice p-number" onclick="playerChoice(3)">3</div>
