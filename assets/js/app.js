@@ -3,7 +3,7 @@ let mainGrid = document.getElementById('grid');
 const gCells = document.getElementsByClassName('game-grid-cells');
 let pChoice = document.getElementsByClassName('choice');
 
-const isGameStarted = document.querySelector('.next');
+const hasEnteredName = document.getElementById('next');
 const isDarkMode = document.querySelector('.dark-mode-button');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -26,6 +26,8 @@ let pencilActive = false; // boolean for turning pencil on and off.
 
 var isThisDecision = ''; // in playerChoice
 let userInput = ''; // this is the users input
+
+let userName = ''; // empty string for the users name
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
@@ -95,6 +97,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-dark'));
         document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-dark'));
         document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-dark'));
+        document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-dark'));
         enableDarkMode = true;
     }else if(enableDarkMode === true){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
@@ -112,6 +115,7 @@ function darkMode(){
         document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-light'));
         document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-light'));
         document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-light'));
+        document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-light'));
         enableDarkMode = false;
     }
 }
@@ -348,12 +352,30 @@ function removeHighlighted(){
 }
 
 // function to start game
-function newGame(){
+function getUserName(){
+    let name = document.getElementById('name');
+
+    userName = name.value; // assign the users name to this variable
+
+    // call a function to display the next screen
+    pullMenuOne();
+}
+
+// function to start game
+function pullMenuOne(){
+
+}
+
+// function to start game
+function pullMenuTwo(){
     removeHighlighted();
     createEmptyInnerArrays();
     displayedBoard(45);
 }
 
+
+
+
 // event listeners for starting game and darkmode
-isGameStarted.addEventListener('click', newGame);
+hasEnteredName.addEventListener('click', getUserName);
 isDarkMode.addEventListener('click', darkMode);

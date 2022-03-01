@@ -34,8 +34,13 @@
         <div class="game">
             <div class="game-menu layer-two">
                 <h1>Welcome to Sudoku Master!</h1>
-
-                <button type="button" id="start-game" class="next">next</button>
+                <form id="user-name">
+                    <label for="name">Enter Your Name</label>
+                    <br>
+                    <input type="text" id="name" class="name" maxLength="18" required>
+                    <br>
+                    <input type="submit" id="next" class="next" value="Next">
+                </form>
             </div>
             <div id="grid">
                 <!-- game numbers 81 -->
