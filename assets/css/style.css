@@ -95,7 +95,7 @@ body {
 /*-------------------------------------------------------Added with JavaScript */
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .margin-top {
@@ -302,7 +302,7 @@ h1 {
 }
 
 #user-name input {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
     font-family: 'Alfa Slab One', cursive;
     height: 32px;
@@ -317,6 +317,58 @@ h1 {
     background-color: var(--menu);
     font-weight: 600;
     cursor: pointer;
+}
+
+#diff-menu {
+    width: 320px;
+    height: 320px;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    color: var(--menu-text);
+    letter-spacing: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--menu);
+    border: 3px solid var(--player-cell);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+#diff-menu h2 {
+    position: absolute;
+    top: 0;
+}
+
+.diff-choice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#diff-menu button {
+    position: absolute;
+    bottom: 20%;
+}
+
+.arrow-icon {
+    font-size: 3rem;
+    position: absolute;
+    top: 25%;
+    cursor: pointer;
+}
+
+.move-left {
+    left: 15%;
+}
+
+.move-right {
+    right: 15%;
 }
 
 #grid {
