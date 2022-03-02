@@ -201,33 +201,52 @@ ul {
 }
 
 .dark-mode-button {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     display: flex;
     flex-wrap: wrap;
     background-color: var(--dark-mode-dark);
     border: 2px solid var(--dark-mode);
     border-radius: 50%;
     position: absolute;
-    left: 90%;
+    left: 83%;
     margin: 10px;
 }
 
+.help-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: var(--log-in);
+    background-color: var(--game-border);
+    position: absolute;
+    left: 90%;
+    margin: 10px;
+    cursor: pointer;
+}
+
 .dark-mode-button:hover {
-    background-color: var(--log-in);
-    border-color: var(--dark-mode-dark);
     cursor: pointer;
 }
 
 .dark-mode-button:hover .fa-moon,
 .dark-mode-button:hover .fa-sun {
-    color: var(--dark-mode-dark);
+    color: var(--dark-mode);
 }
+
 
 .fa-moon,
 .fa-sun {
     color: var(--dark-mode);
-    font-size: 1rem;
+    font-size: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fa-question-circle {
+    font-size: 2.2rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -242,7 +261,7 @@ footer {
     font-size: 1rem;
     display: flex;
     flex-wrap: wrap;
-    align-content: space-between;
+    align-content: center;
     justify-content: center;
     position: absolute;
     bottom: 0;
@@ -254,6 +273,8 @@ footer a:hover {
 
 #footer-list {
     width: 650px;
+    position: relative;
+    bottom: 0;
 }
 
 .float-left {
