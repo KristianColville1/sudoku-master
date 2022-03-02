@@ -13,25 +13,13 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <header>
-        <!-- top of nav -->
-        <nav>
-            <div class="nav-left">
-                <a class="logo" href="#">Sudoku Master</a>
-            </div>
-            <div class="nav-right">
-                <button class="dark-mode-button" id="dark-mode-button" type="button" aria-label="Clicking this button will change the contrast of the website to darker colors">
-                    <i class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-sun hidden"></i>
-                </button>
-            </div>
-        </nav>
-        <!-- end of nav -->
-    </header>
-
     <!-- top of main -->
     <main>
         <div class="game">
+            <button class="dark-mode-button" id="dark-mode-button" type="button" aria-label="Clicking this button will change the contrast of the website to darker colors">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-sun hidden"></i>
+            </button>
             <h1 class="menu-part-one welcome-menu">Welcome to Sudoku Master!</h1>
             <form onsubmit="getUserName()" class="menu-part-one">
                 <label for="name">Enter Your Name</label>
@@ -54,6 +42,8 @@
                 <button type="button" id="start-game" class="start-game" onclick="startGame()">Start Game</button>
                 <i class="far fa-arrow-alt-circle-right" onclick="nextDifficulty('right')"></i>
             </div>
+            <i class="far fa-user-circle hidden"></i>
+            <i class="far fa-clock hidden"></i>
             <div id="grid" class="hidden">
                 <!-- game numbers 81 -->
                 <div class="game-grid-cells" onclick="playerPosition('0')"></div>
