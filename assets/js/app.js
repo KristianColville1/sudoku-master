@@ -342,7 +342,7 @@ function highlightThisChoiceOnBoard(){
 
     } else{
         for(let i = 0; i < gCells.length; i++){
-            if(boardOnScreen[i] === userInput){
+            if(boardOnScreen[i] === userInput || trackPencilMarks[i].includes(userInput)){
                 gCells[i].classList.add('num-highlight');
             }
         }
