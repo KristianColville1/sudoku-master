@@ -338,11 +338,16 @@ function highlightThisChoiceOnBoard(){
 
     removeHighlighted();
     // adds the new highlighted cells for the user to see and if eraser do not highlight or same again except pencil
-    for(let i = 0; i < gCells.length; i++){
-        if(boardOnScreen[i] === userInput && userInput !== ' ' || boardOnScreen[i] === userInput && userInput !== '  '){
-            gCells[i].classList.add('num-highlight');
+    if(userInput === ' ' || userInput === '  ' || userInput === ''){
+
+    } else{
+        for(let i = 0; i < gCells.length; i++){
+            if(boardOnScreen[i] === userInput){
+                gCells[i].classList.add('num-highlight');
+            }
         }
     }
+
 }
 
 function removeHighlighted(){
