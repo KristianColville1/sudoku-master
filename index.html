@@ -41,16 +41,18 @@
                 <button type="button" id="next" class="next">Next</button>
             </form>
             <div class="diff-menu menu-part-two hidden">
-                <i></i>
+                <i class="far fa-arrow-alt-circle-left" onclick="nextDifficulty('left')"></i>
+                <h2 class="diff-heading">Choose a Difficulty</h2>
                 <ul>
                     <li class="diff-options">Very Easy</li>
-                    <li class="diff-options">Easy</li>
-                    <li class="diff-options">Medium</li>
-                    <li class="diff-options">Hard</li>
-                    <li class="diff-options">Very Hard</li>
-                    <li class="diff-options">Insane</li>
+                    <li class="diff-options hidden">Easy</li>
+                    <li class="diff-options hidden">Medium</li>
+                    <li class="diff-options hidden">Hard</li>
+                    <li class="diff-options hidden">Very Hard</li>
+                    <li class="diff-options hidden">Insane</li>
                 </ul>
-                <i></i>
+                <button type="button" id="start-game" class="start-game">Start Game</button>
+                <i class="far fa-arrow-alt-circle-right" onclick="nextDifficulty('right')"></i>
             </div>
             <div id="grid" class="hidden">
                 <!-- game numbers 81 -->

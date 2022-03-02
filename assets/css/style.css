@@ -262,6 +262,7 @@ footer a:hover {
 
 /*-------------------------------------------------------Game board */
 .game,
+.diff-menu,
 .menu {
     width: 600px; /*-------------------------------------------------------Game width */
     height: 450px;
@@ -279,6 +280,7 @@ footer a:hover {
     justify-content: center;
 }
 
+/*-------------------------------------------------------first menu */
 h1.welcome-menu {
     color: var(--menu);
     font-size: 2.5rem;
@@ -299,6 +301,13 @@ input {
     width: 60%;
     font-size: 1.5rem;
     margin: 5px;
+    border: 2px inset var(--log-in);
+    background-color: var(--logo);
+    cursor: pointer;
+}
+
+input:hover {
+    background-color: var(--log-in);
 }
 
 .next {
@@ -308,8 +317,62 @@ input {
     background-color: var(--menu);
     margin-top: 10px;
     float: right;
+    cursor: pointer;
 }
 
+/*-----------------------------------------------------difficulty menu */
+
+.diff-menu {
+    font-size: 2.5rem;
+    background-color: var(--menu);
+    color: var(--shaded-cells);
+}
+
+
+.diff-options,
+.fa-arrow-alt-circle-left,
+.fa-arrow-alt-circle-right {
+    position: absolute;
+}
+
+.diff-options {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.fa-arrow-alt-circle-left,
+.fa-arrow-alt-circle-right {
+    top: 50%;
+    cursor: pointer;
+}
+
+.fa-arrow-alt-circle-left:active,
+.fa-arrow-alt-circle-right:active {
+    font-size: 3rem;
+}
+
+.fa-arrow-alt-circle-left{
+    left: 25%;
+}
+
+.fa-arrow-alt-circle-right{
+    right: 25%;
+}
+
+.diff-heading {
+    position: absolute;
+    top: 0;
+}
+.start-game {
+    position: absolute;
+    top: 60%;
+    cursor: pointer;
+    background-color: var(--menu-text);
+    color: var(--menu);
+}
+
+/*------------------------------------------------------ game grid */
 #grid {
     height: 370px;
     width: 380px;

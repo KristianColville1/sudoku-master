@@ -6,6 +6,7 @@ let pChoice = document.getElementsByClassName('choice');
 const firstMenu = document.getElementsByClassName('menu-part-one');
 const hasEnteredName = document.getElementById('next');
 const isDarkMode = document.querySelector('.dark-mode-button');
+const setting = document.getElementsByClassName('diff-options');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -77,9 +78,6 @@ vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
 hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
-function lightOn(){
-    
-}
 // darkmode function 
 function darkMode(){
     if(enableDarkMode === false){
@@ -358,10 +356,10 @@ function getUserName(){
 
     userName = name.value; // assign the users name to this variable
 
-    if(name.value.length > 3){
+    if(name.value.length > 1){
         pullUpDiffMenu();
     } else{
-        alert('Enter a name at least 3 characters long to continue');
+        alert('Entered name must be at least 2 characters');
     }
         // call a function to display the next screen
     return false;
@@ -376,18 +374,58 @@ function pullUpDiffMenu(){
 
 
 function checkUserDiff(){
+    pullNextMenu();
 
 }
 
+function nextDifficulty(direction){
+    let index = 0;
+    if(direction === 'left'){
+        for(let i = 0; i < setting.length; i++){
+            if(!setting[i].classList.contains('hidden')){
+                setting[i].classList.add('hidden');
+
+                if(i < 1){
+                    index = setting.length - 1;
+                    setting[index].classList.remove('hidden');
+                } else{
+                    setting[i - 1].classList.remove('hidden');
+                }
+                break;
+            }
+        }
+    }
+    
+    if(direction === 'right'){
+        for(let i = 0; i < setting.length; i++){
+            if(!setting[i].classList.contains('hidden')){
+                setting[i].classList.add('hidden');
+
+                if(i < setting.length - 1){
+                    setting[i + 1].classList.remove('hidden');
+
+                } else{
+                    index = 0;
+                    setting[index].classList.remove('hidden');
+                }
+                break;
+            }
+        }
+    }
+}
+
+function pullNextMenu(){
+
+}
 
 // function to start game
-function pullMenuTwo(){
+function pullMenuThree(){
     removeHighlighted();
     createEmptyInnerArrays();
     displayedBoard(45);
 }
 
-
 // event listeners for starting game and darkmode
 hasEnteredName.addEventListener('click', getUserName);
 isDarkMode.addEventListener('click', darkMode);
+
