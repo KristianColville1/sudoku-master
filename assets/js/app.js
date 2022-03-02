@@ -1,9 +1,11 @@
 // global variables
 let mainGrid = document.getElementById('grid');
+const numPad = document.getElementsByClassName('player-num-choice');
 const gCells = document.getElementsByClassName('game-grid-cells');
 let pChoice = document.getElementsByClassName('choice');
 
 const firstMenu = document.getElementsByClassName('menu-part-one');
+const secondMenu = document.getElementsByClassName('menu-part-two');
 const hasEnteredName = document.getElementById('next');
 const isDarkMode = document.querySelector('.dark-mode-button');
 const setting = document.getElementsByClassName('diff-options');
@@ -156,20 +158,20 @@ function howDifficultIsGame(diff){
             toRemove = 37;
             break;
         case 3:
-            // medium, remove 45 pieces
-            toRemove = 45;
+            // medium, remove 42 pieces
+            toRemove = 42;
             break;
         case 4:
-            // hard, remove 51 pieces
-            toRemove = 51;
+            // hard, remove 48 pieces
+            toRemove = 48;
             break;
         case 5:
-            // very hard, remove 59 pieces
-            toRemove = 59;
+            // very hard, remove 50 pieces
+            toRemove = 50;
             break;
         default:
-            // insane, remove 64 pieces
-            toRemove = 64;
+            // insane, remove 55 pieces
+            toRemove = 55;
             break;
     }
 
@@ -369,13 +371,7 @@ function pullUpDiffMenu(){
     for(let i = 0; i < firstMenu.length; i++){
         firstMenu[i].classList.add('hidden');
     }
-    checkUserDiff();
-}
-
-
-function checkUserDiff(){
-    pullNextMenu();
-
+    secondMenu[0].classList.remove('hidden');
 }
 
 function nextDifficulty(direction){
@@ -395,7 +391,7 @@ function nextDifficulty(direction){
             }
         }
     }
-    
+
     if(direction === 'right'){
         for(let i = 0; i < setting.length; i++){
             if(!setting[i].classList.contains('hidden')){
@@ -414,18 +410,50 @@ function nextDifficulty(direction){
     }
 }
 
-function pullNextMenu(){
+function getInnerTextForDiff(){
+    let diff = '';
+    for(let i = 0; i < setting.length; i++){
+        if(!setting[i].classList.contains('hidden')){
+            diff = setting[i].innerHTML;
+        }
+    }
+    switch(diff){
+        case 'Very Easy':
+            diff = 1;
+            break;
+        case 'Easy':
+            diff = 2;
+            break;
+        case 'Medium':
+            diff = 3;
+            break;
+        case 'Hard':
+            diff = 4;
+            break;
+        case 'Very Hard':
+            diff = 5;
+            break;
+        default:
+            diff = 6;
+            break;
+    }
 
+    hideDiffMenu();
+    howDifficultIsGame(diff);
 }
 
-// function to start game
-function pullMenuThree(){
+function hideDiffMenu(){
+    secondMenu[0].classList.add('hidden');
+    mainGrid.classList.remove('hidden');
+    numPad[0].classList.remove('hidden');
+}
+
+function startGame(){
     removeHighlighted();
     createEmptyInnerArrays();
-    displayedBoard(45);
+    getInnerTextForDiff();
 }
 
 // event listeners for starting game and darkmode
 hasEnteredName.addEventListener('click', getUserName);
 isDarkMode.addEventListener('click', darkMode);
-
