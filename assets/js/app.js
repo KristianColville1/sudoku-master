@@ -297,34 +297,41 @@ function createEmptyInnerArrays(){
 
 // adds a pencil mark or removes a pencil mark
 function createPencilMark(){
-
-    if(trackPencilMarks[playerIndex].includes(userInput)){
-        let index = trackPencilMarks[playerIndex].indexOf(userInput);
-        trackPencilMarks[playerIndex].splice(index, 1, '');
-    } else{
-        trackPencilMarks[playerIndex].push(userInput);
-    }
-
-    let newArray = [];
-    for(let i = 0; i < trackPencilMarks[playerIndex].length; i++){
-        if(trackPencilMarks[playerIndex][i] !== ''){
-            let num = trackPencilMarks[playerIndex][i];
-            newArray.push(num);
+    // if user input is empty string, eraser or pencil do not mark the cell otherwise do
+    if(userInput === '' || userInput === ' ' || userInput === '  '){
+        // dont do anything as we dont want these values on the board in pencil markings
+    }else {
+        if(trackPencilMarks[playerIndex].includes(userInput)){
+            let index = trackPencilMarks[playerIndex].indexOf(userInput);
+            trackPencilMarks[playerIndex].splice(index, 1, '');
+        } else{
+            trackPencilMarks[playerIndex].push(userInput);
         }
+    
+        let newArray = [];
+        for(let i = 0; i < trackPencilMarks[playerIndex].length; i++){
+            if(trackPencilMarks[playerIndex][i] !== ''){
+                let num = trackPencilMarks[playerIndex][i];
+                newArray.push(num);
+            }
+        }
+    
+        trackPencilMarks[playerIndex] = [];
+        for(let i = 0; i < newArray.length; i++){
+            trackPencilMarks[playerIndex].push(newArray[i]);
+        }
+    
+        // place pencil marks in accending order from 1 - 9 within cells
+        trackPencilMarks[playerIndex].sort();
+
+        // calls the print function when decision made
+        printNewPencilMarks(trackPencilMarks[playerIndex]);
     }
-
-    trackPencilMarks[playerIndex] = [];
-    for(let i = 0; i < newArray.length; i++){
-        trackPencilMarks[playerIndex].push(newArray[i]);
-    }
-
-    trackPencilMarks[playerIndex].sort();
-
-    printNewPencilMarks(trackPencilMarks[playerIndex]);
 }
 
-// if called upon takes array and creates a string to make a code block for pencil markings
+// if called upon takes array and creates an empty string to make a code block for pencil markings
 function printNewPencilMarks(innerPencilArray){
+    // each time called it rewrites the values in the cell according to the innerPencil array values
     let incrementalString = '';
     for(let i = 0; i < innerPencilArray.length; i++){
         incrementalString+=`<span class='pencil-mark'>${innerPencilArray[i]}</span>`;
@@ -355,6 +362,8 @@ function removeHighlighted(){
     for(let i = 0; i < gCells.length; i++){
         gCells[i].classList.remove('num-highlight');
     }
+
+
 }
 
 // function to start game
