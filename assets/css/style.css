@@ -148,6 +148,10 @@ h1, h2, h3, button {
     background-color: var(--num-highlight);
 }
 
+.winner {
+    background-color: var(--log-in);
+}
+
 .pencil-mark {
     width: 12px;
     height: 12px;

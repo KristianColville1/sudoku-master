@@ -283,9 +283,14 @@ function playerChoice(position){
 // adds the users input to the board based on the cell number and if it contains the numbers class
 function isOnTheBoard(){
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
-        gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
-        boardOnScreen.splice(playerIndex, 1, userInput);
-        cellCounter++;
+        if(userInput === '' || userInput === '  '){
+            // do not enter these values on the board
+            // do not want empty strings or pencil marks without values
+        } else{
+            gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
+            boardOnScreen.splice(playerIndex, 1, userInput);
+            cellCounter++;
+        }
     }
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
         createPencilMark();
@@ -500,7 +505,19 @@ function checkIfAllCorrect(){
 }
 
 function wonGame(){
-    alert("you win");
+    // remove classes and fill grid with green background and display winning message
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].classList.remove('numbers');
+        gCells[i].classList.remove('player');
+        gCells[i].classList.remove('shaded'); 
+
+        // add winning background to cells when game is over and make the cell a system number to match style
+        gCells[i].classList.add('system-numbers');
+        gCells[i].classList.add('winner');
+    }
+    for(let i = 0; i < pChoice.length; i++){
+        pChoice[i].classList.remove('choice-active');
+    }
 }
 // event listeners for starting game and darkmode
 hasEnteredName.addEventListener('click', getUserName);
