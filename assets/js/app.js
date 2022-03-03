@@ -6,9 +6,11 @@ let pChoice = document.getElementsByClassName('choice');
 
 const firstMenu = document.getElementsByClassName('menu-part-one');
 const secondMenu = document.getElementsByClassName('menu-part-two');
+const lastMenu = document.getElementsByClassName('last-menu');
 const hasEnteredName = document.getElementById('next');
 const isDarkMode = document.querySelector('.dark-mode-button');
 const setting = document.getElementsByClassName('diff-options');
+let hasWon = document.getElementsByClassName('win');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -20,7 +22,6 @@ const lastIndex = []; // players last index
 
 let boardOnScreen = []; // board to be displayed to the user
 let boardBefore = []; // board to compare results when game finished
-
 let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
 
 let enableDarkMode = false; // boolean for turning darkmode on and off.
@@ -33,8 +34,6 @@ let userInput = ''; // this is the users input
 let userName = ''; // empty string for the users name
 
 let cellCounter = 0; // used to track how many cells have numbers in them
-
-
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
 // horizontal indexs
@@ -518,6 +517,9 @@ function wonGame(){
     for(let i = 0; i < pChoice.length; i++){
         pChoice[i].classList.remove('choice-active');
     }
+
+    hasWon[0].classList.add('layer-four');
+    lastMenu[0].classList.remove('hidden');
 }
 // event listeners for starting game and darkmode
 hasEnteredName.addEventListener('click', getUserName);
