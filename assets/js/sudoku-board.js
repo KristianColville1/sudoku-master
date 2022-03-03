@@ -69,48 +69,17 @@ function randomTheBoard(num1, num2){
 function repeat(){
     let num1 = getRandomIntInclusive(1, 9);
     let num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
-    num1 = getRandomIntInclusive(1, 9);
-    num2 = getRandomIntInclusive(1, 9);
-    randomTheBoard(num1, num2);
+    
+    for(let i = 0; i < 81; i++){
+        num1 = getRandomIntInclusive(1, 9);
+        num2 = getRandomIntInclusive(1, 9);
+        randomTheBoard(num1, num2);
+    }
 }
 
 // repeats this process again and again to increase random board generation
 function repeatManyTimes(){
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-    repeat();
-    repeat();
+    for(let i = 0; i < 81; i++){
+        repeat();
+    }
 }
