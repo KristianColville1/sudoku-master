@@ -23,8 +23,8 @@
             <button class="help-button" id="help-button" type="button" aria-label="Click this button to display the help screen for information on how to play sudoku">
                 <i class="far fa-question-circle"></i>
             </button>
-            <h1 class="menu-part-one welcome-menu">Welcome to Sudoku Master!</h1>
             <form onsubmit="getUserName()" class="menu-part-one">
+                <h1 class="welcome-menu">Welcome to Sudoku Master!</h1>
                 <label for="name">Enter Your Name</label>
                 <br>
                 <input type="text" id="name" class="name" maxLength="18" required>
@@ -47,6 +47,9 @@
             </div>
             <i class="far fa-user-circle hidden"></i>
             <i class="far fa-clock hidden"></i>
+            <div class="last-menu hidden">
+                <p class="win hidden">You solved the sudoku puzzle congradulations!</p>
+                <p class="lose hidden">You failed to solve the puzzle...</p>
             <div id="grid" class="hidden">
                 <!-- game numbers 81 -->
                 <div class="game-grid-cells" onclick="playerPosition('0')"></div>
