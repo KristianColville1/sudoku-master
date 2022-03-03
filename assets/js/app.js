@@ -19,7 +19,7 @@ var playerIndex = []; // players current index
 const lastIndex = []; // players last index
 
 let boardOnScreen = []; // board to be displayed to the user
-let boardToCompare = []; // board to compare results when game finished
+let boardBefore = []; // board to compare results when game finished
 
 let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
 
@@ -30,8 +30,10 @@ let pencilActive = false; // boolean for turning pencil on and off.
 
 var isThisDecision = ''; // in playerChoice
 let userInput = ''; // this is the users input
-
 let userName = ''; // empty string for the users name
+
+let cellCounter = 0; // used to track how many cells have numbers in them
+
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
@@ -151,7 +153,7 @@ function howDifficultIsGame(diff){
     switch(diff){
         case 1:
             // very easy, remove 28 pieces
-            toRemove = 28;
+            toRemove = 2;
             break;
         case 2:
             // easy, remove 37 pieces
@@ -179,7 +181,7 @@ function howDifficultIsGame(diff){
 }
 
 function displayedBoard(toRemove){
-    let boardBefore =  printBoard(); // The full board of valid numbers
+    boardBefore =  printBoard(); // The full board of valid numbers
     boardOnScreen = []; // board to be displayed to the user
 
     for(let i = 0; i < gCells.length; i++){
@@ -187,7 +189,7 @@ function displayedBoard(toRemove){
         gCells[i].classList.remove('numbers');
     }
 
-    for(let i = 0; i <= toRemove; i++){ 
+    for(let i = 0; i < toRemove; i++){ 
         boardOnScreen.push(''); // pushes the disired amount of blank spaces
     }
 
@@ -201,6 +203,7 @@ function displayedBoard(toRemove){
         if(boardOnScreen[i] === '-'){
             boardOnScreen[i] = boardBefore[i]; // adds the numbers to the board for the user
             gCells[i].innerHTML = `<span class='center-cell'>${boardOnScreen[i]}</span>`;
+            cellCounter++; // adds amount of cells displayed to user
             gCells[i].classList.add('system-numbers');
         } else{
             gCells[i].innerHTML = `<span class='center-cell'>${boardOnScreen[i]}</span>`; // seperates blank spaces for user input only
@@ -274,6 +277,7 @@ function playerChoice(position){
     }
 
     highlightThisChoiceOnBoard(); // calls when user picks a choice
+    isBoardFilled();
 }
 
 // adds the users input to the board based on the cell number and if it contains the numbers class
@@ -281,10 +285,13 @@ function isOnTheBoard(){
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
         gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
         boardOnScreen.splice(playerIndex, 1, userInput);
+        cellCounter++;
     }
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
         createPencilMark();
     }
+
+    isBoardFilled();
 }
 
 function createEmptyInnerArrays(){
@@ -463,11 +470,38 @@ function hideDiffMenu(){
 }
 
 function startGame(){
+    cellCounter = 0;
     removeHighlighted();
     createEmptyInnerArrays();
     getInnerTextForDiff();
 }
 
+function isBoardFilled(){
+
+    if(cellCounter === 81){
+        // board is completed
+        checkIfAllCorrect();
+    }
+}
+
+function checkIfAllCorrect(){
+    let hasLost = false;
+
+    for(let i = 0; i < gCells.length; i++){
+        if(boardOnScreen[i] !== boardBefore[i]){
+            alert('lost');
+            hasLost = true;
+        }
+    }
+
+    if(hasLost === false){
+        wonGame();
+    }
+}
+
+function wonGame(){
+    alert("you win");
+}
 // event listeners for starting game and darkmode
 hasEnteredName.addEventListener('click', getUserName);
 isDarkMode.addEventListener('click', darkMode);
