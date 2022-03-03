@@ -99,6 +99,21 @@ h1, h2, h3, button {
     font-family: 'Lato', sans-serif;
 }
 
+a {
+    font-size: 2rem;
+    color: unset;
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+    padding: 0px 5px;
+}
+
+ul {
+    list-style-type: none;
+}
+
 /*-------------------------------------------------------Added with JavaScript */
 
 .hidden {
@@ -120,7 +135,6 @@ h1, h2, h3, button {
     width: 100%;
     color: var(--system-numbers);
     font-size: 1.5rem;
-
 }
 
 .numbers {
@@ -152,6 +166,16 @@ h1, h2, h3, button {
     background-color: var(--log-in);
 }
 
+.win {
+    font-size: 5rem;
+    font-weight: 900;
+    color: var(--dark-mode);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .pencil-mark {
     width: 12px;
     height: 12px;
@@ -178,31 +202,6 @@ h1, h2, h3, button {
 }
 
 /*-------------------------------------------------------Navigational menu */
-
-a {
-    font-size: 2rem;
-    color: unset;
-    text-decoration: none;
-}
-
-li {
-    display: inline-block;
-    padding: 0px 5px;
-}
-
-ul {
-    list-style-type: none;
-}
-
-.logo {
-    color: var(--logo);
-    padding: 0;
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    font-family: 'Lato', sans-serif;
-    position: absolute;
-    margin: 5px 20px;
-}
 
 .dark-mode-button {
     width: 40px;
@@ -362,7 +361,6 @@ input:hover {
     color: var(--shaded-cells);
 }
 
-
 .diff-options,
 .fa-arrow-alt-circle-left,
 .fa-arrow-alt-circle-right {
@@ -398,6 +396,7 @@ input:hover {
     position: absolute;
     top: 0;
 }
+
 .start-game {
     position: absolute;
     top: 60%;
@@ -432,7 +431,6 @@ input:hover {
     background-color: var(--player-cell);
     cursor: pointer;
 }
-
 
 .player-num-choice,
 .player-pen-choice {
