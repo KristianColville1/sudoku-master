@@ -19,15 +19,6 @@
 --main-bg-light: #52B788;
 --main-bg-dark: #19647E;
 
-/* ...............................header and logo */
---header-bg: #19647E;
---header-bg-light: #19647E;
---header-bg-dark: #37392E;
-
---logo: #F4F4F9;
---logo-light: #F4F4F9;
---logo-dark: #F9CB40;
-
 /* ...............................dark mode */
 --dark-mode: #F9CB40;
 --dark-mode-light: #F9CB40;
@@ -100,7 +91,7 @@ h1, h2, h3, button {
 }
 
 a {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: unset;
     text-decoration: none;
 }
@@ -209,7 +200,6 @@ ul {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--menu);
-    border: 3px solid var(--dark-mode);
     border-radius: 50%;
     position: absolute;
     left: 83%;
@@ -217,8 +207,8 @@ ul {
 }
 
 .help-button {
-    width: 40px;
-    height: 40px;
+    width: 41px;
+    height: 41px;
     border-radius: 50%;
     color: var(--dark-mode);
     background-color: var(--menu);
@@ -239,17 +229,10 @@ ul {
 
 
 .fa-moon,
-.fa-sun {
+.fa-sun,
+.fa-question {
     color: var(--dark-mode);
     font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.fa-question-circle {
-    font-size: 2.5rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -268,6 +251,10 @@ footer {
     justify-content: center;
     position: absolute;
     bottom: 0;
+}
+
+footer a {
+    font-size: 2rem;
 }
 
 footer a:hover {
@@ -290,6 +277,7 @@ footer div {
 
 /*-------------------------------------------------------Game board */
 .game,
+.help-menu,
 form,
 .diff-menu,
 .menu {
@@ -307,6 +295,17 @@ form,
     flex: 1 1 auto;
     align-content: center;
     justify-content: center;
+}
+
+.help-menu {
+    color: var(--menu);
+    width: 500px;
+    border: none;
+}
+
+.help-menu a {
+    color: var(--system-numbers);
+    cursor: pointer;
 }
 
 /*-------------------------------------------------------first menu */
@@ -327,8 +326,8 @@ input {
     width: 60%;
     font-size: 1.5rem;
     margin: 5px;
-    border: 2px inset var(--log-in);
-    background-color: var(--logo);
+    border: 3px inset var(--log-in);
+    background-color: transparent;
     cursor: pointer;
 }
 
