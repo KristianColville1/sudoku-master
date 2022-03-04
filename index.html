@@ -16,13 +16,15 @@
     <!-- top of main -->
     <main>
         <div class="game">
-            <button class="dark-mode-button layer-five" id="dark-mode-button" type="button" aria-label="Clicking this button will change the contrast of the website to darker colors">
-                <i class="fa-solid fa-moon"></i>
-                <i class="fa-solid fa-sun hidden"></i>
-            </button>
-            <button class="help-button layer-five" id="help-button" type="button" onclick="helpInfo()" aria-label="Click this button to display the help screen for information on how to play sudoku">
-                <i class="fas fa-question"></i>
-            </button>
+            <div class="menu-btns layer-five">
+                <button class="help-button" id="help-button" type="button" onclick="helpInfo()" aria-label="Click this button to display the help screen for information on how to play sudoku">
+                    <i class="fas fa-question"></i>
+                </button>
+                <button class="dark-mode-button" id="dark-mode-button" type="button" aria-label="Clicking this button will change the contrast of the website to darker colors">
+                    <i class="fa-solid fa-moon"></i>
+                    <i class="fa-solid fa-sun hidden"></i>
+                </button>
+            </div>
             <div class="help-menu layer-four hidden">
                 <h1>How to play sudoku</h1>
                 <p class="small-center">To finish the game, each row, column, and 3x3 grid must contain the numbers 1 through 9.</p>
@@ -31,7 +33,7 @@
                 <p class="small-center">There are six different difficulties to choose from in this game; if you are a beginner, we recommend starting with Very Easy.</p>
                 <p class="small-center">This game has 11 fill-in-the-blank options, the numbers 1-9, an eraser, and a pencil.</p>
                 <p class="small-center">When there is no immediate answer, use the pencil to help you keep track of your potential guesses for cells.</p>
-                <p class="small-center">Should you require more information please visit <a href="https://www.kristanix.com/sudokuepic/sudoku-rules.php" target="_blank" aria-label="Click this link to see more information of the rules of sudoku and how to play the game">Here</a></p>
+                <p class="small-center">Should you require more information please visit <a href="https://www.kristanix.com/sudokuepic/sudoku-rules.php" target="_blank" aria-label="Click this link to see more information of the rules of sudoku and how to play the game">Sudoku Rules</a></p>
             </div>
             <form onsubmit="getUserName()" class="menu-part-one">
                 <h2 class="welcome-menu">Welcome to Sudoku Master!</h2>
