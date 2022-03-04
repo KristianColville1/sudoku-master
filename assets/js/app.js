@@ -1,5 +1,6 @@
 // global variables
 const isDarkMode = document.querySelector('.dark-mode-button');
+const helpUser = document.getElementsByClassName('help-menu');
 let darkIconSun = document.getElementsByClassName('fa-sun');
 let darkIconMoon = document.getElementsByClassName('fa-moon');
 
@@ -29,6 +30,7 @@ let boardBefore = []; // board to compare results when game finished
 let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
 
 let enableDarkMode = false; // boolean for turning darkmode on and off.
+let userNeedsHelp = false; // boolean for toggling help menu on and off.
 let isPlayerHere = false; // is the player on the board
 let isGameOver = false;
 let pencilActive = false; // boolean for turning pencil on and off.
@@ -129,6 +131,16 @@ function darkMode(){
 
         darkIconMoon[0].classList.remove('hidden');
         darkIconSun[0].classList.add('hidden');
+    }
+}
+
+function helpInfo(){
+    if(userNeedsHelp === false){
+        helpUser[0].classList.remove('hidden');
+        userNeedsHelp = true;
+    } else if(userNeedsHelp === true){
+        helpUser[0].classList.add('hidden');
+        userNeedsHelp = false;
     }
 }
 

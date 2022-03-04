@@ -176,20 +176,24 @@ ul {
     color: var(--system-numbers);
 }
 
-.layer-one{
+.layer-one {
     z-index: 1;
 }
 
-.layer-two{
+.layer-two {
     z-index: 2;
 }
 
-.layer-three{
+.layer-three {
     z-index: 3;
 }
 
-.layer-four{
+.layer-four {
     z-index: 4;
+}
+
+.layer-five {
+    z-index: 5;
 }
 
 /*-------------------------------------------------------Navigational menu */
@@ -299,8 +303,6 @@ form,
 
 .help-menu {
     color: var(--menu);
-    width: 500px;
-    border: none;
 }
 
 .help-menu a {
@@ -308,9 +310,13 @@ form,
     cursor: pointer;
 }
 
+.small-center {
+    width: 500px;
+}
+
 /*-------------------------------------------------------first menu */
 h1.welcome-menu {
-    color: var(--menu-text);
+    color: var(--menu);
     font-size: 2.5rem;
     font-style: italic;
 }
@@ -318,7 +324,6 @@ h1.welcome-menu {
 form {
     font-size: 2rem;
     color: var(--menu-text);
-    background-color: var(--menu);
 }
 
 input {
@@ -327,7 +332,6 @@ input {
     font-size: 1.5rem;
     margin: 5px;
     border: 3px inset var(--log-in);
-    background-color: transparent;
     cursor: pointer;
 }
 
@@ -355,8 +359,7 @@ input:hover {
 
 .diff-menu {
     font-size: 2.5rem;
-    background-color: var(--menu);
-    color: var(--shaded-cells);
+    color: var(--menu-text);
 }
 
 .diff-options,
