@@ -76,10 +76,10 @@
 
 body {
     margin: 0;
-    border: 0;
+    border: none;
     padding: 0;
     font-family:'Raleway', sans-serif;
-    overflow-x: hidden;
+    overflow: hidden;
     background: url(../images/leisure-time-g6ab431ab6_1920.jpg) center center no-repeat;
     background-blend-mode: soft-light;
     background-color: var(--main-bg);
@@ -209,32 +209,20 @@ ul {
 
 /*-------------------------------------------------------Navigational menu */
 
-.dark-mode-button {
+.menu-btns {
+    width: 100%;
+    position: absolute;
+}
+
+.dark-mode-button,
+.help-button {
     width: 40px;
     height: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: var(--menu);
+    float: right;
     border-radius: 50%;
-    position: absolute;
-    left: 83%;
-    margin: 10px;
-}
-
-.help-button {
-    width: 41px;
-    height: 41px;
-    border-radius: 50%;
-    color: var(--dark-mode);
-    background-color: var(--menu);
-    position: absolute;
-    left: 90%;
-    margin: 10px;
+    margin-right: 5px;
     cursor: pointer;
-}
-
-.dark-mode-button:hover {
-    cursor: pointer;
+    background-color: var(--player-cell);
 }
 
 .dark-mode-button:hover .fa-moon,
@@ -248,10 +236,6 @@ ul {
 .fa-question {
     color: var(--dark-mode);
     font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /*-------------------------------------------------------footer */
@@ -260,12 +244,12 @@ footer {
     height: 10vh;
     width: 100%;
     font-size: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
     position: absolute;
     bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
 }
 
 footer a {
@@ -278,7 +262,6 @@ footer a:hover {
 
 footer div {
     width: 700px;
-    line-height: 50px;
     color: var(--logo)
 }
 
@@ -335,7 +318,7 @@ form,
 }
 
 /*-------------------------------------------------------first menu */
-h1.welcome-menu {
+h2.welcome-menu {
     color: var(--menu);
     font-size: 2.5rem;
     font-style: italic;
@@ -343,7 +326,7 @@ h1.welcome-menu {
 
 form {
     font-size: 2rem;
-    color: var(--menu-text);
+    color: var(--menu);
 }
 
 input {
@@ -365,7 +348,7 @@ input:hover {
     color: var(--menu-text);
     background-color: var(--menu);
     margin-top: 10px;
-    float: right;
+    margin-left: 5px;
     cursor: pointer;
 }
 
@@ -427,6 +410,11 @@ input:hover {
 }
 
 /*------------------------------------------------------ game grid */
+
+#grid {
+    margin-top: 8vh;
+}
+
 .container-row {
     display: flex;
     flex-direction: row;
@@ -449,8 +437,9 @@ input:hover {
 
 .player-num-choice,
 .player-pen-choice {
-    height: 50px;
+    height: 100px;
     width: 300px;
+    margin-bottom: 2vh;
     display: flex;
     flex-wrap: wrap;
 }
@@ -494,6 +483,10 @@ input:hover {
 
     .game-grid-cells {
         width: 10%;
+    }
+
+    h2.welcome-menu {
+        font-size: 1.8rem;
     }
 
     footer {
