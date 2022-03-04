@@ -175,7 +175,7 @@ function howDifficultIsGame(diff){
     switch(diff){
         case 1:
             // very easy, remove 28 pieces
-            toRemove = 2;
+            toRemove = 28;
             break;
         case 2:
             // easy, remove 37 pieces
@@ -552,7 +552,7 @@ function lostGame(){
         for(let i = 0; i < pChoice.length; i++){
             pChoice[i].classList.remove('choice-active');
         }
-        
+
         hasWon[0].classList.add('hidden');
         hasLost[0].classList.remove('hidden');
         hasLost[0].classList.add('layer-four');
