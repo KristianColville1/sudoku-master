@@ -16,6 +16,7 @@ const hasEnteredName = document.getElementById('next');
 
 const setting = document.getElementsByClassName('diff-options');
 let hasWon = document.getElementsByClassName('win');
+let hasLost = document.getElementsByClassName('lose');
 
 let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -387,7 +388,6 @@ function highlightThisChoiceOnBoard(){
             }
         }
     }
-
 }
 
 function removeHighlighted(){
@@ -395,14 +395,11 @@ function removeHighlighted(){
     for(let i = 0; i < gCells.length; i++){
         gCells[i].classList.remove('num-highlight');
     }
-
-
 }
 
 // function to start game
 function getUserName(){
     let name = document.getElementById('name');
-
     userName = name.value; // assign the users name to this variable
 
     if(name.value.length > 1){
@@ -484,7 +481,6 @@ function getInnerTextForDiff(){
             diff = 6;
             break;
     }
-
     hideDiffMenu();
     howDifficultIsGame(diff);
 }
@@ -503,7 +499,6 @@ function startGame(){
 }
 
 function isBoardFilled(){
-
     if(cellCounter === 81){
         // board is completed
         checkIfAllCorrect();
@@ -515,13 +510,13 @@ function checkIfAllCorrect(){
 
     for(let i = 0; i < gCells.length; i++){
         if(boardOnScreen[i] !== boardBefore[i]){
-            alert('lost');
             hasLost = true;
         }
     }
-
     if(hasLost === false){
         wonGame();
+    } else{
+        lostGame();
     }
 }
 
@@ -539,10 +534,31 @@ function wonGame(){
     for(let i = 0; i < pChoice.length; i++){
         pChoice[i].classList.remove('choice-active');
     }
-
     hasWon[0].classList.add('layer-four');
     lastMenu[0].classList.remove('hidden');
 }
+
+function lostGame(){
+        // remove classes and fill grid with green background and display losing message
+        for(let i = 0; i < gCells.length; i++){
+            gCells[i].classList.remove('numbers');
+            gCells[i].classList.remove('player');
+            gCells[i].classList.remove('shaded'); 
+    
+            // add loosing background to cells when game is over and make the cell a system number to match style
+            gCells[i].classList.add('system-numbers');
+            gCells[i].classList.add('loser');
+        }
+        for(let i = 0; i < pChoice.length; i++){
+            pChoice[i].classList.remove('choice-active');
+        }
+        
+        hasWon[0].classList.add('hidden');
+        hasLost[0].classList.remove('hidden');
+        hasLost[0].classList.add('layer-four');
+        lastMenu[0].classList.remove('hidden');
+}
+
 // event listeners for starting game and darkmode
 hasEnteredName.addEventListener('click', getUserName);
 isDarkMode.addEventListener('click', darkMode);

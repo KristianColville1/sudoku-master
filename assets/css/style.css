@@ -157,7 +157,12 @@ ul {
     background-color: var(--log-in);
 }
 
-.win {
+.loser {
+    background-color: #d90368;
+}
+
+.win,
+.lose {
     font-size: 5rem;
     font-weight: 900;
     color: var(--dark-mode);
@@ -165,6 +170,11 @@ ul {
     top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.lose {
+    width: 100%;
+    left: 70%;
 }
 
 .pencil-mark {
