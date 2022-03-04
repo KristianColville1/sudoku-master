@@ -209,7 +209,7 @@ ul {
     display: flex;
     flex-wrap: wrap;
     background-color: var(--menu);
-    border: 2px solid var(--dark-mode);
+    border: 3px solid var(--dark-mode);
     border-radius: 50%;
     position: absolute;
     left: 83%;
@@ -221,7 +221,7 @@ ul {
     height: 40px;
     border-radius: 50%;
     color: var(--dark-mode);
-    background-color: var(--game-border);
+    background-color: var(--menu);
     position: absolute;
     left: 90%;
     margin: 10px;
@@ -249,7 +249,7 @@ ul {
 }
 
 .fa-question-circle {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     position: absolute;
     top: 50%;
     left: 50%;

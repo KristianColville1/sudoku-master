@@ -1,4 +1,8 @@
 // global variables
+const isDarkMode = document.querySelector('.dark-mode-button');
+let darkIconSun = document.getElementsByClassName('fa-sun');
+let darkIconMoon = document.getElementsByClassName('fa-moon');
+
 let mainGrid = document.getElementById('grid');
 const numPad = document.getElementsByClassName('player-num-choice');
 const gCells = document.getElementsByClassName('game-grid-cells');
@@ -8,7 +12,7 @@ const firstMenu = document.getElementsByClassName('menu-part-one');
 const secondMenu = document.getElementsByClassName('menu-part-two');
 const lastMenu = document.getElementsByClassName('last-menu');
 const hasEnteredName = document.getElementById('next');
-const isDarkMode = document.querySelector('.dark-mode-button');
+
 const setting = document.getElementsByClassName('diff-options');
 let hasWon = document.getElementsByClassName('win');
 
@@ -101,6 +105,9 @@ function darkMode(){
         document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-dark'));
         document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-dark'));
         enableDarkMode = true;
+
+        darkIconMoon[0].classList.add('hidden');
+        darkIconSun[0].classList.remove('hidden');
     }else if(enableDarkMode === true){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
         document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-light'));
@@ -119,6 +126,9 @@ function darkMode(){
         document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-light'));
         document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-light'));
         enableDarkMode = false;
+
+        darkIconMoon[0].classList.remove('hidden');
+        darkIconSun[0].classList.add('hidden');
     }
 }
 
