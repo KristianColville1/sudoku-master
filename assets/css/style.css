@@ -134,6 +134,7 @@ ul {
 
 .center-cell{
     width: 100%;
+    height: 100%;
 }
 
 /*-----------------------------------------Player, shaded cells, position and numbers highlighted */
@@ -281,7 +282,7 @@ footer div {
     color: var(--logo)
 }
 
-#footer-list li {
+#footer-list {
     float: right;
 }
 
@@ -290,11 +291,7 @@ footer div {
 }
 
 /*-------------------------------------------------------Game board */
-.game,
-.help-menu,
-form,
-.diff-menu,
-.menu {
+.game {
     width: 650px; /*-------------------------------------------------------Game width */
     height: 600px;
     background-color: var(--game-bg);
@@ -306,9 +303,22 @@ form,
     padding: 5px 5px;
     display: flex;
     flex-wrap: wrap;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     align-content: center;
     justify-content: center;
+}
+
+.help-menu,
+form,
+.diff-menu,
+.menu {
+    width: 650px; /*-------------------------------------------------------Game width */
+    height: 600px;
+    background-color: var(--game-bg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .help-menu {
@@ -417,15 +427,9 @@ input:hover {
 }
 
 /*------------------------------------------------------ game grid */
-#grid {
-    height: 370px;
-    width: 380px;
-    position: absolute;
-    top: 15vh;
-    left: 50%;
-    transform: translate(-50%, -5vh);
+.container-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .game-grid-cells {
@@ -433,7 +437,7 @@ input:hover {
     height: 38px;
     border: 1px solid var(--game-border);
     border-radius: 5%;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
     display: flex;
     flex-wrap: wrap;
 }
@@ -449,8 +453,6 @@ input:hover {
     width: 300px;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    top: 35%;
 }
 
 .p-number,
@@ -475,3 +477,26 @@ input:hover {
 }
 
 /*-------------------------------------------------------Media Queries */
+
+@media screen and (max-width: 720px) {
+    .game,
+    .help-menu,
+    form,
+    .diff-menu,
+    .menu {
+        width: 90%; /*-------------------------------------------------------Game width */
+        height: 90%;
+    }
+
+    #grid {
+        width: 100%;
+    }
+
+    .game-grid-cells {
+        width: 10%;
+    }
+
+    footer {
+        background-color: var(--menu-text);
+    }
+}
