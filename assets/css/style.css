@@ -208,7 +208,7 @@ ul {
     height: 40px;
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--dark-mode-dark);
+    background-color: var(--menu);
     border: 2px solid var(--dark-mode);
     border-radius: 50%;
     position: absolute;
@@ -220,7 +220,7 @@ ul {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    color: var(--log-in);
+    color: var(--dark-mode);
     background-color: var(--game-border);
     position: absolute;
     left: 90%;
@@ -241,7 +241,7 @@ ul {
 .fa-moon,
 .fa-sun {
     color: var(--dark-mode);
-    font-size: 2rem;
+    font-size: 1.5rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -271,23 +271,22 @@ footer {
 }
 
 footer a:hover {
+    color: var(--menu)
+}
+
+footer div {
+    width: 700px;
+    line-height: 50px;
     color: var(--logo)
 }
 
-#footer-list {
-    width: 650px;
-    position: relative;
-    bottom: 0;
+#footer-list li {
+    float: right;
 }
 
 .float-left {
     float: left;
 }
-
-.float-right {
-    float: right;
-}
-
 
 /*-------------------------------------------------------Game board */
 .game,
