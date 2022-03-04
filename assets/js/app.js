@@ -175,7 +175,7 @@ function howDifficultIsGame(diff){
     switch(diff){
         case 1:
             // very easy, remove 28 pieces
-            toRemove = 28;
+            toRemove = 2;
             break;
         case 2:
             // easy, remove 37 pieces
@@ -534,6 +534,8 @@ function wonGame(){
     for(let i = 0; i < pChoice.length; i++){
         pChoice[i].classList.remove('choice-active');
     }
+    
+    hasWon[0].classList.add('ani-small-big');
     hasWon[0].classList.add('layer-four');
     lastMenu[0].classList.remove('hidden');
 }
@@ -555,6 +557,7 @@ function lostGame(){
 
         hasWon[0].classList.add('hidden');
         hasLost[0].classList.remove('hidden');
+        hasLost[0].classList.add('ani-small-big');
         hasLost[0].classList.add('layer-four');
         lastMenu[0].classList.remove('hidden');
 }

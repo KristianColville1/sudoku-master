@@ -105,7 +105,7 @@ ul {
     list-style-type: none;
 }
 
-/*-------------------------------------------------------Added with JavaScript */
+/*-----------------------------------------------------------Added with JavaScript */
 
 .hidden {
     display: none !important;
@@ -164,18 +164,11 @@ ul {
 
 .win,
 .lose {
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: 900;
     color: var(--dark-mode);
     position: absolute;
     top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.lose {
-    width: 100%;
-    left: 70%;
 }
 
 .pencil-mark {
@@ -207,7 +200,24 @@ ul {
     z-index: 5;
 }
 
-/*-------------------------------------------------------Navigational menu */
+.ani-small-big {
+    animation-name: win-or-lose;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-delay: 1s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes win-or-lose {
+    0% {
+        font-size: 0rem;
+    }
+    100% {
+        font-size: 4.5rem;
+    }
+}
+
+/*-------------------------------------------------------game menu */
 
 .menu-btns {
     width: 100%;
