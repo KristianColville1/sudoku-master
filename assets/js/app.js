@@ -1,13 +1,13 @@
 // global variables
 const isDarkMode = document.querySelector('.dark-mode-button');
 const helpUser = document.getElementsByClassName('help-menu');
-let darkIconSun = document.getElementsByClassName('fa-sun');
-let darkIconMoon = document.getElementsByClassName('fa-moon');
+const darkIconSun = document.getElementsByClassName('fa-sun');
+const darkIconMoon = document.getElementsByClassName('fa-moon');
 
-let mainGrid = document.getElementById('grid');
+const mainGrid = document.getElementById('grid');
 const numPad = document.getElementsByClassName('player-num-choice');
 const gCells = document.getElementsByClassName('game-grid-cells');
-let pChoice = document.getElementsByClassName('choice');
+const pChoice = document.getElementsByClassName('choice');
 
 const firstMenu = document.getElementsByClassName('menu-part-one');
 const secondMenu = document.getElementsByClassName('menu-part-two');
@@ -15,10 +15,10 @@ const lastMenu = document.getElementsByClassName('last-menu');
 const hasEnteredName = document.getElementById('next');
 
 const setting = document.getElementsByClassName('diff-options');
-let hasWon = document.getElementsByClassName('win');
-let hasLost = document.getElementsByClassName('lose');
+const hasWon = document.getElementsByClassName('win');
+const hasLost = document.getElementsByClassName('lose');
 
-let possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var dontShade = []; // used to track shaded indexs
 const shadedIndexs = []; // current shaded indexs
@@ -32,8 +32,6 @@ let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
 
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let userNeedsHelp = false; // boolean for toggling help menu on and off.
-let isPlayerHere = false; // is the player on the board
-let isGameOver = false;
 let pencilActive = false; // boolean for turning pencil on and off.
 
 var isThisDecision = ''; // in playerChoice
@@ -87,118 +85,12 @@ vGrid[6].forEach(index => gCells[index].classList.add('margin-left'));
 hGrid[3].forEach(index => gCells[index].classList.add('margin-top'));
 hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
-// darkmode function 
-function darkMode(){
-    if(enableDarkMode === false){
-        document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-dark'));
-        document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-dark'));
-        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-dark'));
-        document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-dark'));
-        document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-dark'));
-        document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-dark'));
-        document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-dark'));
-        document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-dark'));
-        document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-dark'));
-        document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-dark'));
-        document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-dark'));
-        document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-dark'));
-        document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-dark'));
-        document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-dark'));
-        document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-dark'));
-        document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-dark'));
-        enableDarkMode = true;
 
-        darkIconMoon[0].classList.add('hidden');
-        darkIconSun[0].classList.remove('hidden');
-    }else if(enableDarkMode === true){
-        document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
-        document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-light'));
-        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-light'));
-        document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-light'));
-        document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-light'));
-        document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-light'));
-        document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-light'));
-        document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-light'));
-        document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-light'));
-        document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-light'));
-        document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-light'));
-        document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-light'));
-        document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-light'));
-        document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-light'));
-        document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-light'));
-        document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-light'));
-        enableDarkMode = false;
-
-        darkIconMoon[0].classList.remove('hidden');
-        darkIconSun[0].classList.add('hidden');
-    }
-}
-
-function helpInfo(){
-    if(userNeedsHelp === false){
-        helpUser[0].classList.remove('hidden');
-        userNeedsHelp = true;
-    } else if(userNeedsHelp === true){
-        helpUser[0].classList.add('hidden');
-        userNeedsHelp = false;
-    }
-}
-
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-  }// code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
-function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (currentIndex != 0) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-  
-      // And swap it with the current element.
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-    return array;
-  }//function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
-
-
-function howDifficultIsGame(diff){
-    let toRemove = 0;
-    // user difficulty will select different outcome
-    switch(diff){
-        case 1:
-            // very easy, remove 28 pieces
-            toRemove = 2;
-            break;
-        case 2:
-            // easy, remove 37 pieces
-            toRemove = 37;
-            break;
-        case 3:
-            // medium, remove 42 pieces
-            toRemove = 42;
-            break;
-        case 4:
-            // hard, remove 48 pieces
-            toRemove = 48;
-            break;
-        case 5:
-            // very hard, remove 50 pieces
-            toRemove = 50;
-            break;
-        default:
-            // insane, remove 55 pieces
-            toRemove = 55;
-            break;
-    }
-
-    displayedBoard(toRemove); // board to display will be called here.
+// this function is activated when user chooses a difficulty
+function startGame(){
+    removeHighlighted();
+    createEmptyInnerArrays();
+    getInnerTextForDiff();
 }
 
 function displayedBoard(toRemove){
@@ -224,7 +116,6 @@ function displayedBoard(toRemove){
         if(boardOnScreen[i] === '-'){
             boardOnScreen[i] = boardBefore[i]; // adds the numbers to the board for the user
             gCells[i].innerHTML = `<span class='center-cell'>${boardOnScreen[i]}</span>`;
-            cellCounter++; // adds amount of cells displayed to user
             gCells[i].classList.add('system-numbers');
         } else{
             gCells[i].innerHTML = `<span class='center-cell'>${boardOnScreen[i]}</span>`; // seperates blank spaces for user input only
@@ -296,9 +187,7 @@ function playerChoice(position){
     if(userInput === 11){ // after users input turns on pencilActive reset here, dont want 11
         userInput = '  '; // two blanks for pencil
     }
-
     highlightThisChoiceOnBoard(); // calls when user picks a choice
-    isBoardFilled();
 }
 
 // adds the users input to the board based on the cell number and if it contains the numbers class
@@ -314,16 +203,6 @@ function isOnTheBoard(){
     }
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
         createPencilMark();
-    }
-
-    isBoardFilled();
-}
-
-function createEmptyInnerArrays(){
-    // creates an empty array and fills it with 81 empty arrays to track marks
-    trackPencilMarks = [];
-    for(let i = 0; i < 81; i++){
-        trackPencilMarks.push([]);
     }
 }
 
@@ -452,6 +331,8 @@ function nextDifficulty(direction){
     }
 }
 
+// gets the inner text within the html for diff-options and converts it to a value for removing certain amounts of cells,
+// it enables different difficulities.
 function getInnerTextForDiff(){
     let diff = '';
     for(let i = 0; i < setting.length; i++){
@@ -479,41 +360,63 @@ function getInnerTextForDiff(){
             diff = 6;
             break;
     }
-    hideDiffMenu();
-    howDifficultIsGame(diff);
+    hideDiffMenu(); // hides the menu straight away when called
+    howDifficultIsGame(diff); // calls the function here to decide how many pieces to remove
 }
 
+function howDifficultIsGame(diff){
+    let toRemove = 0;
+    // user difficulty will select different outcome
+    switch(diff){
+        case 1:
+            // very easy, remove 28 pieces
+            toRemove = 2;
+            break;
+        case 2:
+            // easy, remove 37 pieces
+            toRemove = 37;
+            break;
+        case 3:
+            // medium, remove 42 pieces
+            toRemove = 42;
+            break;
+        case 4:
+            // hard, remove 48 pieces
+            toRemove = 48;
+            break;
+        case 5:
+            // very hard, remove 50 pieces
+            toRemove = 50;
+            break;
+        default:
+            // insane, remove 55 pieces
+            toRemove = 55;
+            break;
+    }
+    displayedBoard(toRemove); // board to display will be called here.
+}
+
+// hides the difficulty menu straight away when called
 function hideDiffMenu(){
     secondMenu[0].classList.add('hidden');
     mainGrid.classList.remove('hidden');
     numPad[0].classList.remove('hidden');
 }
 
-function startGame(){
-    removeHighlighted();
-    createEmptyInnerArrays();
-    getInnerTextForDiff();
-}
-
-function isBoardFilled(){
-    if(cellCounter === 81){
-        // board is completed
-        checkIfAllCorrect();
-    }
-}
-
 function checkIfAllCorrect(){
     let hasLost = false;
 
-    for(let i = 0; i < gCells.length; i++){
-        if(boardOnScreen[i] !== boardBefore[i]){
-            hasLost = true;
+    if(!boardOnScreen.includes('')){
+        for(let i = 0; i < gCells.length; i++){
+            if(boardOnScreen[i] !== boardBefore[i]){
+                hasLost = true;
+            }
         }
-    }
-    if(hasLost === false){
-        wonGame();
-    } else{
-        lostGame();
+        if(hasLost === false){
+            wonGame();
+        } else{
+            lostGame();
+        }
     }
 }
 
@@ -556,6 +459,97 @@ function lostGame(){
         hasLost[0].classList.add('ani-small-big');
         hasLost[0].classList.add('layer-four');
         lastMenu[0].classList.remove('hidden');
+}
+
+// help menu button toggles on and off showing sudoku rules
+function helpInfo(){
+    if(userNeedsHelp === false){
+        helpUser[0].classList.remove('hidden');
+        userNeedsHelp = true;
+    } else if(userNeedsHelp === true){
+        helpUser[0].classList.add('hidden');
+        userNeedsHelp = false;
+    }
+}
+
+// creates an empty array and fills it with 81 empty arrays to track marks
+function createEmptyInnerArrays(){
+    trackPencilMarks = [];
+    for(let i = 0; i < 81; i++){
+        trackPencilMarks.push([]);
+    }
+}
+
+// code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+function getRandomIntInclusive(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+  }
+
+//function taken from stackoverflow, it is the Fisher-Yates Shuffle algorithm. https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
+
+// darkmode function 
+function darkMode(){
+    if(enableDarkMode === false){
+        document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-dark'));
+        document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-dark'));
+        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-dark'));
+        document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-dark'));
+        document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-dark'));
+        document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-dark'));
+        document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-dark'));
+        document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-dark'));
+        document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-dark'));
+        document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-dark'));
+        document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-dark'));
+        document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-dark'));
+        document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-dark'));
+        document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-dark'));
+        document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-dark'));
+        document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-dark'));
+        enableDarkMode = true;
+
+        darkIconMoon[0].classList.add('hidden');
+        darkIconSun[0].classList.remove('hidden');
+    }else if(enableDarkMode === true){
+        document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
+        document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-light'));
+        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-light'));
+        document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-light'));
+        document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-light'));
+        document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-light'));
+        document.documentElement.style.setProperty('--game-border', getComputedStyle(document.documentElement).getPropertyValue('--game-border-light'));
+        document.documentElement.style.setProperty('--numbers', getComputedStyle(document.documentElement).getPropertyValue('--numbers-light'));
+        document.documentElement.style.setProperty('--choice', getComputedStyle(document.documentElement).getPropertyValue('--choice-light'));
+        document.documentElement.style.setProperty('--choice-active', getComputedStyle(document.documentElement).getPropertyValue('--choice-active-light'));
+        document.documentElement.style.setProperty('--system-numbers', getComputedStyle(document.documentElement).getPropertyValue('--system-numbers-light'));
+        document.documentElement.style.setProperty('--num-bg', getComputedStyle(document.documentElement).getPropertyValue('--num-bg-light'));
+        document.documentElement.style.setProperty('--num-highlight', getComputedStyle(document.documentElement).getPropertyValue('--num-highlight-light'));
+        document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-light'));
+        document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-light'));
+        document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-light'));
+        enableDarkMode = false;
+
+        darkIconMoon[0].classList.remove('hidden');
+        darkIconSun[0].classList.add('hidden');
+    }
 }
 
 // event listeners for starting game and darkmode
