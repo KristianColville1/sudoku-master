@@ -268,9 +268,7 @@ button {
 }
 
 .fa-clock {
-    font-size: 1.5rem;
     font-family: 'Lato', sans-serif;
-    position: absolute;
     left: 50%;
     transform: translate(-50%, -270%);
 }
@@ -595,6 +593,17 @@ input:hover {
 
     .game-grid-cells {
         width: 10%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .fa-user-circle,
+    .fa-clock {
+        font-size: 1.3rem;
+    }
+
+    .fa-clock {
+        top: 12%;
     }
 }
 
