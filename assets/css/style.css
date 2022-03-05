@@ -91,7 +91,7 @@ body {
     border: none;
     padding: 0;
     font-family:'Raleway', sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
     background: url(../images/leisure-time-g6ab431ab6_1920.jpg) center center no-repeat;
     background-blend-mode: soft-light;
     background-color: var(--main-bg-1);
@@ -361,7 +361,13 @@ form,
 }
 
 .help-menu {
+    height: 100%;
     color: var(--menu);
+    text-align: center;
+}
+
+.help-menu p {
+    width: 100%;
 }
 
 .help-menu a {
@@ -580,6 +586,7 @@ input:hover {
     }
 }
 
+/*---------------------------------------------media queries */
 @media screen and (max-width: 479px) {
     .diff-menu {
         font-size: 1.5rem;
