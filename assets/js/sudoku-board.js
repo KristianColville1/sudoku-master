@@ -1,4 +1,5 @@
 // solved board - increased performance and quicker to implement
+// generates up to 362880 different game boards.
 let solvedBoard =[
     4, 3, 5, 2, 6, 9, 7, 8, 1,
     6, 8, 2, 5, 7, 1, 4, 9, 3,
@@ -11,57 +12,47 @@ let solvedBoard =[
     7, 6, 3, 4, 1, 8, 2, 5, 9
 ];
 
-let randomBoard = [];
-
-// Approach four:
-// using this solved board going to try swapping values randomly with other values.
-
 // displays the final sudoku board
 function printBoard(){
     solvedBoard = createBoard(solvedBoard);
-
     return solvedBoard;
 }
 
 // creates the sudoku board
 function createBoard(solvedBoard){
-    randomBoard = [];
     repeatManyTimes();
     return solvedBoard;
 }
 
 // takes random values num1 and num2 and switches those values within the sudoku array
 function randomTheBoard(num1, num2){
-    for(let i = 0; i < 81; i++){
-        randomBoard.push("?");
-    }
-
+    // checks solved board and then swaps the '?' with a number and replaces that with a '+' inside the solved board
     for(let i = 0; i < 81; i++){
         if(solvedBoard[i] === num2){
-            randomBoard.splice(i, 1, num1);
             solvedBoard[i] = '+';
         }
     }
 
+    // repeats the above with the opposite for num 1 and a '-' symbol
     for(let i = 0; i < 81; i++){
         if(solvedBoard[i] === num1){
-            randomBoard.splice(i, 1, num2);
             solvedBoard[i] = '-';
         }
     }
 
+    // finds the '+' symbol and replaces it with num1
     for(let i = 0; i < 81; i++){
         if(solvedBoard[i] === '+'){
             solvedBoard.splice(i, 1, num1);
         }
     }
 
+    // finds the '-' symbol and replaces it with num2
     for(let i = 0; i < 81; i++){
         if(solvedBoard[i] === '-'){
             solvedBoard.splice(i, 1, num2);
         }
     }
-
     return solvedBoard;
 }
 
