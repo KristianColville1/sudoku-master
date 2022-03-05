@@ -15,9 +15,13 @@
 
 
 /* ...............................background */
---main-bg: #52B788;
---main-bg-light: #52B788;
---main-bg-dark: #19647E;
+--main-bg-1: #52B788;
+--main-bg-1-light: #52B788;
+--main-bg-1-dark: #19647E;
+
+--main-bg-2: #BDEED4;
+--main-bg-2-light: #BDEED4;
+--main-bg-2-dark: #436D98;
 
 /* ...............................dark mode */
 --dark-mode: #F9CB40;
@@ -72,14 +76,13 @@
 --choice-active-dark: #00E8FC;
 
 /*---------------------------------------------------footer */
---footer-text: #19647E;
---footer-text-light: #19647E;
+--footer-text: black;
+--footer-text-light: black;
 --footer-text-dark: #F4F4F9;
 
 --footer-bg: #16db85;
 --footer-bg-light: #16db85;
 --footer-bg-dark: #37AFD7;
-
 }
 
 body {
@@ -90,7 +93,7 @@ body {
     overflow: hidden;
     background: url(../images/leisure-time-g6ab431ab6_1920.jpg) center center no-repeat;
     background-blend-mode: soft-light;
-    background-color: var(--main-bg);
+    background-color: var(--main-bg-1);
     background-attachment: fixed;
 }
 
@@ -302,12 +305,12 @@ footer a {
 }
 
 footer a:hover {
-    color: var(--menu)
+    color: var(--menu);
 }
 
 footer div {
     width: 700px;
-    color: var(--logo)
+    color: var(--footer-text)
 }
 
 #footer-list {
@@ -316,6 +319,11 @@ footer div {
 
 .float-left {
     float: left;
+}
+
+.copy-right {
+    margin-left: 25px;
+    position: absolute;
 }
 
 /*-------------------------------------------------------Game board */
@@ -522,6 +530,11 @@ input:hover {
 /*-------------------------------------------------------Media Queries */
 
 @media screen and (max-width: 720px) {
+    body {
+        background: none;
+        background-color: var(--main-bg-2);
+    }
+
     .game,
     .help-menu,
     form,
@@ -536,7 +549,7 @@ input:hover {
     }
 
     footer {
-        background-color: var(--menu-text);
+        background-color: var(--footer-bg);
     }
 
     .fa-arrow-alt-circle-left{
