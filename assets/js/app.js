@@ -37,6 +37,7 @@ let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let userNeedsHelp = false; // boolean for toggling help menu on and off.
 let pencilActive = false; // boolean for turning pencil on and off.
+let isGameOver = false; // checks if game is over
 
 var isThisDecision = ''; // in playerChoice
 let userInput = ''; // this is the users input
@@ -49,6 +50,7 @@ let minuteSmall = 0;
 let secondsSmall = 0;
 let minuteBig = 0;
 let secondsBig = 0; // hourSmall, minuteSmall and secondsSmall for clock
+let time; // variable assigned to function for counting
 
 // horizontal indexs
 let hGrid = [
@@ -424,11 +426,11 @@ function showNameAndTime(){
 
     hours = 0;
     minuteSmall = 0;
-    secondsSmall = 0;
+    secondsSmall = 1; // negates the delay when loading board
     minuteBig = 0;
     secondsBig = 0;
 
-    setInterval(countUserTime, 1000); // counts users time and displays time on board 
+    time = setInterval(countUserTime, 1000); // counts users time and displays time on board 
 }
 
 // starts counting the time for user completing the game
@@ -448,6 +450,9 @@ function countUserTime(){
     if(minuteBig === 6){
         hours++;
         minuteBig = 0;
+    }
+    if(isGameOver === true){
+        clearInterval(time);
     }
 
     userTime.innerText = `${hours} : ${minuteBig}${minuteSmall} : ${secondsBig}${secondsSmall++}`;
@@ -487,6 +492,8 @@ function wonGame(){
     hasWon[0].classList.add('ani-small-big');
     hasWon[0].classList.add('layer-four');
     lastMenu[0].classList.remove('hidden');
+
+    isGameOver = true;
 }
 
 function lostGame(){
@@ -509,6 +516,8 @@ function lostGame(){
         hasLost[0].classList.add('ani-small-big');
         hasLost[0].classList.add('layer-four');
         lastMenu[0].classList.remove('hidden');
+
+        isGameOver = true;
 }
 
 // help menu button toggles on and off showing sudoku rules
