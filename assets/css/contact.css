@@ -30,7 +30,7 @@
 
 #contact-btn,
 #return-btn {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--menu-text);
     background-color: var(--player-cell);
     cursor: pointer;
@@ -41,6 +41,13 @@
 #contact-btn {
     right: 9%;
 }
+
 #return-btn {
     left: 9%;
+}
+
+@media screen and (max-width: 479px) {
+    #contact-form h1 {
+        font-size: 2.2rem;
+    }
 }
