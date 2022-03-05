@@ -10,6 +10,7 @@
     <meta name="Author" content="Kristian Colville">
     <title>Sudoku Master</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
@@ -17,11 +18,12 @@
     <main>
         <form id="contact-form">
             <label for="c-name">Your Name</label>
-            <input id="c-name" class="c-name" placeholder="Name here">
+            <input id="c-name" class="c-name" placeholder="Name here" required>
             <label for="email">Your Email Address</label>
-            <input id="email" class="email" placeholder="Email here">
+            <input id="email" class="email" placeholder="Email here" required>
             <label for="user-msg">Your Message</label>
-            <textarea id="user-msg" class="user-msg" rows="6" cols="70" placeholder="Please leave us an email to let us know what you think of this sudoku game and how we might improve the game, or ask us anything :)"></textarea>
+            <textarea id="user-msg" class="user-msg" placeholder="Please leave us an email to let us know what you think of this sudoku game and how we might improve the game, or ask us anything :)" required></textarea>
+            <button type="submit" id="contact-btn">Submit</button>
         </form>
     </main>
         
@@ -42,8 +44,5 @@
 
     <!-- font awesome icons script-->
     <script src="https://kit.fontawesome.com/0d880835d2.js" crossorigin="anonymous"></script>
-    <!-- game/page scripts-->
-    <script src="assets/js/app.js" type="text/javascript"></script>
-    <script src="assets/js/sudoku-board.js" type="text/javascript"></script>
 </body>
 </html>
