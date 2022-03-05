@@ -18,6 +18,9 @@ const setting = document.getElementsByClassName('diff-options');
 const hasWon = document.getElementsByClassName('win');
 const hasLost = document.getElementsByClassName('lose');
 
+const profile = document.getElementsByClassName('fa-user-circle');
+const clock = document.getElementsByClassName('fa-clock');
+
 const possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 var dontShade = []; // used to track shaded indexs
@@ -157,7 +160,8 @@ function playerPosition(position){
     }
     gCells[position].classList.remove('shaded'); 
     isOnTheBoard(); // calls the function to place the users input on the board
-    highlightThisChoiceOnBoard(); // calls when user picks a choice 
+    highlightThisChoiceOnBoard(); // calls when user picks a choice
+    checkIfAllCorrect(); // checks if the board is correct
 }
 
 
@@ -401,6 +405,14 @@ function hideDiffMenu(){
     secondMenu[0].classList.add('hidden');
     mainGrid.classList.remove('hidden');
     numPad[0].classList.remove('hidden');
+
+    showNameAndTime();
+}
+
+// displays the users name and the time user takes to solve board
+function showNameAndTime(){
+    profile[0].classList.remove('hidden');
+    profile[0].innerHTML = `<span class="users-name">${userName}</span>`;
 }
 
 function checkIfAllCorrect(){
