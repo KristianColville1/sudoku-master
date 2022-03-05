@@ -502,4 +502,17 @@ input:hover {
     footer {
         background-color: var(--menu-text);
     }
+
+    .fa-arrow-alt-circle-left{
+        left: 20%;
+    }
+    
+    .fa-arrow-alt-circle-right{
+        right: 20%;
+    }
+
+    .copy-right {
+        margin-left: 25px;
+        position: absolute;
+    }
 }
