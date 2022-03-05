@@ -24,7 +24,7 @@
             <label for="user-msg">Your Message</label>
             <textarea id="user-msg" name="user-msg" placeholder="Please leave us an email to let us know what you think of this sudoku game and how we might improve the game, or ask us anything :)" required></textarea>
             <button type="button" id="return-btn" onclick="history.back()"><i class="fas fa-angle-double-left"></i> Back</button>
-            <button type="submit" id="contact-btn">Submit</button>
+            <button type="submit" id="contact-btn" onclick="emailUser()">Submit</button>
         </form>
     </main>
     <!-- end of main -->
@@ -45,7 +45,13 @@
     <!-- font awesome icons script-->
     <script src="https://kit.fontawesome.com/0d880835d2.js" crossorigin="anonymous"></script>
 
-    <!-- contact script-->
+    <!-- contact scripts-->
     <script src="assets/js/contact.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('JBCmNL6wutFtO1NM7');
+        })();
+    </script>
 </body>
 </html>
