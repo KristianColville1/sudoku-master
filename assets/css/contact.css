@@ -1,0 +1,19 @@
+#contact-form {
+    border: 5px solid var(--menu-text);
+}
+
+#contact-form label {
+    font-size: 1.5rem;
+    padding: 20px;
+}
+
+.c-name,
+.email,
+.user-msg {
+    border: 3px solid var(--menu-text);
+    resize: none;
+}
+
+.user-msg {
+    font-size: 1rem;
+}
