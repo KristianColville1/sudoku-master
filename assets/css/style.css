@@ -218,6 +218,10 @@ ul {
 }
 
 /*-------------------------------------------------------game menu */
+.top-menu {
+    width: 100%;
+    position: absolute;
+}
 
 .menu-btns {
     width: 100%;
@@ -240,6 +244,16 @@ ul {
     color: var(--dark-mode);
 }
 
+.fa-user-circle,
+.fa-clock {
+    font-size: 1.5rem;
+    color: var(--menu);
+    position: absolute;
+}
+
+.fa-clock {
+    left: 50%;
+}
 
 .fa-moon,
 .fa-sun,
@@ -369,12 +383,6 @@ input:hover {
     color: var(--menu-text);
     background-color: var(--menu);
     cursor: pointer;
-}
-
-/*----------------------------------------------------top of game */
-.fa-user-circle {
-    font-size: 3rem;
-    color: var(--menu);
 }
 
 /*-----------------------------------------------------difficulty menu */
