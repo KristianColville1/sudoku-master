@@ -85,6 +85,7 @@
 --footer-bg-dark: #37AFD7;
 }
 
+/*----------------------------------------------------defaults */
 body {
     margin: 0;
     border: none;
@@ -114,6 +115,10 @@ li {
 
 ul {
     list-style-type: none;
+}
+
+button {
+    border: 2px solid var(--footer-bg);
 }
 
 /*-----------------------------------------------------------Added with JavaScript */
@@ -417,8 +422,14 @@ input:hover {
 /*-----------------------------------------------------difficulty menu */
 
 .diff-menu {
+    width: 100%;
     font-size: 2.5rem;
     color: var(--menu-text);
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .diff-options,
@@ -454,15 +465,16 @@ input:hover {
 
 .diff-heading {
     position: absolute;
-    top: 0;
+    top: 15%;
 }
 
 .start-game {
+    font-size: 1.5rem;
+    color: var(--menu-text);
+    background-color: var(--player-cell);
+    cursor: pointer;
     position: absolute;
     top: 60%;
-    cursor: pointer;
-    background-color: var(--menu-text);
-    color: var(--menu);
 }
 
 /*------------------------------------------------------ game grid */
@@ -548,6 +560,10 @@ input:hover {
         font-size: 1.8rem;
     }
 
+    .diff-menu {
+        font-size: 2rem;
+    }
+
     footer {
         background-color: var(--footer-bg);
     }
@@ -563,6 +579,12 @@ input:hover {
     .copy-right {
         margin-left: 25px;
         position: absolute;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .diff-menu {
+        font-size: 1.5rem;
     }
 }
 
