@@ -6,8 +6,8 @@
     /* CSS HEX */
 
 /* ...............................player position */
---shaded-cells: #37AFD7;
---shaded-cells-light: #37AFD7;
+--shaded-cells: #5FEBE8;
+--shaded-cells-light: #5FEBE8;
 --shaded-cells-dark: #6D76B2;
 --player-cell: #6D76B2;
 --player-cell-light: #6D76B2;
@@ -63,8 +63,8 @@
 --num-bg-light: #BDEED4;
 --num-bg-dark: #436D98;
 
---num-highlight: #F9CB40;
---num-highlight-light: #F9CB40;
+--num-highlight: #F7E09D;
+--num-highlight-light: #F7E09D;
 --num-highlight-dark: #16db85;
 
 --choice: #6D76B2;
@@ -170,7 +170,7 @@ ul {
 }
 
 .loser {
-    background-color: #d90368;
+    background-color: #6D76B2;
 }
 
 .win,
@@ -410,7 +410,7 @@ input:hover {
     width: 35%;
     font-size: 1.5rem;
     color: var(--menu-text);
-    background-color: var(--menu);
+    background-color: var(--player-cell);
     cursor: pointer;
 }
 
