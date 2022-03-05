@@ -20,6 +20,7 @@ const hasLost = document.getElementsByClassName('lose');
 
 const profile = document.getElementsByClassName('fa-user-circle');
 const clock = document.getElementsByClassName('fa-clock');
+const userTime = document.getElementById('user-time');
 
 const possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
@@ -42,6 +43,12 @@ let userInput = ''; // this is the users input
 let userName = ''; // empty string for the users name
 
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
+
+let hours = 0;
+let minuteSmall = 0;
+let secondsSmall = 0;
+let minuteBig = 0;
+let secondsBig = 0; // hourSmall, minuteSmall and secondsSmall for clock
 
 // horizontal indexs
 let hGrid = [
@@ -413,6 +420,36 @@ function hideDiffMenu(){
 function showNameAndTime(){
     profile[0].classList.remove('hidden');
     profile[0].innerHTML = `<span class="users-name">${userName}</span>`;
+    clock[0].classList.remove('hidden');
+
+    hours = 0;
+    minuteSmall = 0;
+    secondsSmall = 0;
+    minuteBig = 0;
+    secondsBig = 0;
+
+    setInterval(countUserTime, 1000); // counts users time and displays time on board 
+}
+
+// starts counting the time for user completing the game
+function countUserTime(){
+    if(secondsSmall === 10){
+        secondsBig++;
+        secondsSmall = 0;
+    }
+    if(secondsBig === 6){
+        minuteSmall++;
+        secondsBig = 0;
+    }
+    if(minuteSmall === 10){
+        minuteBig++;
+        minuteSmall = 0;
+    }
+    if(minuteBig === 6){
+        hours++;
+    }
+
+    userTime.innerText = `${hours} : ${minuteBig}${minuteSmall} : ${secondsBig}${secondsSmall++}`;
 }
 
 function checkIfAllCorrect(){
