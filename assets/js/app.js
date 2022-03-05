@@ -485,7 +485,7 @@ function countUserTime(){
 function checkIfAllCorrect(){
     let hasLost = false;
 
-    if(!boardOnScreen.includes('')){
+    if(!boardOnScreen.includes('') && !boardOnScreen.includes(' ')){
         for(let i = 0; i < gCells.length; i++){
             if(boardOnScreen[i] !== boardBefore[i]){
                 hasLost = true;
