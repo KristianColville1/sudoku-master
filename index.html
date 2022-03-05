@@ -16,14 +16,18 @@
     <!-- top of main -->
     <main>
         <div class="game">
-            <div class="menu-btns layer-five">
-                <button class="help-button" id="help-button" type="button" onclick="helpInfo()" aria-label="Click this button to display the help screen for information on how to play sudoku">
-                    <i class="fas fa-question"></i>
-                </button>
-                <button class="dark-mode-button" id="dark-mode-button" type="button" aria-label="Clicking this button will change the contrast of the website to darker colors">
-                    <i class="fa-solid fa-moon"></i>
-                    <i class="fa-solid fa-sun hidden"></i>
-                </button>
+            <div class="top-menu layer-five">
+                <i class="far fa-user-circle hidden"><span class="users-name"></span></i>
+                <i class="far fa-clock hidden"></i>
+                <div class="menu-btns">
+                    <button class="help-button" id="help-button" type="button" onclick="helpInfo()" aria-label="Click this button to display the help screen for information on how to play sudoku">
+                        <i class="fas fa-question"></i>
+                    </button>
+                    <button class="dark-mode-button" id="dark-mode-button" type="button" aria-label="Clicking this button will change the contrast of the website to darker colors">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun hidden"></i>
+                    </button>
+                </div>
             </div>
             <div class="help-menu layer-four hidden">
                 <h1>How to play sudoku</h1>
@@ -57,8 +61,6 @@
                 <button type="button" id="start-game" class="start-game" onclick="startGame()">Start Game</button>
                 <i class="far fa-arrow-alt-circle-right" onclick="nextDifficulty('right')"></i>
             </div>
-            <i class="far fa-user-circle hidden"></i>
-            <i class="far fa-clock hidden"></i>
             <div class="last-menu hidden">
                 <p class="win">You Win!</p>
                 <p class="lose hidden">You Lose!</p>
