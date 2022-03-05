@@ -337,11 +337,21 @@ h2.welcome-menu {
 form {
     font-size: 2rem;
     color: var(--menu);
+    text-align: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 2rem;
 }
 
 input {
     height: 35px;
-    width: 60%;
+    width: 80%;
     font-size: 1.5rem;
     margin: 5px;
     border: 3px inset var(--log-in);
@@ -353,12 +363,11 @@ input:hover {
 }
 
 .next {
-    width: 70px;
+    height: 35px;
+    width: 35%;
     font-size: 1.5rem;
     color: var(--menu-text);
     background-color: var(--menu);
-    margin-top: 10px;
-    margin-left: 5px;
     cursor: pointer;
 }
 
