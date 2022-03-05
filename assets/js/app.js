@@ -447,6 +447,7 @@ function countUserTime(){
     }
     if(minuteBig === 6){
         hours++;
+        minuteBig = 0;
     }
 
     userTime.innerText = `${hours} : ${minuteBig}${minuteSmall} : ${secondsBig}${secondsSmall++}`;
