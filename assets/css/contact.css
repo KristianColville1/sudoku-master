@@ -2,18 +2,45 @@
     border: 5px solid var(--menu-text);
 }
 
+#contact-form h1 {
+    font-size: 3rem;
+    position: absolute;
+    top: 0;
+}
+
 #contact-form label {
     font-size: 1.5rem;
     padding: 20px;
 }
 
-.c-name,
-.email,
-.user-msg {
+#c-name,
+#email,
+#user-msg {
+    width: 80%;
+    font-size: 1.2rem;
     border: 3px solid var(--menu-text);
+    
+}
+
+#user-msg {
+    font-size: 1rem;
+    height: 20%;
     resize: none;
 }
 
-.user-msg {
-    font-size: 1rem;
+#contact-btn,
+#return-btn {
+    font-size: 1.5rem;
+    color: var(--menu-text);
+    background-color: var(--player-cell);
+    cursor: pointer;
+    position: absolute;
+    top: 88%;
+}
+
+#contact-btn {
+    right: 9%;
+}
+#return-btn {
+    left: 9%;
 }

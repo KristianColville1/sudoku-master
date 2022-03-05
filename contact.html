@@ -17,16 +17,17 @@
     <!-- top of main -->
     <main>
         <form id="contact-form">
+            <h1>Send us a message</h1>
             <label for="c-name">Your Name</label>
-            <input id="c-name" class="c-name" placeholder="Name here" required>
+            <input type="text" id="c-name" name="c-name" placeholder="Name here" required>
             <label for="email">Your Email Address</label>
-            <input id="email" class="email" placeholder="Email here" required>
+            <input type="email" id="email" name="email" placeholder="Email here" required="@">
             <label for="user-msg">Your Message</label>
-            <textarea id="user-msg" class="user-msg" placeholder="Please leave us an email to let us know what you think of this sudoku game and how we might improve the game, or ask us anything :)" required></textarea>
+            <textarea type="text" id="user-msg" name="user-msg" placeholder="Please leave us an email to let us know what you think of this sudoku game and how we might improve the game, or ask us anything :)" required></textarea>
+            <button type="button" id="return-btn" onclick="history.back()"><i class="fas fa-angle-double-left"></i> Back</button>
             <button type="submit" id="contact-btn">Submit</button>
-        </form>
+            </div>
     </main>
-        
     <!-- end of main -->
 
     <!--top of footer-->
