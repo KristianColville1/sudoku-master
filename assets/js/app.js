@@ -593,7 +593,8 @@ function darkMode(){
     if(enableDarkMode === false){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-dark'));
         document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-dark'));
-        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-dark'));
+        document.documentElement.style.setProperty('--main-bg-1', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-1-dark'));
+        document.documentElement.style.setProperty('--main-bg-2', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-2-dark'));
         document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-dark'));
         document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-dark'));
         document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-dark'));
@@ -607,6 +608,8 @@ function darkMode(){
         document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-dark'));
         document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-dark'));
         document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-dark'));
+        document.documentElement.style.setProperty('--footer-text', getComputedStyle(document.documentElement).getPropertyValue('--footer-text-dark'));
+        document.documentElement.style.setProperty('--footer-bg', getComputedStyle(document.documentElement).getPropertyValue('--footer-bg-dark'));
         enableDarkMode = true;
 
         darkIconMoon[0].classList.add('hidden');
@@ -614,7 +617,8 @@ function darkMode(){
     }else if(enableDarkMode === true){
         document.documentElement.style.setProperty('--shaded-cells', getComputedStyle(document.documentElement).getPropertyValue('--shaded-cells-light'));
         document.documentElement.style.setProperty('--player-cell', getComputedStyle(document.documentElement).getPropertyValue('--player-cell-light'));
-        document.documentElement.style.setProperty('--main-bg', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-light'));
+        document.documentElement.style.setProperty('--main-bg-1', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-1-light'));
+        document.documentElement.style.setProperty('--main-bg-2', getComputedStyle(document.documentElement).getPropertyValue('--main-bg-2-light'));
         document.documentElement.style.setProperty('--header-bg', getComputedStyle(document.documentElement).getPropertyValue('--header-bg-light'));
         document.documentElement.style.setProperty('--logo', getComputedStyle(document.documentElement).getPropertyValue('--logo-light'));
         document.documentElement.style.setProperty('--game-bg', getComputedStyle(document.documentElement).getPropertyValue('--game-bg-light'));
@@ -628,6 +632,8 @@ function darkMode(){
         document.documentElement.style.setProperty('--menu', getComputedStyle(document.documentElement).getPropertyValue('--menu-light'));
         document.documentElement.style.setProperty('--log-in', getComputedStyle(document.documentElement).getPropertyValue('--log-in-light'));
         document.documentElement.style.setProperty('--menu-text', getComputedStyle(document.documentElement).getPropertyValue('--menu-text-light'));
+        document.documentElement.style.setProperty('--footer-text', getComputedStyle(document.documentElement).getPropertyValue('--footer-text-light'));
+        document.documentElement.style.setProperty('--footer-bg', getComputedStyle(document.documentElement).getPropertyValue('--footer-bg-light'));
         enableDarkMode = false;
 
         darkIconMoon[0].classList.remove('hidden');
