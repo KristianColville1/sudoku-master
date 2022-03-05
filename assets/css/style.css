@@ -471,7 +471,7 @@ input:hover {
 }
 
 .game-grid-cells:hover {
-    background-color: var(--player-cell);
+    background-color: var(--menu);
     cursor: pointer;
 }
 
@@ -489,20 +489,26 @@ input:hover {
 .eraser {
     text-align: center;
     color: var(--system-numbers);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     width: 40px;
     height: 40px;
     border: 2px solid var(--game-border);
     border-radius: 50%;
     margin-right: 5px;
     flex: 0 1 auto;
+    cursor: pointer;
 }
 
 .p-number:hover,
 .pencil:hover,
 .eraser:hover {
-    background-color: var(--choice);
-    cursor: pointer;
+    background-color: var(--menu-text);   
+}
+
+.n-counter {
+    font-size: 0.65rem;
+    position: absolute;
+    transform: translate(-145%, 165%);
 }
 
 /*-------------------------------------------------------Media Queries */

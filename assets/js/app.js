@@ -8,6 +8,7 @@ const mainGrid = document.getElementById('grid');
 const numPad = document.getElementsByClassName('player-num-choice');
 const gCells = document.getElementsByClassName('game-grid-cells');
 const pChoice = document.getElementsByClassName('choice');
+const numChoice = document.getElementsByClassName('p-number');
 
 const firstMenu = document.getElementsByClassName('menu-part-one');
 const secondMenu = document.getElementsByClassName('menu-part-two');
@@ -100,9 +101,32 @@ hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 // this function is activated when user chooses a difficulty
 function startGame(){
+    fillNumberPad();
     removeHighlighted();
     createEmptyInnerArrays();
     getInnerTextForDiff();
+}
+
+// initial fill for the number pad
+function fillNumberPad(){
+    for(let i = 0; i < numChoice.length; i++){
+        numChoice[i].innerText = i + 1;
+    }
+}
+
+// when user selects cell or puts value into cell it checks here and will decrease amountLeft if that value is on board
+function checkNumPad(){
+    let amountLeft = 9;
+    for(let i = 0; i < numChoice.length; i++){
+        let counter = i + 1;
+        amountLeft = 9;
+        for(let j = 0; j < gCells.length; j++){
+            if(boardOnScreen[j] === counter){
+                amountLeft--;
+            }
+        }
+        numChoice[i].innerHTML = `${counter}<span class="n-counter">${amountLeft}</span>`;
+    }
 }
 
 function displayedBoard(toRemove){
@@ -170,9 +194,9 @@ function playerPosition(position){
     gCells[position].classList.remove('shaded'); 
     isOnTheBoard(); // calls the function to place the users input on the board
     highlightThisChoiceOnBoard(); // calls when user picks a choice
+    checkNumPad();
     checkIfAllCorrect(); // checks if the board is correct
 }
-
 
 // function activates for the players choice
 function playerChoice(position){
@@ -383,7 +407,7 @@ function howDifficultIsGame(diff){
     switch(diff){
         case 1:
             // very easy, remove 28 pieces
-            toRemove = 2;
+            toRemove = 28;
             break;
         case 2:
             // easy, remove 37 pieces
