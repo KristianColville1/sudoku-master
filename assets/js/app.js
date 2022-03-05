@@ -40,7 +40,6 @@ var isThisDecision = ''; // in playerChoice
 let userInput = ''; // this is the users input
 let userName = ''; // empty string for the users name
 
-let cellCounter = 0; // used to track how many cells have numbers in them
 let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
 
 // horizontal indexs
@@ -311,7 +310,6 @@ function isOnTheBoard(){
         } else{
             gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
             boardOnScreen.splice(playerIndex, 1, userInput);
-            cellCounter++;
         }
     }
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
@@ -492,7 +490,6 @@ function hideDiffMenu(){
 }
 
 function startGame(){
-    cellCounter = 0;
     removeHighlighted();
     createEmptyInnerArrays();
     getInnerTextForDiff();
@@ -534,7 +531,6 @@ function wonGame(){
     for(let i = 0; i < pChoice.length; i++){
         pChoice[i].classList.remove('choice-active');
     }
-    
     hasWon[0].classList.add('ani-small-big');
     hasWon[0].classList.add('layer-four');
     lastMenu[0].classList.remove('hidden');
