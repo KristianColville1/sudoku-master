@@ -6,8 +6,8 @@
     /* CSS HEX */
 
 /* ...............................player position */
---shaded-cells: #B7F1FA;
---shaded-cells-light: #B7F1FA;
+--shaded-cells: #37AFD7;
+--shaded-cells-light: #37AFD7;
 --shaded-cells-dark: #6D76B2;
 --player-cell: #6D76B2;
 --player-cell-light: #6D76B2;
@@ -71,6 +71,14 @@
 --choice-active-light: #6D76B2;
 --choice-active-dark: #00E8FC;
 
+/*---------------------------------------------------footer */
+--footer-text: #19647E;
+--footer-text-light: #19647E;
+--footer-text-dark: #F4F4F9;
+
+--footer-bg: #16db85;
+--footer-bg-light: #16db85;
+--footer-bg-dark: #37AFD7;
 
 }
 
@@ -523,14 +531,6 @@ input:hover {
         height: 90%;
     }
 
-    #grid {
-        width: 100%;
-    }
-
-    .game-grid-cells {
-        width: 10%;
-    }
-
     h2.welcome-menu {
         font-size: 1.8rem;
     }
@@ -550,5 +550,15 @@ input:hover {
     .copy-right {
         margin-left: 25px;
         position: absolute;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    #grid {
+        width: 100%;
+    }
+
+    .game-grid-cells {
+        width: 10%;
     }
 }
