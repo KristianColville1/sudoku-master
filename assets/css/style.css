@@ -570,6 +570,10 @@ input:hover {
     border: 2px solid var(--footer-bg);
 }
 
+.frowning {
+    color: var(--log-in);
+}
+
 /*-------------------------------------------------------Media Queries */
 
 @media screen and (max-width: 720px) {
