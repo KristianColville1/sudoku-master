@@ -1,15 +1,23 @@
-// function taking from EmailJS for sending user thank you email 
+// function taking from EmailJS for sending sudoku master email https://www.emailjs.com/docs/tutorial/creating-contact-form/
 
+const sendEmailBtn = document.getElementById('contact-btn');
 
-// gets these objests and sends an email to sudoku master
-function emailUser(para){
-    let obj = {
-        fromUser: document.getElementById('c-name').value,
-        toUser: 'Sudoku Master',
-        message: document.getElementById('user-msg'),
-    };
+document.getElementById('contact-form').addEventListener('submit', function (event){
+    event.preventDefault();
+    emailjs.init('JBCmNL6wutFtO1NM7');
 
-    emailjs.send('gmail', 'template_b7f648f', obj).then(function(respond){
-        console.log('success', respond.status);
+    emailjs.sendForm('service_5c7vg0b', 'template_dz7rfjt', this)
+    .then(function() {
+        console.log('SUCCESS!');
+        displayThanks();
+    }, function(error) {
+        console.log('FAILED...', error);
     });
+});
+
+
+// hides contact form and displays thank you message on success
+
+function displayThanks(){
+    
 }
