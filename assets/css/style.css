@@ -638,6 +638,12 @@ input:hover {
     .game-grid-cells {
         width: 10%;
     }
+
+    .pencil-mark {
+        width: 9px;
+        height: 9px;
+        font-size: .5rem;
+    }
 }
 
 @media screen and (max-width: 375px) {
