@@ -224,7 +224,14 @@ function playerChoice(position){
     if(userInput === 11){ // after users input turns on pencilActive reset here, dont want 11
         userInput = '  '; // two blanks for pencil
     }
+
     highlightThisChoiceOnBoard(); // calls when user picks a choice
+
+    for(let i = 0; i < gCells.length; i++){ // when user selects a new choice remove the shaded cells/ player index for readability
+        gCells[i].classList.remove('shaded');
+        gCells[i].classList.remove('player');
+
+    }
 }
 
 // adds the users input to the board based on the cell number and if it contains the numbers class
@@ -297,9 +304,16 @@ function highlightThisChoiceOnBoard(){
 
     } else{
         for(let i = 0; i < gCells.length; i++){
-            if(boardOnScreen[i] === userInput || trackPencilMarks[i].includes(userInput)){
+            if(boardOnScreen[i] === userInput){
                 gCells[i].classList.add('num-highlight');
             }
+            if( // if there are pencil marks with user input and the board does not contain empty strings or blank spaces, highlight cells.
+                trackPencilMarks[i].includes(userInput) && !boardOnScreen[i].includes('') ||
+                trackPencilMarks[i].includes(userInput) && !boardOnScreen[i].includes(' ') ||
+                trackPencilMarks[i].includes(userInput) && !boardOnScreen[i].includes('  ')
+                ){
+                    gCells[i].classList.add('num-highlight');
+                }
         }
     }
 }
