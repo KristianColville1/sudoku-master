@@ -29,7 +29,8 @@
 }
 
 #contact-btn,
-#return-btn {
+#return-btn,
+.home-link {
     font-size: 1.2rem;
     color: var(--menu-text);
     background-color: var(--player-cell);
@@ -38,12 +39,28 @@
     top: 88%;
 }
 
+
 #contact-btn {
+    width: auto;
     right: 9%;
 }
 
 #return-btn {
     left: 9%;
+}
+
+.home-link {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--footer-bg);
+}
+
+#thank-you-msg h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    position: relative;
+    top: 25%;
 }
 
 @media screen and (max-width: 479px) {

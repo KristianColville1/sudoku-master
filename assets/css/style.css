@@ -555,6 +555,7 @@ input:hover {
     .game,
     .help-menu,
     form,
+    #thank-you-msg,
     .diff-menu,
     .menu {
         width: 90%; /*-------------------------------------------------------Game width */
