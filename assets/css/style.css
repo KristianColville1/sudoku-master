@@ -581,6 +581,7 @@ input:hover {
         background-color: var(--main-bg-2);
     }
 
+    .game,
     .help-menu,
     form,
     #thank-you-msg,
