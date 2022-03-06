@@ -383,14 +383,13 @@ form,
 
 /*-------------------------------------------------------first menu */
 h2.welcome-menu {
-    color: var(--menu);
     font-size: 2.5rem;
     font-style: italic;
 }
 
 form {
     font-size: 2rem;
-    color: var(--menu);
+    color: var(--player-cell);
     text-align: center;
 
     display: flex;
@@ -430,7 +429,7 @@ input:hover {
 .diff-menu {
     width: 100%;
     font-size: 2.5rem;
-    color: var(--menu-text);
+    color: var(--player-cell);
 
     display: flex;
     flex-wrap: wrap;
