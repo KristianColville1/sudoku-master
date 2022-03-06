@@ -49,13 +49,6 @@
     left: 9%;
 }
 
-.home-link {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid var(--footer-bg);
-}
-
 #thank-you-msg h2 {
     font-size: 1.6rem;
     text-align: center;

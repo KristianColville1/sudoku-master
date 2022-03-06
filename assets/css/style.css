@@ -350,6 +350,7 @@ footer div {
 .help-menu,
 form,
 #thank-you-msg,
+#error-page,
 .diff-menu,
 .menu {
     width: 650px; /*-------------------------------------------------------Game width */
@@ -544,6 +545,31 @@ input:hover {
     transform: translate(-145%, 165%);
 }
 
+/*--------------------------------404 error page */
+#error-page {
+    text-align: center;
+}
+
+#error-page h1 {
+    color: var(--log-in);
+    font-size: 5rem;
+}
+
+#error-page p {
+    font-size: 2rem;
+}
+
+.home-link {
+    font-size: 1.2rem;
+    color: var(--menu-text);
+    background-color: var(--player-cell);
+    cursor: pointer;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--footer-bg);
+}
+
 /*-------------------------------------------------------Media Queries */
 
 @media screen and (max-width: 720px) {
@@ -552,10 +578,10 @@ input:hover {
         background-color: var(--main-bg-2);
     }
 
-    .game,
     .help-menu,
     form,
     #thank-you-msg,
+    #error-page,
     .diff-menu,
     .menu {
         width: 90%; /*-------------------------------------------------------Game width */
