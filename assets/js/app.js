@@ -129,6 +129,7 @@ function checkNumPad(){
     }
 }
 
+// creates a new board and removes random pieces from the board to display on screen
 function displayedBoard(toRemove){
     boardBefore =  printBoard(); // The full board of valid numbers
     boardOnScreen = []; // board to be displayed to the user
@@ -241,7 +242,7 @@ function isOnTheBoard(){
             // do not want empty strings or pencil marks without values
         } else{
             if(userInput === ' '){
-                // remove pencil markings under the cell if the eraser is on this cells
+                // remove pencil markings under the cell if the eraser is on this cell
                 trackPencilMarks[playerIndex] = [];
                 gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
                 boardOnScreen.splice(playerIndex, 1, userInput);
@@ -301,7 +302,7 @@ function printNewPencilMarks(innerPencilArray){
     gCells[playerIndex].innerHTML = incrementalString;
 }
 
-
+// adds a different background to numbers user selects on the sudoku board, highlighting their positions
 function highlightThisChoiceOnBoard(){
 
     removeHighlighted();
@@ -324,6 +325,7 @@ function highlightThisChoiceOnBoard(){
     }
 }
 
+// removes highlighted background from the cells when called
 function removeHighlighted(){
     // removes the highlighted cells from the last cells
     for(let i = 0; i < gCells.length; i++){
@@ -345,6 +347,7 @@ function getUserName(){
     return false;
 }
 
+// pulls up the difficulty menu for the user and hides the first menu after user selects next
 function pullUpDiffMenu(){
     for(let i = 0; i < firstMenu.length; i++){
         firstMenu[i].classList.add('hidden');
@@ -352,6 +355,7 @@ function pullUpDiffMenu(){
     secondMenu[0].classList.remove('hidden');
 }
 
+// displays difficulty setting to user and navigates left or right when user clicks arrows and hides the other settings
 function nextDifficulty(direction){
     let index = 0;
     if(direction === 'left'){
@@ -421,6 +425,7 @@ function getInnerTextForDiff(){
     howDifficultIsGame(diff); // calls the function here to decide how many pieces to remove
 }
 
+// when called it decides how many numbers to remove from the board depending on the difficulty setting
 function howDifficultIsGame(diff){
     let toRemove = 0;
     // user difficulty will select different outcome
@@ -502,6 +507,7 @@ function countUserTime(){
     userTime.innerText = `${hours} : ${minuteBig}${minuteSmall} : ${secondsBig}${secondsSmall++}`;
 }
 
+// checks if there is empty cells or eraser markings and if so decides when game is over
 function checkIfAllCorrect(){
     let hasLost = false;
 
@@ -519,6 +525,7 @@ function checkIfAllCorrect(){
     }
 }
 
+// when user wins game this is called and the winning message appears
 function wonGame(){
     // remove classes and fill grid with green background and display winning message
     for(let i = 0; i < gCells.length; i++){
@@ -540,6 +547,7 @@ function wonGame(){
     isGameOver = true;
 }
 
+// when user wins game this is called and the lost message appears
 function lostGame(){
         // remove classes and fill grid with purple background and display losing message
         for(let i = 0; i < gCells.length; i++){
