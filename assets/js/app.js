@@ -230,7 +230,6 @@ function playerChoice(position){
     for(let i = 0; i < gCells.length; i++){ // when user selects a new choice remove the shaded cells/ player index for readability
         gCells[i].classList.remove('shaded');
         gCells[i].classList.remove('player');
-
     }
 }
 
@@ -241,8 +240,15 @@ function isOnTheBoard(){
             // do not enter these values on the board
             // do not want empty strings or pencil marks without values
         } else{
-            gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
-            boardOnScreen.splice(playerIndex, 1, userInput);
+            if(userInput === ' '){
+                // remove pencil markings under the cell if the eraser is on this cells
+                trackPencilMarks[playerIndex] = [];
+                gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
+                boardOnScreen.splice(playerIndex, 1, userInput);
+            } else{
+                gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
+                boardOnScreen.splice(playerIndex, 1, userInput);
+            }
         }
     }
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
@@ -313,7 +319,7 @@ function highlightThisChoiceOnBoard(){
                 trackPencilMarks[i].includes(userInput) && !boardOnScreen[i].includes('  ')
                 ){
                     gCells[i].classList.add('num-highlight');
-                }
+            }
         }
     }
 }
@@ -535,7 +541,7 @@ function wonGame(){
 }
 
 function lostGame(){
-        // remove classes and fill grid with green background and display losing message
+        // remove classes and fill grid with purple background and display losing message
         for(let i = 0; i < gCells.length; i++){
             gCells[i].classList.remove('numbers');
             gCells[i].classList.remove('player');
