@@ -24,8 +24,13 @@
             <label for="user-msg">Your Message</label>
             <textarea id="user-msg" name="user-msg" placeholder="Please leave us an email to let us know what you think of this sudoku game and how we might improve the game, or ask us anything :)" required></textarea>
             <button type="button" id="return-btn" onclick="history.back()"><i class="fas fa-angle-double-left"></i> Back</button>
-            <button type="submit" id="contact-btn">Submit</button>
+            <input type="submit" id="contact-btn" value="Send">
         </form>
+
+        <div id="thank-you-msg" class="hidden">
+            <h2>Thank you for your email</h2>
+            <a class="home-link" href="index.html" aria-label="Click here to return to the home page"><i class="fas fa-home"></i>Home</a>
+        </div>
     </main>
     <!-- end of main -->
 
