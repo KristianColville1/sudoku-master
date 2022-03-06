@@ -623,6 +623,11 @@ input:hover {
     .diff-menu {
         font-size: 1.5rem;
     }
+
+    .fa-arrow-alt-circle-left:active,
+    .fa-arrow-alt-circle-right:active {
+        font-size: 2rem;
+    }
 }
 
 @media screen and (max-width: 410px) {
