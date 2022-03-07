@@ -387,6 +387,11 @@ h2.welcome-menu {
     font-style: italic;
 }
 
+.name-warning {
+    font-size: 1.5rem;
+    color: var(--log-in);
+}
+
 form {
     font-size: 2rem;
     color: var(--player-cell);

@@ -19,6 +19,7 @@ const setting = document.getElementsByClassName('diff-options');
 const hasWon = document.getElementsByClassName('win');
 const hasLost = document.getElementsByClassName('lose');
 
+const nameWarning = document.getElementsByClassName('name-warning');
 const profile = document.getElementsByClassName('fa-user-circle');
 const clock = document.getElementsByClassName('fa-clock');
 const userTime = document.getElementById('user-time');
@@ -333,7 +334,7 @@ function removeHighlighted(){
     }
 }
 
-// function to start game
+// function to get user name and assigning it to variable userName, checks if name is greater  2 characters
 function getUserName(){
     let name = document.getElementById('name');
     userName = name.value; // assign the users name to this variable
@@ -341,7 +342,7 @@ function getUserName(){
     if(name.value.length > 1){
         pullUpDiffMenu();
     } else{
-        alert('Entered name must be at least 2 characters');
+        nameWarning[0].classList.remove('hidden');
     }
         // call a function to display the next screen
     return false;

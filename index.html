@@ -38,9 +38,10 @@
             </div>
             <form onsubmit="getUserName()" class="menu-part-one">
                 <h2 class="welcome-menu">Welcome to Sudoku Master!</h2>
+                <p class="name-warning hidden">Name must be a minimum of 2 characters and max 12 characters!</p>
                 <label for="name">Enter Your Name</label>
                 <br>
-                <input type="text" id="name" class="name" maxLength="18" placeholder="Here" required>
+                <input type="text" id="name" class="name" maxLength="12" placeholder="Here" required>
                 <br>
                 <button type="button" id="next" class="next">Next</button>
             </form>
