@@ -517,14 +517,15 @@ input:hover {
 .player-pen-choice {
     height: 100px;
     width: 300px;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
     display: flex;
     flex-wrap: wrap;
 }
 
 .p-number,
 .pencil,
-.eraser {
+.eraser,
+.undo {
     text-align: center;
     color: var(--system-numbers);
     font-size: 1.2rem;
@@ -532,14 +533,15 @@ input:hover {
     height: 40px;
     border: 2px solid var(--game-border);
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: 2px;
     flex: 0 1 auto;
     cursor: pointer;
 }
 
 .p-number:hover,
 .pencil:hover,
-.eraser:hover {
+.eraser:hover,
+.undo:hover {
     background-color: var(--menu-text);   
 }
 

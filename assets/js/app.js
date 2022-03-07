@@ -35,6 +35,7 @@ const lastIndex = []; // players last index
 let boardOnScreen = []; // board to be displayed to the user
 let boardBefore = []; // board to compare results when game finished
 let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
+let history = []; // array to store user game history
 
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let userNeedsHelp = false; // boolean for toggling help menu on and off.
@@ -593,13 +594,15 @@ function createEmptyInnerArrays(){
     }
 }
 
-let history = [];
-
 // function to recored the history of user choices, the cell index, the value already in the cell and the new choice
 function recordHistory(cellIndex, insideCell, newChoice){
     let cellString = String(cellIndex);
     history.push([cellString, insideCell, newChoice]);
     alert(history);
+}
+
+function undoLastMove(){
+    
 }
 
 // code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
