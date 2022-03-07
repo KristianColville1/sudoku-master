@@ -16,7 +16,10 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
     * [Site User](#site-user)
     * [Site Owner](#site-owner)
 * [Design](#design)
-    * [How to build Sudoko](#how-to-build-sudoko)
+    * [Color Scheme](#color-scheme)
+    * [Fonts](#color-scheme)
+    * [Structure](#color-scheme)
+    * [Color Scheme](#color-scheme)
 * [Technologies & Tools](#technologies--tools)
 * [Features](#features)
 * [Validation](#validation)
@@ -90,8 +93,37 @@ The goal of this project was to create an interactive and user-friendly version 
 
 [Back to the top](#table-of-contents)
 ## Design
-### How to build Sudoko
-Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku game boards by Kristian Colville. It attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
+
+### Color Scheme
+The color scheme was inspired by the colors of the earth. Other colors were chosen for contrasting reasons between the various shades to add a cohesive style.
+
+- For contrast reasons, the color black was used to increase accessibility scores in areas such as the footer
+
+- The main colors in light mode are the default & they are specifically orientated around the color green. In dark mode, the darker colors are predominately shown with the lighter blue.
+
+- The background image is also affected by the dark mode and has a soft light effect of green and then blue in dark mode.
+
+![Color Palette one](assets/images/colors.png)
+![Color Palette Two](assets/images/colors-two.png)
+
+### Fonts
+[Google fonts](https://fonts.google.com/) were used and implemented in the website. After user feedback, I chose Raleway sans-serif and Lato sans-serif as my final two fonts for the website. I also found these fonts to be visually appealing and easy to read.
+
+Handwriting fonts were initially considered in the design process but were not implemented after user feedback suggested they drastically affected the visual appeal of the site and were harder to read.
+
+### Structure
+The structure of the website was designed to be easily navigated. The whole game is within a single container directly in the centre of the screen. Each menu of the game appears on the screen only when needed.
+
+The game contains the following screens:
+
+- Home page with an instructions icon and dark mode icon in the top right corner, a welcome message with game title, and a user login
+- Next is a difficulty menu that informs the user to select a choice
+- The main game screen displays once the user selects a difficulty, it contains the user's name in the top left corner, a digital clock to count how long the user takes to solve the board, the numbers 1 - 9 for selection and three additional choices for eraser, pencil and undoing moves.
+- Once the game is finished either by losing or winning the whole board turns the same color and a message appears informing the user of a win or lose.
+- Additionally, another smaller screen appears shortly after to check if the user wishes to play another game or to change the difficulty.
+
+#### How to build Sudoko
+Here is a [PDF](assets/docs/pdf/sudoku.pdf) I created called 'How to generate sudoku game boards by Kristian Colville' it attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
 
 [Back to the top](#table-of-contents)
 ## Technologies & Tools
