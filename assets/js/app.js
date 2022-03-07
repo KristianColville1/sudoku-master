@@ -161,6 +161,7 @@ function displayedBoard(toRemove){
             gCells[i].classList.add('numbers');
         }
     }
+    checkNumPad(); // adds amounts of nums left on start of game
 }
 
 // locate the player class and highlight arrays with class shader
@@ -610,7 +611,7 @@ function undoLastMove(){
         boardOnScreen.splice(index, 1, lastMove);
         history.pop();
     }
-    checkNumPad();
+    checkNumPad(); // checks num pad amounts on undo move
 }
 
 // code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
