@@ -7,9 +7,11 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 
 ## Table of Contents
 * [Project Goals](#project-goals)
-    * [External User Goals](#external-user-goals)
+    * [User Goals](#user-goals)
     * [Site Owners Goals](#site-owners-goals)
 * [User Experience](#user-experience-ux)
+    * [Target Audience](#target-audience)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
 * [Design](#design)
     * [How to build Sudoko](#how-to-build-sudoko)
 * [Technologies & Tools](#technologies--tools)
@@ -41,6 +43,20 @@ The goal of this project was to create an interactive and user-friendly version 
 
 [Back to the top](#table-of-contents)
 ## User Experience (UX)
+
+### Target Audience
+
+- This game can be played by anyone that enjoys puzzle based games
+- Any user who likes challanging number games with easy to understand rules
+
+### User Requirements and Expectations
+
+- Simplistic game rules
+- Simplistic navigation through website
+- Responsive wesite that allows any user to play the game
+- Actions which work as expected such as buttons or links
+- A way to contact the developer responsible for creating the game
+- Ease of accessibility for visually imparied users
 
 [Back to the top](#table-of-contents)
 ## Design
