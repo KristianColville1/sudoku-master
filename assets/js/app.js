@@ -46,8 +46,6 @@ var isThisDecision = ''; // in playerChoice
 let userInput = ''; // this is the users input
 let userName = ''; // empty string for the users name
 
-let randomPosition = Math.floor(Math.random() * 80); // random position for player position testing
-
 let hours = 0;
 let minuteSmall = 0;
 let secondsSmall = 0;
@@ -103,10 +101,33 @@ hGrid[6].forEach(index => gCells[index].classList.add('margin-top'));
 
 // this function is activated when user chooses a difficulty
 function startGame(){
+    resetVars();
     fillNumberPad();
     removeHighlighted();
     createEmptyInnerArrays();
     getInnerTextForDiff();
+}
+
+// when called it resets these variables to default values
+function resetVars(){
+    dontShade = []; 
+    playerIndex = []; 
+    boardOnScreen = []; 
+    boardBefore = []; 
+    trackPencilMarks = []; 
+    history = []; 
+    enableDarkMode = false; 
+    userNeedsHelp = false; 
+    pencilActive = false; 
+    isGameOver = false; 
+    isThisDecision = ''; 
+    userInput = ''; 
+    userName = ''; 
+    hours = 0;
+    minuteSmall = 0;
+    secondsSmall = 0;
+    minuteBig = 0;
+    secondsBig = 0; 
 }
 
 // initial fill for the number pad
@@ -327,7 +348,6 @@ function highlightThisChoiceOnBoard(){
             if(trackPencilMarks[i].includes(userInput)){
                 gCells[i].classList.add('num-highlight');
             }
-
         }
     }
 }
