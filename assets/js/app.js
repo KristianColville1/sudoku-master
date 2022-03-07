@@ -121,8 +121,7 @@ function resetVars(){
     pencilActive = false; 
     isGameOver = false; 
     isThisDecision = ''; 
-    userInput = ''; 
-    userName = ''; 
+    userInput = '';
     hours = 0;
     minuteSmall = 0;
     secondsSmall = 0;
