@@ -564,10 +564,6 @@ input:hover {
     bottom: 15%;
 }
 
-.undo .tooltip-text {
-    right: 5%;
-}
-
 .tooltip:hover .tooltip-text {
     visibility: visible;
 }
@@ -671,6 +667,10 @@ input:hover {
         width: 9px;
         height: 9px;
         font-size: .5rem;
+    }
+    
+    .undo .tooltip-text {
+        right: 5%;
     }
 }
 
