@@ -12,6 +12,9 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 * [User Experience](#user-experience-ux)
     * [Target Audience](#target-audience)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
+* [User Stories](#user-stories)
+    * [Site User](#site-user)
+    * [Site Owner](#site-owner)
 * [Design](#design)
     * [How to build Sudoko](#how-to-build-sudoko)
 * [Technologies & Tools](#technologies--tools)
@@ -53,10 +56,37 @@ The goal of this project was to create an interactive and user-friendly version 
 
 - Simplistic game rules
 - Simplistic navigation through website
-- Responsive wesite that allows any user to play the game
+- Responsive website that allows any user to play the game
 - Actions which work as expected such as buttons or links
 - A way to contact the developer responsible for creating the game
 - Ease of accessibility for visually imparied users
+
+[Back to the top](#table-of-contents)
+
+## User Stories
+
+### Site User
+
+1. I want to be able to understand the rules of the game
+2. I want to have the ability to enter my name and show it on screen while playing the game
+3. I want the ability to choose how difficult the game is
+4. I want to play the game by just clicking with the mouse
+5. I want the ability to undo my last move in the game
+6. I want the ability to see my position in the game
+7. I want the ability to keep track of my guesses in the game
+8. I want to see how long it takes me to solve the game
+9. I want the ability to play the game in darkmode
+10. I want to be able to contact the developer responsible for creating the game
+11. I want to know that my message to the developer has been sent
+
+### Site Owner
+
+12. I want the user to understand the rules of the game
+13. I want the user of the website to have the ability to choose difficulty settings
+14. I want my website to be fully responsive so all users can play
+15. I want a 404 error page incase the user enters a url that does not exist within the website
+16. I want the user to have the ability to contact me about the game and provide feedback for the game
+
 
 [Back to the top](#table-of-contents)
 ## Design
