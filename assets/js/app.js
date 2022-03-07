@@ -231,9 +231,11 @@ function playerChoice(position){
 
     highlightThisChoiceOnBoard(); // calls when user picks a choice
 
-    for(let i = 0; i < gCells.length; i++){ // when user selects a new choice remove the shaded cells/ player index for readability
-        gCells[i].classList.remove('shaded');
-        gCells[i].classList.remove('player');
+    if(pencilActive === false){
+        for(let i = 0; i < gCells.length; i++){ // when user selects a new choice remove the shaded cells/ player index for readability
+            gCells[i].classList.remove('shaded');
+            gCells[i].classList.remove('player');
+        }
     }
 }
 
@@ -318,13 +320,14 @@ function highlightThisChoiceOnBoard(){
             if(boardOnScreen[i] === userInput){
                 gCells[i].classList.add('num-highlight');
             }
-            if( // if there are pencil marks with user input and the board does not contain empty strings or blank spaces, highlight cells.
-                trackPencilMarks[i].includes(userInput) && !boardOnScreen[i].includes('') ||
-                trackPencilMarks[i].includes(userInput) && !boardOnScreen[i].includes(' ') ||
-                trackPencilMarks[i].includes(userInput) && !boardOnScreen[i].includes('  ')
-                ){
-                    gCells[i].classList.add('num-highlight');
+            if(boardOnScreen[i] === ' ' || boardOnScreen[i] === '  ' || boardOnScreen[i] === '   '){
+                trackPencilMarks[i] = []; // makes sure to empty the inner array incase eraser, pencil or undo move
             }
+            // if there are pencil marks with user input and the board does not contain empty strings or blank spaces, highlight cells.
+            if(trackPencilMarks[i].includes(userInput)){
+                gCells[i].classList.add('num-highlight');
+            }
+
         }
     }
 }
@@ -343,12 +346,10 @@ function getUserName(){
     userName = name.value; // assign the users name to this variable
 
     if(name.value.length > 1){
-        pullUpDiffMenu();
+        pullUpDiffMenu(); // call a function to display the next screen
     } else{
         nameWarning[0].classList.remove('hidden');
     }
-        // call a function to display the next screen
-    return false;
 }
 
 // pulls up the difficulty menu for the user and hides the first menu after user selects next
@@ -606,6 +607,10 @@ function recordHistory(cellIndex, insideCell, newChoice){
 function undoLastMove(){
     let index = Number(history[history.length -1][0]);
     let lastMove = history[history.length -1][1];
+    if(lastMove === ''){
+        lastMove = '   '; // makes last move 3 blank spaces to make sure pencil doesn't highlight
+    }
+
     if(history.length > 0){
         gCells[index].innerHTML = `<span class='center-cell'>${lastMove}</span>`;
         boardOnScreen.splice(index, 1, lastMove);
