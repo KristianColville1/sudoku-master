@@ -249,6 +249,7 @@ function isOnTheBoard(){
                 boardOnScreen.splice(playerIndex, 1, userInput);
             } else{
                 gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
+                recordHistory(playerIndex, boardOnScreen[playerIndex], userInput);
                 boardOnScreen.splice(playerIndex, 1, userInput);
             }
         }
@@ -590,6 +591,15 @@ function createEmptyInnerArrays(){
     for(let i = 0; i < 81; i++){
         trackPencilMarks.push([]);
     }
+}
+
+let history = [];
+
+// function to recored the history of user choices, the cell index, the value already in the cell and the new choice
+function recordHistory(cellIndex, insideCell, newChoice){
+    let cellString = String(cellIndex);
+    history.push([cellString, insideCell, newChoice]);
+    alert(history);
 }
 
 // code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
