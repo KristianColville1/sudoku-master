@@ -624,13 +624,12 @@ function recordHistory(cellIndex, insideCell, newChoice){
 
 // when called it reverses the last move
 function undoLastMove(){
-    let index = Number(history[history.length -1][0]);
-    let lastMove = history[history.length -1][1];
-    if(lastMove === ''){
-        lastMove = '   '; // makes last move 3 blank spaces to make sure pencil doesn't highlight
-    }
-
     if(history.length > 0){
+        let index = Number(history[history.length -1][0]);
+        let lastMove = history[history.length -1][1];
+        if(lastMove === ''){
+            lastMove = '   '; // makes last move 3 blank spaces to make sure pencil doesn't highlight
+        }
         gCells[index].innerHTML = `<span class='center-cell'>${lastMove}</span>`;
         boardOnScreen.splice(index, 1, lastMove);
         history.pop();
