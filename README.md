@@ -3,7 +3,7 @@ Sudoku game website.
 
 Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 
-(image here of finished website)
+![Sudoku Master](assets/images/responsive.png)
 
 ## Table of Contents
 * [Project Goals](#project-goals)
