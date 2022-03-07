@@ -9,7 +9,7 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 * [Project Goals](#project-goals)
     * [External User Goals](#external-user-goals)
     * [Site Owners Goals](#site-owners-goals)
-* [UX](#ux)
+* [User Experience](#user-experience-ux)
 * [Design](#design)
     * [How to build Sudoko](#how-to-build-sudoko)
 * [Technologies & Tools](#technologies--tools)
@@ -25,16 +25,27 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
 * [acknowledgements](#acknowledgements)
 
 ## Project Goals
-This project's goal was to create an interactive and user-friendly version of the popular game Sudoku.
+The goal of this project was to create an interactive and user-friendly version of the popular game Sudoku.
 
-### External User Goals
+### User Goals
+
+- To play a puzzle based game that is both challanging and easy to use
+- Be able to choose exactly how challanging the game is
+
 ### Site Owners Goals
 
-## UX
+- Create a puzzle based game that is engaging and challanging
+- Create a visually attractive design
+- Make navigating around the website simplistic
+- Build a responsive and accessible website for all users of the website
+
+[Back to the top](#table-of-contents)
+## User Experience (UX)
+
 [Back to the top](#table-of-contents)
 ## Design
 ### How to build Sudoko
-Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku game boards by Kristian Colville. It describes my thought process for this project and my ideas on how to build the game.
+Here is a [PDF](assets/pdf/sudoku.pdf) I created called How to generate sudoku game boards by Kristian Colville. It attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
 
 [Back to the top](#table-of-contents)
 ## Technologies & Tools
