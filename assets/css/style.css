@@ -236,7 +236,9 @@ button {
 /*-------------------------------------------------------game menu */
 .top-menu {
     width: 100%;
+    padding-top: 2px;
     position: absolute;
+    top: 0;
 }
 
 .menu-btns {
@@ -383,7 +385,7 @@ form,
 
 /*-------------------------------------------------------first menu */
 h2.welcome-menu {
-    font-size: 2.5rem;
+    font-size: 2;
     font-style: italic;
 }
 
@@ -393,7 +395,7 @@ h2.welcome-menu {
 }
 
 form {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--player-cell);
     text-align: center;
 
@@ -526,11 +528,11 @@ input:hover {
 .pencil,
 .eraser,
 .undo {
-    text-align: center;
-    color: var(--system-numbers);
-    font-size: 1.2rem;
     width: 40px;
     height: 40px;
+    color: var(--system-numbers);
+    font-size: 1.2rem;
+    text-align: center;
     border: 2px solid var(--game-border);
     border-radius: 50%;
     margin-right: 2px;
