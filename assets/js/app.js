@@ -598,11 +598,18 @@ function createEmptyInnerArrays(){
 function recordHistory(cellIndex, insideCell, newChoice){
     let cellString = String(cellIndex);
     history.push([cellString, insideCell, newChoice]);
-    alert(history);
+
 }
 
+// when called it reverses the last move
 function undoLastMove(){
-    
+    let index = Number(history[history.length -1][0]);
+    let lastMove = history[history.length -1][1];
+    if(history.length > 0){
+        gCells[index].innerHTML = `<span class='center-cell'>${lastMove}</span>`;
+        boardOnScreen.splice(index, 1, lastMove);
+        history.pop();
+    }
 }
 
 // code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
