@@ -19,7 +19,8 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
     * [Color Scheme](#color-scheme)
     * [Fonts](#color-scheme)
     * [Structure](#color-scheme)
-    * [Color Scheme](#color-scheme)
+    * [Wireframes](#wireframes)
+    * [How to build Sudoku](#how-to-build-sudoko)
 * [Technologies & Tools](#technologies--tools)
 * [Features](#features)
 * [Validation](#validation)
@@ -124,6 +125,29 @@ The structure of the website was designed to be easily navigated. The whole game
 - If the user clicks the question mark a modal menu pops open showing game rules and basic instructions with a link to a sudoku wikipedia page if the user needs more information about the game and how to play it
 - I've also added a contage page form which allows users of the website to send an email through EmailJs to the developer responsible for creating the website so they can share feedback and provide insights
 - Incase the user enters a URL that does not exist within the site I have also added a 404 error page to display with a link to the home page
+
+### Wireframes
+
+<details>
+<summary>Desktop and large screens<summary>
+
+![Desktop](assets/images/sudoku-master.png)
+
+</details>
+
+<details>
+<summary>Tablet and medium screens<summary>
+
+![Tablet](assets/images/sudoku-master-two.png)
+
+</details>
+
+<details>
+<summary>Mobile and smaller screens<summary>
+
+![Mobile](assets/images/sudoku-master-three.png)
+
+</details>
 
 #### How to build Sudoko
 Here is a [PDF](assets/docs/sudoku.pdf) I created called 'How to generate sudoku game boards by Kristian Colville' it attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
