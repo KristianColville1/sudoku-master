@@ -20,7 +20,6 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
     * [Fonts](#color-scheme)
     * [Structure](#color-scheme)
     * [Wireframes](#wireframes)
-    * [How to build Sudoku](#how-to-build-sudoko)
 * [Technologies & Tools](#technologies--tools)
 * [Features](#features)
 * [Validation](#validation)
@@ -149,9 +148,6 @@ The structure of the website was designed to be easily navigated. The whole game
 
 </details>
 
-#### How to build Sudoko
-Here is a [PDF](assets/docs/sudoku.pdf) I created called 'How to generate sudoku game boards by Kristian Colville' it attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
-
 [Back to the top](#table-of-contents)
 ## Technologies & Tools
 
@@ -177,9 +173,9 @@ Here is a [PDF](assets/docs/sudoku.pdf) I created called 'How to generate sudoku
 - [Wave Validator](https://wave.webaim.org/) for accessibility validation
 - [WC3 Validator](https://validator.w3.org/) for validating HTML code
 
-
 [Back to the top](#table-of-contents)
 ## Features
+
 [Back to the top](#table-of-contents)
 ## Validation
 [Back to the top](#table-of-contents)
