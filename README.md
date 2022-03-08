@@ -114,13 +114,16 @@ Handwriting fonts were initially considered in the design process but were not i
 ### Structure
 The structure of the website was designed to be easily navigated. The whole game is within a single container directly in the centre of the screen. Each menu of the game appears on the screen only when needed.
 
-The game contains the following screens:
+- The game contains the following screens:
 
-- Home page with an instructions icon and dark mode icon in the top right corner, a welcome message with game title, and a user login
-- Next is a difficulty menu that informs the user to select a choice
-- The main game screen displays once the user selects a difficulty, it contains the user's name in the top left corner, a digital clock to count how long the user takes to solve the board, the numbers 1 - 9 for selection and three additional choices for eraser, pencil and undoing moves.
-- Once the game is finished either by losing or winning the whole board turns the same color and a message appears informing the user of a win or lose.
-- Additionally, another smaller screen appears shortly after to check if the user wishes to play another game or to change the difficulty.
+    - Home page with an instructions icon and dark mode icon in the top right corner, a welcome message with game title, and a user login
+    - Next is a difficulty menu that informs the user to select a choice
+    - The main game screen displays once the user selects a difficulty, it contains the user's name in the top left corner, a digital clock to count how long the user takes to solve the board, the numbers 1 through 9 for selection and three additional choices for eraser, pencil and undoing moves
+    - Once the game is finished either by losing or winning the whole board turns the same color and a message appears informing the user of a win or lose
+    - Additionally, another smaller screen appears shortly after to check if the user wishes to play another game or to change the difficulty
+- If the user clicks the question mark a modal menu pops open showing game rules and basic instructions with a link to a sudoku wikipedia page if the user needs more information about the game and how to play it
+- I've also added a contage page form which allows users of the website to send an email through EmailJs to the developer responsible for creating the website so they can share feedback and provide insights
+- Incase the user enters a URL that does not exist within the site I have also added a 404 error page to display with a link to the home page
 
 #### How to build Sudoko
 Here is a [PDF](assets/docs/sudoku.pdf) I created called 'How to generate sudoku game boards by Kristian Colville' it attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
