@@ -13,6 +13,7 @@ const numChoice = document.getElementsByClassName('p-number');
 const firstMenu = document.getElementsByClassName('menu-part-one');
 const secondMenu = document.getElementsByClassName('menu-part-two');
 const lastMenu = document.getElementsByClassName('last-menu');
+const returnMenu = document.getElementsByClassName('return-menu');
 const hasEnteredName = document.getElementById('next');
 
 const setting = document.getElementsByClassName('diff-options');
@@ -52,6 +53,9 @@ let secondsSmall = 0;
 let minuteBig = 0;
 let secondsBig = 0; // hourSmall, minuteSmall and secondsSmall for clock
 let time; // variable assigned to function for counting
+
+let counter = 0;
+let menuTimeCounter = 0;
 
 // horizontal indexs
 let hGrid = [
@@ -569,6 +573,7 @@ function wonGame(){
     lastMenu[0].classList.remove('hidden');
 
     isGameOver = true;
+    openReturnMenu();
 }
 
 // when user wins game this is called and the lost message appears
@@ -594,6 +599,7 @@ function lostGame(){
         lastMenu[0].classList.remove('hidden');
 
         isGameOver = true;
+        openReturnMenu();
 }
 
 // help menu button toggles on and off showing sudoku rules
@@ -604,6 +610,20 @@ function helpInfo(){
     } else if(userNeedsHelp === true){
         helpUser[0].classList.add('hidden');
         userNeedsHelp = false;
+    }
+}
+
+// when game is finished the return menu will pop up after a few seconds
+function openReturnMenu(){
+    counter = setInterval(passTime, 1000);
+}
+
+// checks if a few seconds have passed and displays the return menu for the user
+function passTime(){
+    menuTimeCounter++;
+    if(menuTimeCounter >= 3){
+        clearInterval(counter);
+        returnMenu[0].classList.remove('hidden');
     }
 }
 
