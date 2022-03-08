@@ -136,18 +136,27 @@ function resetVars(){
     addClassHidden();
 }
 
-// adds the class hidden to these so the game can be played again
+// adds the class hidden and removes end game background so the game can be played again
 function addClassHidden(){
     hasWon[0].classList.add('hidden');
     hasLost[0].classList.add('hidden');
     lastMenu[0].classList.add('hidden');
     returnMenu[0].classList.add('hidden');
+    profile[0].classList.add('hidden');
+    clock[0].classList.add('hidden');
 
     // removes the backgrounds on each new game for the player
     for(let i = 0; i < gCells.length; i++){
         gCells[i].classList.remove('loser');
         gCells[i].classList.remove('winner');
+
     }
+    for(let i = 0; i < numChoice.length; i++){
+        numChoice[i].innerHTML = '';
+    }
+
+    //resets the clock also
+    userTime.innerText = '';
 }
 
 // initial fill for the number pad
