@@ -130,7 +130,24 @@ function resetVars(){
     minuteSmall = 0;
     secondsSmall = 0;
     minuteBig = 0;
-    secondsBig = 0; 
+    secondsBig = 0;
+    counter = 0;
+    menuTimeCounter = 0;
+    addClassHidden();
+}
+
+// adds the class hidden to these so the game can be played again
+function addClassHidden(){
+    hasWon[0].classList.add('hidden');
+    hasLost[0].classList.add('hidden');
+    lastMenu[0].classList.add('hidden');
+    returnMenu[0].classList.add('hidden');
+
+    // removes the backgrounds on each new game for the player
+    for(let i = 0; i < gCells.length; i++){
+        gCells[i].classList.remove('loser');
+        gCells[i].classList.remove('winner');
+    }
 }
 
 // initial fill for the number pad
@@ -570,6 +587,7 @@ function wonGame(){
     }
     hasWon[0].classList.add('ani-small-big');
     hasWon[0].classList.add('layer-four');
+    hasWon[0].classList.remove('hidden');
     lastMenu[0].classList.remove('hidden');
 
     isGameOver = true;
@@ -655,6 +673,17 @@ function undoLastMove(){
         history.pop();
     }
     checkNumPad(); // checks num pad amounts on undo move
+}
+
+// called if user wants to play same settings again
+function playAgain(){
+    startGame();
+}
+
+// called if user wants to change difficulty
+function displayDiffMenu(){
+    addClassHidden();
+    pullUpDiffMenu();
 }
 
 // code sourced from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
