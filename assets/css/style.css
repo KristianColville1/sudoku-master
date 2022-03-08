@@ -485,7 +485,7 @@ input:hover {
 
 .start-game {
     font-size: 1.5rem;
-    color: var(--menu-text);
+    color: var(--game-bg);
     background-color: var(--player-cell);
     cursor: pointer;
     position: absolute;
