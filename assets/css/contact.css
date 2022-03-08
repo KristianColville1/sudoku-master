@@ -31,8 +31,9 @@
 #contact-btn,
 #return-btn,
 .home-link {
+    height: 44px;
     font-size: 1.2rem;
-    color: var(--menu-text);
+    color: var(--game-bg);
     background-color: var(--player-cell);
     cursor: pointer;
     position: absolute;
