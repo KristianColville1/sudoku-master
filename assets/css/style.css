@@ -277,7 +277,8 @@ button {
 
 .fa-moon,
 .fa-sun,
-.fa-question {
+.fa-question,
+.fa-times {
     color: var(--dark-mode);
     font-size: 1.5rem;
 }

@@ -3,6 +3,8 @@ const isDarkMode = document.querySelector('.dark-mode-button');
 const helpUser = document.getElementsByClassName('help-menu');
 const darkIconSun = document.getElementsByClassName('fa-sun');
 const darkIconMoon = document.getElementsByClassName('fa-moon');
+const exitRules = document.getElementsByClassName('fa-times');
+const openRules = document.getElementsByClassName('fa-question');
 
 const mainGrid = document.getElementById('grid');
 const numPad = document.getElementsByClassName('player-num-choice');
@@ -633,9 +635,13 @@ function lostGame(){
 function helpInfo(){
     if(userNeedsHelp === false){
         helpUser[0].classList.remove('hidden');
+        openRules[0].classList.add('hidden');
+        exitRules[0].classList.remove('hidden');
         userNeedsHelp = true;
     } else if(userNeedsHelp === true){
         helpUser[0].classList.add('hidden');
+        openRules[0].classList.remove('hidden');
+        exitRules[0].classList.add('hidden');
         userNeedsHelp = false;
     }
 }
