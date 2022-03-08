@@ -354,7 +354,9 @@ form,
 #thank-you-msg,
 #error-page,
 .diff-menu,
-.menu {
+.menu,
+.return-menu,
+.scores {
     width: 650px; /*-------------------------------------------------------Game width */
     height: 600px;
     background-color: var(--game-bg);
@@ -568,6 +570,32 @@ input:hover {
     visibility: visible;
 }
 
+
+.return-menu {
+    width: 300px;
+    height: 300px;
+    border: 2px solid var(--menu);
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex: 0 1 auto;
+    align-content: center;
+    justify-content: center;
+}
+
+.home,
+.home a,
+.play-again,
+.show-diff-menu {
+    font-size: 2rem;
+    color: var(--menu-text);
+    background-color: var(--player-cell);
+    cursor: pointer;
+
+    margin: 5px 0;
+}
+
 /*--------------------------------404 error page */
 #error-page {
     text-align: center;
@@ -611,9 +639,14 @@ input:hover {
     #thank-you-msg,
     #error-page,
     .diff-menu,
-    .menu {
+    .menu,
+    .return-menu {
         width: 90%; /*-------------------------------------------------------Game width */
         height: 90%;
+    }
+
+    .return-menu {
+        height: 50%;
     }
 
     h2.welcome-menu {
