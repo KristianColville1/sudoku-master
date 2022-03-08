@@ -129,21 +129,21 @@ The structure of the website was designed to be easily navigated. The whole game
 ### Wireframes
 
 <details>
-<summary>Desktop and large screens<summary>
+<summary>Desktop and large screens</summary>
 
 ![Desktop](assets/images/sudoku-master.png)
 
 </details>
 
 <details>
-<summary>Tablet and medium screens<summary>
+<summary>Tablet and medium screens</summary>
 
 ![Tablet](assets/images/sudoku-master-two.png)
 
 </details>
 
 <details>
-<summary>Mobile and smaller screens<summary>
+<summary>Mobile and smaller screens</summary>
 
 ![Mobile](assets/images/sudoku-master-three.png)
 
