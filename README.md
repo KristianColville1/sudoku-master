@@ -123,7 +123,7 @@ The game contains the following screens:
 - Additionally, another smaller screen appears shortly after to check if the user wishes to play another game or to change the difficulty.
 
 #### How to build Sudoko
-Here is a [PDF](assets/docs/pdf/sudoku.pdf) I created called 'How to generate sudoku game boards by Kristian Colville' it attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
+Here is a [PDF](assets/docs/sudoku.pdf) I created called 'How to generate sudoku game boards by Kristian Colville' it attempts to describe my thought process on how to build the game, the pitfalls encountered and the solutions I implemented for solving the sudoku boards.
 
 [Back to the top](#table-of-contents)
 ## Technologies & Tools
@@ -147,7 +147,14 @@ Here is a [PDF](assets/docs/pdf/sudoku.pdf) I created called 'How to generate su
 | Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving in the same manner | Isolating the code in its own for loop solved the problem, the cell was not updating the previous values accordingly as the horizontal and 3x3 filled |
 | Solving the board unsuccessful, values in wrong positions each time | Went with my fourth approach and removed all code and used a solved sudoku board to generate values correctly |
 | Moving on from situations the boards are generating but the current issue is user input to the board, I can successfully seperate user input from the system numbers but once the user puts a number on the board it acts like a system number | I removed the classes from the spans and added them to the divs instead and used classList.Contains to locate them and decide the appropiate outcome so the user could not change the displayed numbers |
-| 1 | 2|
+| Shaded cells not showing on pencil marks to help guide user | Added a function to check the inner cells each time user clicks on board and highlights these cells |
+| When user enters number over a cell with pencil marks the highlighted cells showing when no numbers to see | Added code to check if user has entered a number on top of pencil marks and then empties that cell of pencil marks |
+| Erased cells are showing highlighted background | Created seperate strings with different values for the eraser and the actual blank space on the board |
+| Pencil marks showing the same problem as above | Added a different blank string with two blank spaces to seperate different inputs on the board |
+| The inner pencil arrays can only hold 9 values or the numbers dont appear on smaller screens | Discovered the eraser was at fault and removed the ability to use it within pencil marks and only on top of them instead |
+| Highlighted cells showing on top of pencil marks after undo button removes value in a cell if pencil marks underneath | Walked through code and discovered that the undo button adds the initial value back to board. Added code so if initial value is a blank space just empty the pencil mark array underneath |
+
+
 [Back to the top](#table-of-contents)
 
 ## Deployment
