@@ -262,7 +262,6 @@ function playerChoice(position){
     for(let i = 0; i < 10; i++){
         pChoice[i].classList.remove('choice-active');
     }
-
     pChoice[playerChoiceIndex].classList.add('choice-active');
     userInput = position;
     if(userInput === 0 || userInput === 10){
@@ -293,16 +292,26 @@ function playerChoice(position){
 
 // adds the users input to the board based on the cell number and if it contains the numbers class
 function isOnTheBoard(){
-    if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
-                // remove pencil markings under the cell if the eraser is on this cell
-                trackPencilMarks[playerIndex] = [];
-                gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
-                recordHistory(playerIndex, boardOnScreen[playerIndex], userInput);
-                boardOnScreen.splice(playerIndex, 1, userInput);
+    let miniSwitch = false; // boolean to stop user accidently erasing cell if no user input at all
+
+    for(let i = 0; i < pChoice.length; i++){
+        if(pChoice[i].classList.contains('choice-active')){
+            miniSwitch = true;
+        }
     }
-    if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
-        createPencilMark();
+
+    if(miniSwitch === true){
+        if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
+                    trackPencilMarks[playerIndex] = [];
+                    gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
+                    recordHistory(playerIndex, boardOnScreen[playerIndex], userInput);
+                    boardOnScreen.splice(playerIndex, 1, userInput);
+        }
+        if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
+            createPencilMark();
+        }
     }
+    miniSwitch = false; // turned back off after checking for choice active
 }
 
 // adds a pencil mark or removes a pencil mark
@@ -644,7 +653,7 @@ function openReturnMenu(){
 // checks if a few seconds have passed and displays the return menu for the user
 function passTime(){
     menuTimeCounter++;
-    if(menuTimeCounter >= 3){
+    if(menuTimeCounter >= 5){
         clearInterval(counter);
         returnMenu[0].classList.remove('hidden');
     }
