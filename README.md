@@ -170,6 +170,7 @@ The structure of the website was designed to be easily navigated. The whole game
 - [Google Fonts](https://fonts.google.com/) for the fonts used on the website
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) for validating CSS code
 - [JShint](https://jshint.com/) for validating JavaScript code
+- [VSCode](https://code.visualstudio.com/) as a local respository
 - [Wave Validator](https://wave.webaim.org/) for accessibility validation
 - [WC3 Validator](https://validator.w3.org/) for validating HTML code
 
@@ -185,22 +186,22 @@ The structure of the website was designed to be easily navigated. The whole game
 
 |    Bug    |    Fix    |
 | --- | --- |
-| The second array I set up showed the players position in the wrong location between grids 5 & 9 | Created new array for indexs starting from 0 put the players position in the correct location|
-| Creating a backtracking algorithm to solve the board with one array for horizontal navigation | Using mutiple arrays for the index helped simplify creating boards, without this no boards could be created|
+| The second array I set up showed the players position in the wrong location between grids 5 & 9 | Created new array for indexes starting from 0 put the player's position in the correct location|
+| Creating a backtracking algorithm to solve the board with one array for horizontal navigation | Using multiple arrays for the index helped simplify creating boards, without this, no boards could be created|
 | The vertical array to hold the values generating the sudoku board not in the correct position | Swapping the outer index with the inner index positioned the value correctly |
-| The 3x3 array to hold the values generating the sudoku board not in the correct position | Removed code and started over |
+| The 3x3 array to hold the values generating the sudoku board, not in the correct position | Removed code and started over |
 | Generating 3x3 and horizontal values successful but vertical values conflicting | Removed code for vertically populating the grid |
-| Grid only capable of generating 12 random values successfully and it needs 17 to generate a single outcome each time | pushing the values generated vertically and horizontally to empty arrays for use later in conflict checking |
-| Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving in the same manner | Isolating the code in its own for loop solved the problem, the cell was not updating the previous values accordingly as the horizontal and 3x3 filled |
+| Grid was only capable of generating 12 random values successfully and it needs 17 to generate a single outcome each time | pushing the values generated vertically and horizontally to empty arrays for use later in conflict checking |
+| Solving for the above bug has somehow generated another bug where the vertical and horizontal indexes are behaving, in the same manner, | Isolating the code in its own for loop solved the problem, the cell was not updating the previous values accordingly as the horizontal and 3x3 filled |
 | Solving the board unsuccessful, values in wrong positions each time | Went with my fourth approach and removed all code and used a solved sudoku board to generate values correctly |
-| Moving on from situations the boards are generating but the current issue is user input to the board, I can successfully seperate user input from the system numbers but once the user puts a number on the board it acts like a system number | I removed the classes from the spans and added them to the divs instead and used classList.Contains to locate them and decide the appropiate outcome so the user could not change the displayed numbers |
+| Moving on from situations the boards are generating but the current issue is a user input to the board, I can successfully separate user input from the system numbers but once the user puts a number on the board it acts as a system number | I removed the classes from the spans and added them to the divs instead and used classList.Contains to locate them and decide the appropriate outcome so the user could not change the displayed numbers |
 | Shaded cells not showing on pencil marks to help guide user | Added a function to check the inner cells each time user clicks on board and highlights these cells |
-| When user enters number over a cell with pencil marks the highlighted cells showing when no numbers to see | Added code to check if user has entered a number on top of pencil marks and then empties that cell of pencil marks |
-| Erased cells are showing highlighted background | Created seperate strings with different values for the eraser and the actual blank space on the board |
-| Pencil marks showing the same problem as above | Added a different blank string with two blank spaces to seperate different inputs on the board |
-| The inner pencil arrays can only hold 9 values or the numbers dont appear on smaller screens | Discovered the eraser was at fault and removed the ability to use it within pencil marks and only on top of them instead |
-| Highlighted cells showing on top of pencil marks after undo button removes value in a cell if pencil marks underneath | Walked through code and discovered that the undo button adds the initial value back to board. Added code so if initial value is a blank space just empty the pencil mark array underneath |
-| If a user uses a pencil on a cell and then writes a number over it but decides to write with pencil on the same cell the pencil array not filling up correctly, only one value being displayed | Removed the nested if and else statements causing the issue from isOnBoard function and rewrote logic, the cells are able to be rewritten now |
+| When a user enters a number over a cell with pencil marks the highlighted cells show when no numbers to see | Added code to check if a user has entered a number on top of pencil marks and then empties that cell of pencil marks |
+| Erased cells are showing highlighted background | Created separate strings with different values for the eraser and the actual blank space on the board |
+| Pencil marks showing the same problem as above | Added a different blank string with two blank spaces to separate different inputs on the board |
+| The inner pencil arrays can only hold 9 values or the numbers don't appear on smaller screens | Discovered the eraser was at fault and removed the ability to use it within pencil marks and only on top of them instead |
+| Highlighted cells showing on top of pencil marks after undo button removes value in a cell if pencil marks underneath | Walked through code and discovered that the undo button adds the initial value back to board. Added code so if the initial value is a blank space just empty the pencil mark array underneath |
+| If a user uses a pencil on a cell and then writes a number over it but decides to write with pencil on the same cell the pencil array not filling up correctly, only one value being displayed | Removed the nested if and else statements causing the issue from isOnBoard function and rewrote logic, the cells can be rewritten now |
 
 [Back to the top](#table-of-contents)
 
