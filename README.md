@@ -200,7 +200,7 @@ The structure of the website was designed to be easily navigated. The whole game
 | Pencil marks showing the same problem as above | Added a different blank string with two blank spaces to seperate different inputs on the board |
 | The inner pencil arrays can only hold 9 values or the numbers dont appear on smaller screens | Discovered the eraser was at fault and removed the ability to use it within pencil marks and only on top of them instead |
 | Highlighted cells showing on top of pencil marks after undo button removes value in a cell if pencil marks underneath | Walked through code and discovered that the undo button adds the initial value back to board. Added code so if initial value is a blank space just empty the pencil mark array underneath |
-
+| If a user uses a pencil on a cell and then writes a number over it but decides to write with pencil on the same cell the pencil array not filling up correctly, only one value being displayed | Removed the nested if and else statements causing the issue from isOnBoard function and rewrote logic, the cells are able to be rewritten now |
 
 [Back to the top](#table-of-contents)
 
