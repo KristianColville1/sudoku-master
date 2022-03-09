@@ -153,9 +153,9 @@ The structure of the website was designed to be easily navigated. The whole game
 
 ### Languages Used
 
-- HTML
-- CSS
-- JavaScript
+- [HTML](https://en.wikipedia.org/wiki/HTML)
+- [CSS](https://en.wikipedia.org/wiki/CSS)
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 
 ### Frameworks, Libraries & Tools
 
@@ -170,12 +170,17 @@ The structure of the website was designed to be easily navigated. The whole game
 - [Google Fonts](https://fonts.google.com/) for the fonts used on the website
 - [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/) for validating CSS code
 - [JShint](https://jshint.com/) for validating JavaScript code
+- [Lighthouse](https://developers.google.com/web/tools/lighthouse) used within [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) for testing performance, accessibility, best practices, and search engine optimization
 - [VSCode](https://code.visualstudio.com/) as a local respository
 - [Wave Validator](https://wave.webaim.org/) for accessibility validation
 - [WC3 Validator](https://validator.w3.org/) for validating HTML code
 
 [Back to the top](#table-of-contents)
 ## Features
+
+This website includes three web pages consisting of thirteen distinct features as described below.
+
+### Home Page
 
 [Back to the top](#table-of-contents)
 ## Validation
