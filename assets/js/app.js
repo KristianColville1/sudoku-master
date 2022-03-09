@@ -294,21 +294,11 @@ function playerChoice(position){
 // adds the users input to the board based on the cell number and if it contains the numbers class
 function isOnTheBoard(){
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === false){
-        if(userInput === '' || userInput === '  '){
-            // do not enter these values on the board
-            // do not want empty strings or pencil marks without values
-        } else{
-            if(userInput === ' '){
                 // remove pencil markings under the cell if the eraser is on this cell
                 trackPencilMarks[playerIndex] = [];
                 gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
-                boardOnScreen.splice(playerIndex, 1, userInput);
-            } else{
-                gCells[playerIndex].innerHTML = `<span class='center-cell'>${userInput}</span>`;
                 recordHistory(playerIndex, boardOnScreen[playerIndex], userInput);
                 boardOnScreen.splice(playerIndex, 1, userInput);
-            }
-        }
     }
     if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
         createPencilMark();
@@ -354,7 +344,7 @@ function printNewPencilMarks(innerPencilArray){
     // each time called it rewrites the values in the cell according to the innerPencil array values
     let incrementalString = '';
     for(let i = 0; i < innerPencilArray.length; i++){
-        incrementalString+=`<span class='pencil-mark'>${innerPencilArray[i]}</span>`;
+        incrementalString+=`<span class='pencil-mark'>${innerPencilArray[i]}</span>\n`;
     }
 
     gCells[playerIndex].innerHTML = incrementalString;
