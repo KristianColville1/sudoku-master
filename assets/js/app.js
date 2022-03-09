@@ -295,7 +295,7 @@ function isOnTheBoard(){
     let miniSwitch = false; // boolean to stop user accidently erasing cell if no user input at all
 
     for(let i = 0; i < pChoice.length; i++){
-        if(pChoice[i].classList.contains('choice-active')){
+        if(pChoice[i].classList.contains('choice-active') || userInput === ' '){
             miniSwitch = true;
         }
     }
