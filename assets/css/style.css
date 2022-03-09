@@ -6,8 +6,8 @@
     /* CSS HEX */
 
 /* ...............................player position */
---shaded-cells: #5FEBE8;
---shaded-cells-light: #5FEBE8;
+--shaded-cells: #B7f1fa;
+--shaded-cells-light: #B7f1fa;
 --shaded-cells-dark: #6D76B2;
 --player-cell: #6D76B2;
 --player-cell-light: #6D76B2;
