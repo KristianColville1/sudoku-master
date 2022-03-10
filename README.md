@@ -165,6 +165,7 @@ The structure of the website was designed to be easily navigated. The whole game
 - [Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) for making the site responsive and debugging the site in a browser
 - [EmailJs](https://www.emailjs.com/) provided the ability for users to send email from the contact form
 - [Favicon](https://favicon.io/) for the favicon in the website
+- [Font Awesome](https://fontawesome.com/v5/search) for all icons within the website
 - [Git](https://git-scm.com/) for version control within [VSCode](https://code.visualstudio.com/) to push commits to [GitHub](https://github.com/)
 - [GitHub](https://github.com/) as a remote repository for project development
 - [Google Fonts](https://fonts.google.com/) for the fonts used on the website
@@ -181,6 +182,229 @@ The structure of the website was designed to be easily navigated. The whole game
 This website includes three web pages consisting of thirteen distinct features as described below.
 
 ### Home Page
+
+#### Welcome title animation
+
+- When the page is opened the game title fades in to full opacity
+
+<details>
+<summary>See this feature</summary>
+
+![Welcome Animation](assets/images/features/welcome-animation.png)
+</details>
+<br>
+
+#### User name input
+
+- The user is asked to provide their name into the input field for display in the game. The name the user enters needs to be at least 2 characters long and a maximum of 12 characters. There are no limits or restrictions implemented to prevent the user from entering characters of any type or name they wish to have displayed. If the user does not enter any input, however, then a message with feedback is displayed to inform the user of the name requirements. Then once a valid user name is provided, the name will be shown after a difficulty is picked on the next screen their name is next to a user icon at the top of the game screen in the left top corner
+- User stories fufilled: 2
+
+<details>
+<summary>See this feature</summary>
+
+![Required Input](assets/images/features/required-input.png)
+</details>
+<br>
+
+#### Instructions Menu
+
+- A simple modal pops up with game instructions when the '?' icon is clicked on by the user
+- It is available on game screens within the home page
+- A link to a wikipedia page about sudoku has also been provided for more information
+- User stories fufilled: 1, 12
+
+<details>
+<summary>See this feature</summary>
+
+![Instructions Menu](assets/images/features/instructions.png)
+</details>
+<br>
+
+#### Difficulty Menu 
+
+- Users can choose between six difficulties to exactly pick how challenging the game will be
+    - Very Easy
+    - Easy
+    - Medium
+    - Hard
+    - Very Hard
+    - Insane
+- Once a user picks a difficulty the game starts
+- User stories fufilled: 3, 13
+
+<details>
+<summary>See this feature</summary>
+
+![Difficulty Menu](assets/images/features/difficulty-menu.png)
+</details>
+<br>
+
+#### Game Screen
+
+- The game screen contains the following elements:
+    - Users name
+    - The chosen difficulty setting
+    - Darkmode button
+    - Instructions menu button
+    - A digital clock to count the time
+    - A sudoku grid
+    - A number pad with options 1 through 9
+    - Amounts left on board underneath the options 1 through 9
+    - Options for eraser, pencil and undo move
+- User stories fufilled: 2, 4, 5, 6, 7, 8
+
+<details>
+<summary>See this feature</summary>
+
+![Game Screen](assets/images/features/game-screen.png)
+</details>
+<br>
+
+#### Dark Mode
+
+- When the user selects the moon icon on the home page they activate the dark mode button
+    - Users have the option to play the game in a darker contrast
+    - When activated the icon changes to a sun icon
+    - Intuitively highlighting night and day from the moon and the sun
+- User stories fufilled: 9
+
+<details>
+<summary>See this feature</summary>
+
+![Dark Mode](assets/images/features/darkmode.png)
+</details>
+
+#### Digital Clock
+
+- User can see a digital clock counting the time directly above the center of the sudoku grid
+    - Allows users to see how long the puzzle takes to solve
+    - It counts from zero and can increment up to 600 hours
+    - The format for the clock is 00:00:00
+- User stories fufilled: 8
+
+<details>
+<summary>See this feature</summary>
+
+![Digital Clock](assets/images/features/user-clock.png)
+</details>
+<br>
+
+#### Sudoku Grid
+
+- Provided is an incomplete sudoku board for the user to fill
+    - Cells the user can change are highlighted with a different background color
+    - When the user clicks on the board their location is highlighted
+        - Hovering over cells shows the mouse location
+        - The 3x3 grid, vertically and horizontally are also highlighted on each click
+    - When a user selects an option from the options list:
+        - If the option is a number, all of those cells will highlight with a different background
+- User stories fufilled: 4, 6, 7, 8
+<details>
+<summary>See this feature</summary>
+
+![Sudoku Grid](assets/images/features/sudoku-grid.png)
+</details>
+<br>
+
+#### Pencil Options
+
+- Users have the options 1 through 9 to choose from to fill the grid
+- Users also have 3 additional options for playing the game:
+    - An eraser to empty a cell on the board
+    - A pencil to mark guesses on the board
+    - An undo button to undo all non pencil moves
+    - Tooltips to describe each pencil options purpose
+- The user only needs to use their mouse to complete the game
+- The amounts left on the board to fill are directly underneath the options 1 through 9
+- User stories fufilled: 4, 5, 7
+
+<details>
+<summary>See this feature</summary>
+
+![All Options](assets/images/features/user-inputs.png)
+![Pencil Options](assets/images/features/pencil-options.png)
+</details>
+<br>
+
+#### Win or Lose
+
+- When the user fills the grid and and there are no blank spaces on the board the game is over
+- A win or lose message will appear on the screen
+    - An animation has been added for the game message to get larger when triggered
+    - After around 5 seconds the return menu pops up
+        - The user can return to the start of the home page
+        - They can play again
+        - Or choose to change the difficulty setting
+
+<details>
+<summary>See this feature</summary>
+
+![Lose](assets/images/features/lose.png)
+![Win](assets/images/features/win.png)
+![Return Menu](assets/images/features/return-menu.png)
+</details>
+<br>
+
+#### Footer 
+
+- Featured on all pages within Sudoku Master
+- It provides:
+    - Copyright for the creator Kristian Colville
+    - Link to the Contact page
+    - Link to the developers GitHub repository of this project
+    - Link to the developers LinkedIn profile
+- All external links open in a seperate window
+- Internal link to the contage page opens in the same window
+- User stories fufilled: 10
+
+<details>
+<summary>See this feature</summary>
+
+![Footer](assets/images/features/footer.png)
+</details>
+<br>
+
+### Contact Page
+
+#### Contact Form
+
+- A user can provide feedback or get in touch with the developer through the contact form
+- Implemented is [EmailJs](https://www.emailjs.com/) which allows a user to send an email to the developer with the user's data and message
+- User stories fufilled: 10, 16
+
+<details>
+<summary>See this feature</summary>
+
+![Contact Form](assets/images/features/contact-page.png)
+</details>
+<br>
+
+#### Contact Form confirmation Message
+
+- A thank you message is displayed
+- Provides a link back to the home page
+- User Stories fufilled: 11
+
+<details>
+<summary>See this feature</summary>
+
+![Informing of Sending](assets/images/features/inform-user.png)
+![Thank You Message](assets/images/features/thank-you-msg.png)
+</details>
+<br>
+
+### 404 error page
+
+- This website has a 404 error page included which is displayed if a user enters a URL that does not exist within the website
+- It provides a method for the user to return to the home page through a link
+- User stories fufilled: 15
+
+<details>
+<summary>See this feature</summary>
+
+![404 error page](assets/images/features/404-error-page.png)
+</details>
+
 
 [Back to the top](#table-of-contents)
 ## Validation
