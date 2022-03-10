@@ -18,6 +18,7 @@ const lastMenu = document.getElementsByClassName('last-menu');
 const returnMenu = document.getElementsByClassName('return-menu');
 const hasEnteredName = document.getElementById('next');
 
+const displayedDiff = document.getElementsByClassName('display-diff');
 const setting = document.getElementsByClassName('diff-options');
 const hasWon = document.getElementsByClassName('win');
 const hasLost = document.getElementsByClassName('lose');
@@ -146,6 +147,7 @@ function addClassHidden(){
     returnMenu[0].classList.add('hidden');
     profile[0].classList.add('hidden');
     clock[0].classList.add('hidden');
+    displayedDiff[0].classList.add('hidden');
 
     // removes the backgrounds on each new game for the player
     for(let i = 0; i < gCells.length; i++){
@@ -451,11 +453,15 @@ function nextDifficulty(direction){
 // it enables different difficulities.
 function getInnerTextForDiff(){
     let diff = '';
+    let displayDiffText = document.getElementsByClassName('displayed-diff');
+
     for(let i = 0; i < setting.length; i++){
         if(!setting[i].classList.contains('hidden')){
             diff = setting[i].innerHTML;
+            displayDiffText[0].innerHTML = diff;
         }
     }
+    
     switch(diff){
         case 'Very Easy':
             diff = 1;
@@ -518,7 +524,7 @@ function hideDiffMenu(){
     secondMenu[0].classList.add('hidden');
     mainGrid.classList.remove('hidden');
     numPad[0].classList.remove('hidden');
-
+    displayedDiff[0].classList.remove('hidden');
     showNameAndTime();
 }
 
@@ -634,11 +640,13 @@ function lostGame(){
 function helpInfo(){
     if(userNeedsHelp === false){
         helpUser[0].classList.remove('hidden');
+        displayedDiff[0].classList.add('hidden');
         openRules[0].classList.add('hidden');
         exitRules[0].classList.remove('hidden');
         userNeedsHelp = true;
     } else if(userNeedsHelp === true){
         helpUser[0].classList.add('hidden');
+        displayedDiff[0].classList.remove('hidden');
         openRules[0].classList.remove('hidden');
         exitRules[0].classList.add('hidden');
         userNeedsHelp = false;
