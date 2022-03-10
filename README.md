@@ -30,7 +30,7 @@ Link to [website](https://kristiancolville1.github.io/sudoku-master/)
     * [GitHub Pages](#github-pages)
     * [Cloning this Repository](#cloning-this-repository)
 * [credits](#credits)
-* [acknowledgements](#acknowledgements)
+* [Acknowledgements](#acknowledgements)
 
 ## Project Goals
 The goal of this project was to create an interactive and user-friendly version of the popular game Sudoku.
@@ -196,7 +196,9 @@ This website includes three web pages consisting of thirteen distinct features a
 
 #### User name input
 
-- The user is asked to provide their name into the input field for display in the game. The name the user enters needs to be at least 2 characters long and a maximum of 12 characters. There are no limits or restrictions implemented to prevent the user from entering characters of any type or name they wish to have displayed. If the user does not enter any input, however, then a message with feedback is displayed to inform the user of the name requirements. Then once a valid user name is provided, the name will be shown after a difficulty is picked on the next screen their name is next to a user icon at the top of the game screen in the left top corner
+- The user is asked to provide their name into the input field for display in the game. The name the user enters needs to be at least 2 characters long and a maximum of 12 characters.
+- There are no limits or restrictions implemented to prevent the user from entering characters of any type or name they wish to have displayed. If the user does not enter any input, however, then a message with feedback is displayed to inform the user of the name requirements.
+- Then once a valid user name is provided, the name will be shown after a difficulty is picked on the next screen their name is next to a user icon at the top of the game screen in the left top corner
 - User stories fufilled: 2
 
 <details>
@@ -223,6 +225,7 @@ This website includes three web pages consisting of thirteen distinct features a
 #### Difficulty Menu 
 
 - Users can choose between six difficulties to exactly pick how challenging the game will be
+- In order of difficulty:
     - Very Easy
     - Easy
     - Medium
@@ -379,7 +382,7 @@ This website includes three web pages consisting of thirteen distinct features a
 </details>
 <br>
 
-#### Contact Form confirmation Message
+#### Contact Form Confirmation Message
 
 - A thank you message is displayed
 - Provides a link back to the home page
@@ -405,9 +408,124 @@ This website includes three web pages consisting of thirteen distinct features a
 ![404 error page](assets/images/features/404-error-page.png)
 </details>
 
-
 [Back to the top](#table-of-contents)
 ## Validation
+
+### HTML Validation
+
+To validate the HTML on all pages the [W3C Markup Validation Service](https://validator.w3.org/) was used. 
+All pages passed with no errors.
+
+<details>
+<summary>Home Page</summary>
+
+![Home Page](assets/images/validation/home-page.png)
+</details>
+
+<details>
+<summary>Contact Page</summary>
+
+![Contact Page](assets/images/validation/contact-page.png)
+</details>
+
+<details>
+<summary>404 Error Page</summary>
+
+![404 Error Page](assets/images/validation/404-error-page.png)
+</details>
+<br>
+
+### CSS Validation
+
+To validate the CSS on all pages the [W3C Jigsaw CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used. 
+All CSS files passed with no errors.
+
+<details>
+<summary>style.css</summary>
+
+![Style CSS](assets/images/validation/style-css.png)
+</details>
+
+<details>
+<summary>contact.css</summary>
+
+![Contact CSS](assets/images/validation/contact-css.png)
+</details>
+<br>
+
+### JavaScript Validation
+
+To validate the JavaScript, [JSHint](https://jshint.com/) was used. No errors or warnings in all JavaScript files.
+JSHint was installed within [VSCode](https://code.visualstudio.com/) and enabled globally for quicker error detection at run time instead of manual copying and pasting files to the actual website.
+All errors were resolved within VSCode instantly at the moment of the error if an error occured.
+
+- Files within workspace:
+    - app.js
+    - sudoku-board.js
+    - contact.js
+
+<details>
+<summary>Workspace Results</summary>
+
+![Game](assets/images/validation/workspace-results.png)
+</details>
+<br>
+
+### Accessibility
+
+To test the accessibility of the website [Wave WebAIM](https://wave.webaim.org/) was used to ensure the website met high accessiblity standards. The entire website passed with 0 errors.
+
+Quick overview of things this tool helped accomplish to meet standards:
+
+- Buttons were resized
+- Font colors were adjusted for contrast
+- Font sizes were made larger
+- Backgrounds and foregrounds were adjusted for contrast
+- Aria labels were checked and matched
+
+<details>
+<summary>Home Page</summary>
+
+![Home Page](assets/images/validation/wave-home-page.png)
+</details>
+
+<details>
+<summary>Contact Page</summary>
+
+![Contact Page](assets/images/validation/wave-contact-page.png)
+</details>
+
+<details>
+<summary>404 Error Page</summary>
+
+![404 Error Page](assets/images/validation/wave-404-error-page.png)
+</details>
+<br>
+
+### Performance
+
+To test performance [Google Lighthouse](https://developers.google.com/web/tools/lighthouse) in [Google Chrome Developer Tools](https://developers.google.com/).
+All scores show excellent results across the entire website. All results are either 100 or are in the high 90s.
+
+<details>
+<summary>Home Page</summary>
+
+![Home Page](assets/images/validation/home-performance.png)
+</details>
+
+<details>
+<summary>Contact Page</summary>
+
+![Contact Page](assets/images/validation/contact-performance.png)
+</details>
+
+<details>
+<summary>404 Error Page</summary>
+
+![404 Error Page](assets/images/validation/404-performance.png)
+</details>
+<br>
+
 [Back to the top](#table-of-contents)
 ## Testing
 [Back to the top](#table-of-contents)
@@ -490,4 +608,11 @@ I sourced a function from [StackOverFlow](https://stackoverflow.com/questions/24
 
 [Back to the top](#table-of-contents)
 ## Acknowledgements
+
+[Spencer Barniball](https://github.com/5pence) for his mentorship and invaluable guidance.
+
+[Kasia Bogucka](https://github.com/bezebee) for being the best cohort facilitator within [Code Institute](https://learn.codeinstitute.net).
+
+[Code Institute](https://learn.codeinstitute.net) for providing me with the skills to complete this project.
+
 [Back to the top](#table-of-contents)
