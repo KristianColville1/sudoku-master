@@ -28,7 +28,7 @@ const profile = document.getElementsByClassName('fa-user-circle');
 const clock = document.getElementsByClassName('fa-clock');
 const userTime = document.getElementById('user-time');
 
-const possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const possibleChoices = [1, 2, 3, 4, 5, 6, 7, 8, 9]; // array used as for possible choices, used as way of counting and for visual guidance
 
 var dontShade = []; // used to track shaded indexs
 const shadedIndexs = []; // current shaded indexs
@@ -58,9 +58,9 @@ let secondsBig = 0; // hourSmall, minuteSmall and secondsSmall for clock
 let time; // variable assigned to function for counting
 
 let counter = 0;
-let menuTimeCounter = 0;
+let menuTimeCounter = 0; // counters for displaying return menu after game finished
 
-// horizontal indexs
+// horizontal indexs in the sudoku grid
 let hGrid = [
     [0, 1, 2, 3, 4, 5, 6, 7, 8],
     [9, 10, 11, 12, 13, 14, 15, 16, 17],
@@ -73,7 +73,7 @@ let hGrid = [
     [72, 73, 74, 75, 76, 77, 78, 79, 80]
 ];
 
-// vertical indexs
+// vertical indexs in the sudoku grid
 let vGrid = [
     [0, 9, 18, 27, 36, 45, 54, 63, 72],
     [1, 10, 19, 28, 37, 46, 55, 64, 73],
@@ -86,7 +86,7 @@ let vGrid = [
     [8, 17, 26, 35, 44, 53, 62, 71, 80]
 ];
 
-// Larger grid indexs 1 - 9
+// Larger grid indexs 1 - 9  in the sudoku grid
 let lGrid = [
     [0, 1, 2, 9, 10, 11, 18, 19, 20],
     [3, 4, 5, 12, 13, 14, 21, 22, 23],
@@ -136,6 +136,7 @@ function resetVars(){
     secondsBig = 0;
     counter = 0;
     menuTimeCounter = 0;
+    userTime.innerText = ''; //resets the clock also
     addClassHidden();
 }
 
@@ -158,9 +159,6 @@ function addClassHidden(){
     for(let i = 0; i < numChoice.length; i++){
         numChoice[i].innerHTML = '';
     }
-
-    //resets the clock also
-    userTime.innerText = '';
 }
 
 // initial fill for the number pad
@@ -492,28 +490,22 @@ function howDifficultIsGame(diff){
     // user difficulty will select different outcome
     switch(diff){
         case 1:
-            // very easy, remove 28 pieces
-            toRemove = 28;
+            toRemove = 28; // very easy, remove 28 pieces
             break;
         case 2:
-            // easy, remove 37 pieces
-            toRemove = 37;
+            toRemove = 37; // easy, remove 37 pieces
             break;
         case 3:
-            // medium, remove 42 pieces
-            toRemove = 42;
+            toRemove = 42; // medium, remove 42 pieces
             break;
         case 4:
-            // hard, remove 48 pieces
-            toRemove = 48;
+            toRemove = 48; // hard, remove 48 pieces
             break;
         case 5:
-            // very hard, remove 50 pieces
-            toRemove = 50;
+            toRemove = 50; // very hard, remove 50 pieces
             break;
         default:
-            // insane, remove 55 pieces
-            toRemove = 55;
+            toRemove = 55; // insane, remove 55 pieces
             break;
     }
     displayedBoard(toRemove); // board to display will be called here.
@@ -786,6 +778,6 @@ function darkMode(){
     }
 }
 
-// event listeners for starting game and darkmode
+// event listeners for user name and darkmode
 hasEnteredName.addEventListener('click', getUserName);
 isDarkMode.addEventListener('click', darkMode);
