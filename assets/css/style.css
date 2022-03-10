@@ -386,10 +386,38 @@ form,
     width: 500px;
 }
 
+.display-diff {
+    font-size: 1.2rem;
+    text-align: right;
+    position: relative;
+    z-index: -1;
+}
+
+.displayed-diff {
+    color: var(--menu);
+    transform: translateY(100%);
+    margin-right: 5px;
+}
+
 /*-------------------------------------------------------first menu */
 h2.welcome-menu {
     font-size: 2;
     font-style: italic;
+
+    animation-name: welcome;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}
+
+@keyframes welcome {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .name-warning {
