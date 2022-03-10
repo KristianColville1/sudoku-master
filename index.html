@@ -67,11 +67,11 @@
                 <h2 class="win">You Win!</h2>
                 <h2 class="lose hidden">You Lose!</h2>
             </div>
-            <div class="return-menu layer-five hidden">
-                <button type="button" id="home" class="home"><a href="index.html" aria-label="click here to return to the main home page">Home</a></button>
+            <form class="return-menu layer-five hidden" action="index.html">
+                <button type="submit" id="home" class="home">Home</button></a>
                 <button type="button" id="play-again" class="play-again" onclick="playAgain()">Play Again</button>
                 <button type="button" id="show-diff-menu" class="show-diff-menu" onclick="displayDiffMenu()">Change Difficulty</button>
-            </div>
+            </form>
             <div id="grid" class="hidden">
                 <i class="far fa-clock hidden"></i>
                 <span id="user-time"></span>
