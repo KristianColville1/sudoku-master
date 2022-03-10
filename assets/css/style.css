@@ -85,7 +85,6 @@
 --footer-bg-dark: #37AFD7;
 }
 
-/*----------------------------------------------------defaults */
 body {
     margin: 0;
     border: none;
@@ -401,7 +400,7 @@ form,
 
 /*-------------------------------------------------------first menu */
 h2.welcome-menu {
-    font-size: 2;
+    font-size: 4rem;
     font-style: italic;
 
     animation-name: welcome;
