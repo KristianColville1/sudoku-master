@@ -39,7 +39,7 @@ const lastIndex = []; // players last index
 let boardOnScreen = []; // board to be displayed to the user
 let boardBefore = []; // board to compare results when game finished
 let trackPencilMarks = []; // creates 81 empty arrays for pencil marking
-let history = []; // array to store user game history
+let userHistory = []; // array to store user game history
 
 let enableDarkMode = false; // boolean for turning darkmode on and off.
 let userNeedsHelp = false; // boolean for toggling help menu on and off.
@@ -678,21 +678,21 @@ function createEmptyInnerArrays(){
 // function to recored the history of user choices, the cell index, the value already in the cell and the new choice
 function recordHistory(cellIndex, insideCell, newChoice){
     let cellString = String(cellIndex);
-    history.push([cellString, insideCell, newChoice]);
+    userHistory.push([cellString, insideCell, newChoice]);
 
 }
 
 // when called it reverses the last move
 function undoLastMove(){
-    if(history.length > 0){
-        let index = Number(history[history.length -1][0]);
-        let lastMove = history[history.length -1][1];
+    if(userHistory.length > 0){
+        let index = Number(userHistory[userHistory.length -1][0]);
+        let lastMove = userHistory[userHistory.length -1][1];
         if(lastMove === ''){
             lastMove = '   '; // makes last move 3 blank spaces to make sure pencil doesn't highlight
         }
         gCells[index].innerHTML = `<span class='center-cell'>${lastMove}</span>`;
         boardOnScreen.splice(index, 1, lastMove);
-        history.pop();
+        userHistory.pop();
     }
     checkNumPad(); // checks num pad amounts on undo move
 }
