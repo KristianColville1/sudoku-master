@@ -597,6 +597,8 @@ The monitors were tested on the developer's screens. There is a generous amount 
 ![User name input](assets/images/screenshots/user-name-part-one.png)
 
 ![User name input condition](assets/images/screenshots/user-name-part-two.png)
+
+![User name input on screen](assets/images/screenshots/user-name-part-three.png)
 </details>
 <br>
 
@@ -660,7 +662,7 @@ The monitors were tested on the developer's screens. There is a generous amount 
 
 ![Position of Player](assets/images/screenshots/position-part-one.png)
 
-![Highlighted cells](assets/images/screenshots/position-part-one.png)
+![Highlighted cells](assets/images/screenshots/position-part-two.png)
 </details>
 <br>
 
