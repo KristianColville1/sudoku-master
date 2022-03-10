@@ -1,7 +1,8 @@
 # Sudoku Master
-Sudoku game website.
 
-Link to [website](https://kristiancolville1.github.io/sudoku-master/)
+Developer: Kristian Colville
+
+[Visit this website](https://kristiancolville1.github.io/sudoku-master/)
 
 ![Sudoku Master](assets/images/responsive.png)
 
@@ -560,6 +561,7 @@ The monitors were tested on the developer's screens. There is a generous amount 
 - Azuze 32" monitor (Desktop)
 - AOC 32" monitor (Desktop)
 
+[Back to the top](#table-of-contents)
 ### Browsers Tested
 
 - Testing has been carried out on the browsers listed below:
@@ -567,7 +569,7 @@ The monitors were tested on the developer's screens. There is a generous amount 
     - Edge Version 99.0.1150.36 (Official build) (64-bit)
     - Firefox 98.0 (64-bit)
 
-
+[Back to the top](#table-of-contents)
 ### Testing User Stories
 
 1. I want to be able to understand the rules of the game
@@ -899,6 +901,8 @@ You now have a local copy of this repository to use on your machine.
 I sourced a function from [Mozilla. org](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) to generate some of my random numbers to help with the game logic.
 
 I sourced a function from [StackOverFlow](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) called the Fisher-Yates Shuffle. I needed a way of shuffling numbers quickly to help generate the game boards.
+
+Function sourced from [EmailJs](https://www.emailjs.com/) for users sending the developer emails from Sudoku Master.
 
 [Back to the top](#table-of-contents)
 ## Acknowledgements
