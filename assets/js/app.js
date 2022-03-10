@@ -309,6 +309,7 @@ function isOnTheBoard(){
         }
         if(gCells[playerIndex].classList.contains('numbers') && pencilActive === true){
             createPencilMark();
+            boardOnScreen.splice(playerIndex, 1, '');
         }
     }
     miniSwitch = false; // turned back off after checking for choice active
