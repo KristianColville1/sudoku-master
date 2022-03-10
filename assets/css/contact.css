@@ -32,7 +32,8 @@
 #return-btn,
 .home-link {
     height: 44px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
     color: var(--game-bg);
     background-color: var(--player-cell);
     cursor: pointer;
